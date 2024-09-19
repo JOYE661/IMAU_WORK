@@ -1,0 +1,104 @@
+export {movieData1,movieData2}
+const movieData1: object[] = [
+  {
+    'id': '1',
+    'movieName': '满江红',
+    'tickets': '99999'
+  },
+  {
+    'id':'2',
+    'movieName':'阿凡达',
+    'tickets':'99910'
+  },
+  {
+    'id':'3',
+    'movieName':'火星救援',
+    'tickets':'99905'
+  },
+  {
+    'id':'4',
+    'movieName':'星球大战',
+    'tickets':'99900'
+  },
+  {
+    'id':'5',
+    'movieName':'你好，李焕英',
+    'tickets':'99899'
+  },
+  {
+    'id':'6',
+    'movieName':'疯狂外星人',
+    'tickets':'99799'
+  },
+  {
+    'id':'7',
+    'movieName':'我不是药神',
+    'tickets':'99699'
+  },
+  {
+    'id':'8',
+    'movieName':'敢死队',
+    'tickets':'99599'
+  },
+  {
+    'id':'9',
+    'movieName':'小猪佩奇',
+    'tickets':'99499'
+  },
+  {
+    'id':'10',
+    'movieName':'小羊肖恩',
+  }
+]
+const movieData2: object[] = [
+  {
+    'id':'11',
+    'movieName':'熊出没',
+    'tickets':'99299'
+  },
+  {
+    'id':'12',
+    'movieName':'功夫熊猫',
+    'tickets':'99199'
+  },
+  {
+    'id':'13',
+    'movieName':'冰雪奇缘',
+    'tickets':'99099'
+  },
+  {
+    'id':'14',
+    'movieName':'魔发奇缘',
+    'tickets':'98999'
+  },
+  {
+    'id':'15',
+    'movieName':'白雪公主',
+    'tickets':'97999'
+  },
+  {
+    'id':'16',
+    'movieName':'指环王',
+    'tickets':'96999'
+  },
+  {
+    'id':'17',
+    'movieName':'猫和老鼠',
+    'tickets':'95999'
+  },
+  {
+    'id': '18',
+    'movieName': '老师，你好',
+    'tickets': '94999'
+  },
+  {
+    'id':'19',
+    'movieName':'黑豹',
+    'tickets':'93999'
+  },
+  {
+    'id':'20',
+    'movieName':'变形金刚',
+    'tickets':'92999'
+  }
+]

@@ -1,0 +1,23 @@
+@Preview
+@Component
+export struct ListHeaderComponent{
+  build(){
+   Row(){
+     Text('排名')
+       .fontSize(20)
+       .width('30%')
+       .fontWeight(400)
+       .fontColor(0xd3d3d3)
+     Text('影片名')
+       .fontSize(20)
+       .width('50%')
+       .fontWeight(400)
+       .fontColor(0xd3d3d3)
+     Text('票房')
+       .fontSize(20)
+       .width('20%')
+       .fontWeight(400)
+       .fontColor(0xd3d3d3)
+   }
+  }
+}
