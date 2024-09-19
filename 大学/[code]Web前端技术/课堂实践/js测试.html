@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="number1">
+		<input type="button" value="逆序输出" onclick="fun1()">
+		<input type="text" id="number2">
+		<br>
+		<script>
+// 			var x,y;
+// 			x=35;
+// 			y="3.57";
+			var curtime=new Date();
+			document.write(curtime);
+			document.write("<br>");
+			var x=curtime.getHours();
+			if(x>=5&&x<12)
+				document.write("上午好");
+			else if(x>=12&&x<18)
+				document.write("下午好");
+			else
+				document.write("晚上好");
+			document.write("<br>");
+			var y=curtime.getDay();
+			switch(y){
+				case 1:
+					document.write("星期一");
+					break;
+				case 2:
+					document.write("星期二");
+					break;
+				case 3:
+					document.write("星期三");
+					break;
+				case 4:
+					document.write("星期四");
+					break;
+				case 5:
+					document.write("星期五");
+					break;
+				default:
+					document.write("周末");
+					break;
+			}
+			document.write("<br>");
+			var sum=1,f=1;
+			for(i=2;i<=100;i++)
+			{
+				sum=sum+i*f;
+				f=-f;
+			}
+			document.write("1+2-3+4...+98-99+100="+sum);
+			document.write("<br>");
+			var x=1234;
+			var s="";
+			while(x!=0)
+			{
+				r=x%10;
+				x=parseInt(x/10);
+				s=s+r
+			}
+			document.write(s);
+			document.write("<br>");
+			function fun1()
+			{
+				var x=document.getElementById("number1").value;
+				//alert(typeof(x));
+				var s="";
+				while(x!=0)
+				{
+					r=x%10;
+					x=parseInt(x/10);
+					s=s+r;
+				}
+				//document.write(s);
+				//alert(s);
+				document.getElementById("number2").value=s;
+			}
+		</script>
+		<!-- <p onclick="alert('test')">这是一个段落</p> -->
+<!-- 		<script src="js文件.js"></script> -->
+	</body>
+</html>

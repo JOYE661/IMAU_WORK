@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+				font-size:16px;
+				line-height:50px;
+			}
+			#box{
+				width:500px;
+				background-color:lightgray;
+				margin:50px auto;
+			}
+			h1{
+				font:bold 28px 黑体;
+				text-align:center;
+				background-color:gray;
+				padding:30px;
+			}
+			#content{
+				padding:30px;
+			}
+			#content .textbox{
+				width:230px;
+				height:30px;
+				float:right;
+			}
+			#content #crop{
+				width:80px;
+				height:30px;
+				margin-left:58px;
+			}
+			#content #ok{
+				width:180px;
+				height:35px;
+			}
+			#content #result{
+				border-top:2px solid gray;
+				margin-top:30px;
+				line-height:35px;
+				padding-top:30px;
+			}
+			#variation{
+				position:relative;
+				height:160px;
+				width:440px;
+			}
+			#box1,#box2,#box3,#box4{
+				display:none;
+				height:160px;
+				width:440px;
+				position:absolute;
+				left:0px;
+				top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+				<h1>农作物亩产计算器</h1>
+				<div id="content">
+					<div id="cropbox" onchange="funselect()">
+						请选择农作物种类
+						<select id="crop">
+							<option value="null"></option>
+							<option value="rice">水稻</option>
+							<option value="wheat">小麦</option>
+							<option value="maize">玉米</option>
+							<option value="millet">谷子</option>
+							<option value="sorghum">高梁</option>
+							<option value="potato">甘薯 </option>
+							<option value="cotton">棉花</option>
+						</select>
+					</div>
+					<div id="variation">
+						<div id="box1">
+							亩穗数:<input type="text" class="textbox" id="mss1"><br>
+							穗粒数:<input type="text" class="textbox" id="sls"><br>
+							斤粒数: <input type="text" class="textbox" id="jls">
+						</div>
+						<div id="box2">
+							亩穗数:<input type="text"class="textbox" id="mss2"><br>
+							穗粒重(克): <input type="text"class="textbox" id="slz"><br>
+						</div>
+						<div id="box3">
+							亩株数:<input type="text" class="textbox" id="mzs1"><br>
+							单株平均薯重(斤):<input type="text" class="textbox" id="dzsz">
+						</div>
+						<div id="box4">
+							亩株数:<input type="text" class="textbox" id="mzs2"><br>
+							每株有效铃数(斤):<input type="text" class="textbox" id="dzls"><br>
+							单粒重(克): <input type="text"class="textbox" id="dlz">
+						</div>
+					</div>
+					<div id="result">
+						<input type="button" value="计算亩产量(斤)" id="ok" onclick="funcount()">
+						<input type="text"class="textbox"id="mcl">
+					</div>
+				</div>
+		</div>
+		<script>
+			function funselect(){
+				var a=document.getElementById("crop").value;
+				if(a=="rice"||a=="wheat"||a=="maize"){
+					box1.style.display="block";
+					box2.style.display="none";
+					box3.style.display="none";
+					box4.style.display="none";
+				}
+				else if(a=="millet"||a=="sorghum"){
+					box1.style.display="none";
+					box2.style.display="block";
+					box3.style.display="none";
+					box4.style.display="none";
+				}
+				else if(a=="potato"){
+					box3.style.display="block";
+					box1.style.display="none";
+					box2.style.display="none";
+					box4.style.display="none";
+				}
+				else if(a=="cotton"){
+					box4.style.display="block";
+					box1.style.display="none";
+					box2.style.display="none";
+					box3.style.display="none";
+				}
+				else if(a=="null"){
+					box1.style.display="none";
+					box2.style.display="none";
+					box3.style.display="none";
+					box4.style.display="none";
+				}
+			}
+			function funcount(){
+				var mss1=document.getElementById("mss1").value;
+				var sls=document.getElementById("sls").value;
+				var jls=document.getElementById("jls").value;
+				var mss2=document.getElementById("mss2").value;
+				var slz=document.getElementById("slz").value;
+				var mzs1=document.getElementById("mzs1").value;
+				var dzsz=document.getElementById("dzsz").value;
+				var mzs2=document.getElementById("mzs2").value;
+				var dzls=document.getElementById("dzls").value;
+				var dlz=document.getElementById("dlz").value;
+				var a1=mss1*sls/jls;
+				var a2=mss2*slz/500;
+				var a3=mzs1*dzsz;
+				var a4=mzs2*dzls*dlz/500;
+				var a=document.getElementById("crop").value;
+				if(a=="rice"||a=="wheat"||a=="maize"){
+					document.getElementById("mcl").value=a1;
+				}
+				else if(a=="millet"||a=="sorghum"){
+					document.getElementById("mcl").value=a2;
+				}
+				else if(a=="potato"){
+					document.getElementById("mcl").value=a3;
+				}
+				else if(a=="cotton"){
+					document.getElementById("mcl").value=a4;
+				}
+			}
+		</script>
+	</body>
+</html>
