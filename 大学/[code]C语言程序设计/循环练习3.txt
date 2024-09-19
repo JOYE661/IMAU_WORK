@@ -1,0 +1,78 @@
+1.检测输入数据中奇数和偶数的个数. 
+从键盘输入一系列正整数，输入-1表示输入结束（-1本身不是输入的数据）。
+判断输入数据中奇数和偶数的个数。
+如果用户输入的第一个数据就是-1，则程序输出"over!"。
+否则。用户每输入一个数据，输出该数据是奇数还是偶数，
+直到用户输入-1为止，分别统计用户输入数据中奇数和偶数的个数。
+
+程序运行结果示例1：
+Please enter the number:
+1↙
+1:odd
+5↙
+5:odd
+8↙
+8:even
+9↙
+9:odd
+12↙
+12:even
+17↙
+17:odd
+-1↙
+The total number of odd is 4
+The total number of even is 2
+程序运行结果示例2：
+Please enter the number:
+-1↙
+over!
+The total number of odd is 0
+The total number of even is 0
+输入提示信息："Please enter the number:\n"
+输入格式: "%d"
+输出格式：
+
+2.输出字符三角
+编写程序产生如下输出：
+F
+FE
+FED
+FEDC
+FEDCB
+FEDCBA
+
+输入格式: 无
+输出格式："%c"
+
+
+3.计算n以内的所有素数和
+编写程序，计算输入的n以内的所有素数之和。
+输入格式:  "%d"
+输出格式："sum=%d\n"
+
+
+4.搬砖问题（总分占比25%）
+n块砖( 27<n<=77 )，36人搬，男搬4，女搬3，两个小孩抬一块砖，要求一次搬完，
+问男人、女人和小孩各需多少人？
+编程求解,砖块n的值要求从键盘输入。
+输入提示： "Input n(27<n<=77):\n"
+输入格式: "%d"
+输出格式： "men=%d,women=%d,children=%d\n"
+
+程序的运行结果示例1：
+Input n(27<n<=77):
+28↙
+men=0,women=4,children=32
+程序的运行结果示例2：
+Input n(27<n<=77):
+36↙
+men=3,women=3,children=30
+
+程序的运行结果示例3：
+Input n(27<n<=77):
+60↙
+men=2,women=14,children=20
+men=7,women=7,children=22
+men=12,women=0,children=24
+
+
