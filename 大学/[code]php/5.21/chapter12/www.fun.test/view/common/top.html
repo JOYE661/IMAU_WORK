@@ -1,0 +1,17 @@
+<div class="top">
+  <div class="container">
+    <div class="top-logo"><a href="./" title="<?=config('APP_TITLE')?>"><img src="./images/logo.png"></a></div>
+    <div class="top-nav">
+      <?php foreach (config('APP_NAV') as $k => $v): ?>
+        <a class="<?=(isset($type) && ($type == $k)) ? 'curr' : ''?>" href="./?type=<?=$k?>"><?=$v?></a>
+      <?php endforeach; ?>
+    </div>
+    <div class="top-right">
+      <?php if(IS_LOGIN): ?>
+        欢迎您，<a href="user.php"><strong><?=user('name')?></strong></a><i></i><a href="login.php?action=logout&token=<?=TOKEN?>">退出</a>
+      <?php else: ?>
+        <a href="login.php">登录</a><i></i><a href="register.php">注册</a>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>

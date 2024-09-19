@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>验证码</title>
+<style>
+	ul,li{margin:0; padding:0;}
+	form{margin:40px 30px 0;}
+	form li{list-style:none; padding:5px 0;}
+	form li label{float:left; width:70px; text-align:right;}
+	form li a{font-size:12px; color:#999; text-decoration:none;}
+	.login_btn{border:none; background:#01A4F1; color:#fff; font-size:14px;font-weight:bold; height:28px; line-height:28px; padding:0 10px; cursor:pointer;}
+	form li img{vertical-align:top;}
+</style>
+</head>
+<body>
+	<form action="checkLogin.php" method="post">
+	<fieldset>
+		<legend>用户登录</legend>
+		<ul>
+			<li>
+				<label for="">用户名：</label> 
+				<input type="text" name="username"/>
+			</li>
+			<li>
+				<label for="">密 码：</label> 
+				<input type="password" name="password" />
+			</li>
+			<li>
+				<label for="">验证码：</label> 
+				<input type="text" name="captcha" />
+				<img src="code.php" alt="" id="code_img"/>  
+				<a href="#" id="change">看不清，换一张</a>
+			</li>
+			<li>
+				<label for="">&nbsp;</label> 
+				<input type="submit" value="登 录" class="login_btn" />
+			</li>
+		</ul>
+	</fieldset>		
+	</form>
+<script>
+	var change = document.getElementById("change");
+	var img = document.getElementById("code_img");
+	change.onclick = function(){
+		img.src = "code.php?t="+Math.random();  //增加一个随机参数，防止图片缓存
+		return false; //阻止超链接的跳转动作
+	}
+</script>
+</body>
+</html>

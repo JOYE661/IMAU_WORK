@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>员工信息列表</title>
+<link rel="stylesheet" href="./css/common.css" />
+</head>
+<body>
+<div class="box list">
+	<div class="title">员工信息列表</div>
+	<div class="search"><form>快速查询：<input type="text" name="search"/> <input type="submit" value="提交"/></form></div>
+	<table>
+		<tr>
+			<?php 
+			//反转排序值
+			$order_sort = ($order_sort=='desc'?'asc':'desc');
+			?>
+			<th width="5%"><a href="?order=id&sort=<?php echo $order_sort; ?>">ID</a></th>
+			<th><a href="?order=name&sort=<?php echo $order_sort; ?>">姓名</a></th>
+			<th><a href="?order=dept_id&sort=<?php echo $order_sort; ?>">所属部门</a></th>
+			<th><a href="?order=birth&sort=<?php echo $order_sort; ?>">出生日期</a></th>
+			<th><a href="?order=entry&sort=<?php echo $order_sort; ?>">入职时间</a></th>
+			<th width="25%">相关操作</th>
+		</tr>
+		<?php if(empty($emp_info)): ?>
+			<tr><td colspan="6">查询的结果不存在！</td></tr>
+		<?php else: foreach($emp_info as $v): ?>
+		<tr>
+			 <td><?php echo $v['emp_id']; ?></td>
+			 <td><?php echo $v['emp_name']; ?></td>
+			 <td><?php echo $v['dept_name']; ?></td>
+			 <td><?php echo date('Y-m-d',strtotime($v['emp_birth'])); ?></td>
+			 <td><?php echo date('Y-m-d',strtotime($v['emp_entry'])); ?></td>
+			 <td>
+				<a class="icon icon-edit" href="emp_edit.php?id=<?php echo $v['emp_id']; ?>">编辑</a>
+				<a class="icon icon-del" href="emp_del.php?id=<?php echo $v['emp_id']; ?>">删除</a>
+			</td>
+		</tr>
+		<?php endforeach; endif; ?>
+	</table>
+	<div class="page">
+		<?php echo $page_html ?>
+	</div>
+	<div class="action">
+		<a href="emp_add.php">添加员工</a><a href="dept.php">部门管理</a>
+	</div>
+</div>
+</body>
+</html>

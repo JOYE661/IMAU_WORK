@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>设置头像 - <?=config('APP_TITLE')?></title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <?php require './view/common/top.html'; ?>
+    <div class="main container">
+      <div class="box">
+        <div class="box-title"><span>设置用户头像</span></div>
+        <div class="box-wp">
+          <div class="box-avatar">
+            <p>当前我的头像：</p>
+            <?php if($avatar): ?><img src="./uploads/avatar/<?=$avatar?>"><?php else: ?><img src="./images/noavatar.gif"><?php endif; ?>
+            <p>设置我的新头像：</p>
+            <form method="post" action="?token=<?=TOKEN?>" enctype="multipart/form-data">
+              <input type="file" name="avatar" required>
+              <input class="ui-btn" type="submit" value="上传头像">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php require './view/common/footer.html'; ?>
+  </body>
+</html>

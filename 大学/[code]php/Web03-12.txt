@@ -1,0 +1,225 @@
+单引号不会解析里面的内容，也就是说会直接输出其本身；
+双引号会解析里面的内容，也就是会输出其相对应的值；
+<?php
+$flag1 = true;		// 将true赋值给变量$flag1
+$flag2 = false;		// 将false赋值为变量$flag2
+
+$oct = 073;			// 八进制数
+$dec = 59;			// 十进制数
+$hex = 0x3b;			// 十六进制数
+
+$number1 = 2147483647;
+var_dump($number1);	          		 // int(2147483647)
+$number2 = 2147483648;
+var_dump($number2);		           	 // float(2147483648)
+
+$fnum1 = 1.759;
+$fnum2 = -4.382;
+
+$fnum3 = 1.234E-2; 		// 等同于0.01234
+$fnum4 = 7.469E-4; 		// 等同于0.0007469
+
+echo "嵌套\"双引号\"";		// 输出结果：嵌套"双引号"
+echo '嵌套\'单引号\'';		// 输出结果：嵌套'单引号'
+
+$ap = 'ma';
+$apple = 'test';
+echo "$apple";			// 不解析$ap变量，输出结果：test
+echo "{$ap}ple";		// 解析$ap变量，输出结果：maple
+
+
+
+
+
+var_dump的相关练习说明：
+
+<?php
+// 将浮点型-5.9强制转换成布尔型
+var_dump((boolean)-5.9);			// 运行结果：bool(true)
+echo '<br>';
+// 将字符串型hello强制转换成整型
+var_dump((integer)'hello');			// 运行结果：int(0)
+echo '<br>';
+// 将布尔型false强制转换成浮点型
+var_dump((float)false);				// 运行结果：float(0)
+echo '<br>';
+// 将整型12强制转换成字符串型
+var_dump((string)12);				// 运行结果：string(2) "12"
+
+
+
+var_dump(is_bool('1'));				// 输出结果：bool(false)
+var_dump(is_string('php'));			// 输出结果：bool(true)
+var_dump(is_float('23'));			// 输出结果：bool(false)
+var_dump(is_int('23.0'));			// 输出结果：bool(false)
+var_dump(is_numeric('45.6'));			// 输出结果：bool(true)
+
+
+
+<?php
+var_dump(0 == false);			// bool(true)
+var_dump(0.0 == false);			// bool(true)
+var_dump('' == false);			// bool(true)
+var_dump('0' == false);			// bool(true)
+
+var_dump(true + 1);				// int(2)
+var_dump(false + 1);			// int(1)
+
+var_dump('1PHP' + 1);			// int(2)
+var_dump('PHP1' + 1);			// int(1)
+
+echo 'true被转换成字符串：' . true;			// true被转换成字符串：1
+echo 'false被转换成字符串：' . false;		// false被转换成空字符串
+
+var_dump(1 . 'PHP');			// string(4) "1PHP"
+var_dump(3.14 . 'PHP');			// string(7) "3.14PHP"
+
+
+
+<?php
+var_dump(5 == 4);
+var_dump(5 != 4);
+var_dump(5 <> 4);
+var_dump(5 === 5);
+var_dump(5 !== '5');
+var_dump(5 > 5);
+var_dump(5 >= 5);
+var_dump(5 < 5);
+var_dump(5 <= 5);
+
+
+
+
+
+
+
+各类运算符的练习：
+
+<?php
+
+$a = 3;
+$b = 2;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 3;
+$b = 2;
+$a += $b;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 3;
+$b = 2;
+$a -= $b;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 3;
+$b = 2;
+$a *= $b;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 3;
+$b = 2;
+$a /= $b;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 3;
+$b = 2;
+$a %= $b;
+echo '$a=' . $a . ', $b=' . $b . '<br>';
+
+$a = 'abc';
+$a .= 'def';
+echo '$a=' . $a . '<br>';
+
+$a = 2;
+$a **= 5;
+echo '$a=' . $a . '<br>';
+
+$first = $second = $third = 3;		// 为3个变量同时赋值
+
+$a = 5;
+$a += 4;
+
+$str = 'I love ';
+$str .= 'PHP';
+
+$str = $str . 'PHP';
+
+
+
+
+
+
+//echo <条件表达式？><表达式1>:<表达式2>
+
+<?php
+$age = 20;
+echo $age >= 18 ? '已成年' : '未成年';		// 输出结果：已成年
+
+$age = 5;
+echo $age ? $age : '未出生';		        // 正常形式，输出结果：5
+echo $age ? : '未出生';			            // 简写形式，输出结果：5
+
+
+
+
+
+
+<?php
+$a = 'say';
+$say = 'Hello';
+$Hello = 'Lucy';
+echo '$a变量的值：', $a;
+echo '<br>';
+echo '$$a变量的值：', $$a;
+echo '<br>';
+echo '$$$a变量的值：', $$$a;
+
+
+
+
+
+<?php
+$num1 = 10 / 0;		     // 报错，除数不能为0
+$num2 = @(10 / 0);	     // 不会报错
+
+
+
+
+
+
+判断平年还是闰年：
+<?php
+    $year=2002;
+    if ($year%4==0 && $year%100!=0 or $year%400==0){
+        $result='是润年';
+    }else{
+        $result='是平年';
+    }
+    echo '判断结果是：'.$year.'年'.$result;
+?>
+
+
+
+<?php
+	$name='张星宇';
+    $score='96';
+    switch(ceil($score/10)){
+        case 10:
+            echo 'A级';break;
+        case 9:
+            echo 'B级';break;
+    }
+?>
+
+
+
+
+
+
+
+<?php
+define('PAI', '3.14');
+define('R', '5', true);   // PHP 7.2可以用，PHP 7.3需要去掉第3个参数
+echo '圆周率=', PAI , '<br>';
+echo '半径=R', R , '<br>';
+echo '半径=r', r , '<br>';

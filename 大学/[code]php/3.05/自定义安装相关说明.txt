@@ -1,0 +1,79 @@
+﻿自动逸安装首先需要安装Visual CPP 2019运行库
+
+Apache配置文件：conf/httpd.conf。（注意：表示路径时使用‘/’而不使用‘\’，注释使用‘#’）
+其中 bin 是Apache应用程序所在的目录，conf 是配置文件目录，htdocs 是默认的网站根目录网页文档目录，modules 是Apache支持的动态加载模块所在的目录。
+
+
+
+1、安装Apache
+（1）安装Apache：打开命令提示符窗口（以管理员身份运行），在命令模式下，
+输入：d: 回车
+cd web\apache24\bin回车 切换到apache的安装目录bin目录下，
+输入：httpd –k install        #安装Apache
+如需卸载Apache服务，使用“httpd –k uninstall”命令进行卸载。
+（2）启动Apache服务：
+命令提示符下输入net start apache2.4           # 启动Apache2.4服务
+                           net stop Apache2.4	     # 停止Apache2.4服务
+（3）访问测试：
+在浏览器中输入：http://localhost或者http://127.0.0.1
+
+2、配置PHP
+（1）创建php.ini配置文件
+在PHP安装目录下复制一份“php.ini-development”文件，并命名为“php.ini”，将该文件作为PHP的配置文件，复制到PHP7文件夹里。修改配置文件，用记事本打开php.ini，
+查找extension_dir，去掉其前面的；，改为：extension_dir = "d:/web/php7/ext"
+查找date.timezone，去掉其前面的；，改为：date.timezone = PRC
+（2）在Apache中引入PHP模块
+编辑d:/web/Apache24/conf/httpd.conf   Apache配置文件，增加：
+LoadModule php_module "D:/Web/Php8/php8apache2_4.dll"
+PHPIniDir "D:/Web/Php8"
+AddType application/x-httpd-php .php
+
+在配置文件d:/web/Apache24/conf/httpd.conf中搜索“DirectoryIndex”，找到以下代码：增加index.php默认主文件
+<IfModule dir_module>
+      DirectoryIndex index.html index.php
+</IfModule>
+ （3）开放扩展库(.dll)：在php.ini文件中，设置开放（去掉行前分号）以下这些基本的扩展库：
+extension=curl
+extension=gd2
+extension=mbstring
+extension=mysqli
+extension=pdo_mysql
+（4）验证php是否配置成功
+新建index.php文件，存放到d:/web/Apache24/htdocs下，内容为：
+<?php
+   Phpinfo();
+?>
+浏览器中输入：http://localhost  出现PHP配置信息则配置成功
+
+  （5）增加目录浏览功能：
+在配置文件d:/web/Apache24/conf/httpd.conf中搜索“Options Indexes”
+<Directory "d:/web/apache24/htdocs">
+        Options Indexes FollowSymLinks 
+</Directory>
+如果在网站上线时，应关闭该功能以免暴露服务器中的文件目录，将其修改为“Options -indexes”或前面加#注释掉即可关闭该功能。
+
+3、 MySQL数据库安装和管理
+（1）新建配置文件：将根目录下默认配置文件“my-default.ini”复制一份，重新命名为“my.ini”，放到根目录下，用记事本打开“my.ini”，找到如下配置项进行修改：
+[mysql]
+basedir = D:/web/mysql8
+datadir = D:/web/mysql8/data
+port = 3306
+（2）安装与启动：执行【开始】菜单-【windows系统】，找到【命令提示符】并单击鼠标右键，在弹出的快捷菜单中更多里选择【以管理员身份运行】方式，启动命令窗口。
+在命令模式下依次输入：
+①切换到MySQL安装目录下的bin目录：
+cd  D:
+cd  web\mysql8\bin           
+② 安装MySQL ：mysqld –install       
+③ 初始化MySQL（ -insecure表示无密码） ： mysqld.exe --initialize -insecure
+④ 启动MySQL服务：net start MySQL
+⑤设置root的密码：SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
+                       或者set password for root@localhost = password(’123456’);
+⑥ 登录MySQL数据库：mysql  -u root -p123456
+⑦ 退出MySQL数据库：exit 或 quit
+
+
+
+
+
+
+

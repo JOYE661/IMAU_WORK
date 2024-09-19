@@ -1,0 +1,367 @@
+递归函数:
+
+function factorial($n)
+{
+	if($n==1)
+		return 1;
+	return $n*factorial($n-1);
+ }
+echo factorial(4);
+
+
+
+
+
+函数定义function（里面是函数的实参）
+{
+	函数要写的内容主体
+	
+}
+
+
+
+函数定义例子1：
+<?php
+function shout()
+{
+    return 'come on';
+}
+echo shout();		// 输出结果：come on
+
+
+
+
+
+<?php
+function shout()
+{
+    echo 'come on....';
+}
+$funcname = 'shout';		// 定义变量，其值是函数的名称
+echo $funcname();			// 利用可变变量调用函数
+
+
+
+
+
+
+函数定义例子2：
+<?php
+function add($a, $b)
+{
+    $a = $a + $b;
+    return $a;
+}
+echo add(5, 7);		// 输出结果：12
+echo '<br>';
+$x = 5;
+$y = 7;
+echo add($x, $y);	// 输出结果：12
+
+
+函数定义例子3：
+<?php
+function extra(&$str)    //前面的‘&’是引用传参
+{
+    $str .= ' and some extra';
+}
+$var = 'food';
+extra($var);
+echo $var;			// 输出结果：food and some extra
+
+
+函数定义例子4：
+<?php
+function say($p, $con = 'say "Hello"')
+{
+    return "$p $con";
+}
+echo say('Tom');		// 输出结果：Tom say "Hello"
+
+
+
+函数定义例子5：
+<?php
+function sum(int $a, int $b)
+{
+    return $a + $b;
+}
+echo sum(2.6, 3.8); 	// 输出结果：5
+
+
+
+
+<?php
+declare(strict_types = 1);
+function sum2(int $a, int $b)
+{
+    return $a + $b;
+}
+echo sum2(2.6, 3.8); // 输出结果：Fatal error: ......
+
+
+
+
+<?php
+function num(...$num)
+{
+    foreach ($num as $v) {
+        echo $v . ' ';
+    }
+}
+num(1, 2, 3, 4, 5, 6, 7, 8, 9);		// 输出结果：1 2 3 4 5 6 7 8 9
+num('a', 'b', 'c');					// 输出结果：a b c
+
+
+
+
+<?php
+declare(strict_types = 1);
+function returnIntValue(int $value): int
+{
+    return $value + 1.0;
+}
+echo returnIntValue(5);
+
+
+
+
+<?php
+function num()
+{
+    static $i = 1;
+    echo $i;
+    ++$i;
+}
+num();
+num();
+num();
+
+
+
+
+<?php
+$sum = function($a, $b) {	// 定义匿名函数
+    return $a + $b;
+};
+echo $sum(100, 200);		// 输出结果：300
+
+
+
+
+<?php
+$path = 'C:\web\apache2.4\htdocs\cat.jpg';
+$pos = strrpos($path, '\\');
+// 截取文件名称，输出结果：cat.jpg
+echo substr($path, $pos + 1);
+// 截取文件所在的路径，输出结果：C:\web\apache2.4\htdocs
+echo substr($path, 0, $pos);
+
+
+
+<?php
+$tel = '18810881888';
+$len = 4;                                        // 需要替换的手机号长度
+$replace = str_repeat('*', $len);              	 // 生成覆盖的字符串
+echo substr_replace($tel, $replace, 3, $len);	 // 输出结果：188****1888
+
+
+
+<?php
+$str = '   These are a few words :) ...   ';
+echo '原字符串：' . $str . '<br>';
+echo '去空白后的字符串：' . trim($str);
+
+
+
+<?php
+if (strcmp('ye_PHP', 'yePHP')) {
+    echo 'not the same string';
+} else {
+    echo 'the same string';
+}
+
+
+
+
+<?php
+echo strlen('abc');				// 输出结果：3
+echo strlen('P H P');			// 输出结果：5
+echo strlen('字符串');			// 输出结果：9
+$str = 'PHP基础案例教程';
+echo strlen($str);				// 输出结果：21
+
+$str = 'PHP基础案例教程';
+echo mb_strlen($str, 'UTF-8');	// 输出结果：9
+
+
+
+
+<?php
+echo abs(-4.2);					// 输出结果：4.2
+echo '<br>';
+echo ceil(5.2);	   				// 输出结果：6
+echo '<br>';
+echo floor(7.8);	   			// 输出结果：7 
+echo '<br>';
+echo fmod(3.75, 1.5);			// 输出结果：0.75
+echo '<br>';
+var_dump(is_nan(12)); 			// 输出结果：bool(false)
+echo '<br>';
+echo max(1, 3, 5, 7, 9); 		// 输出结果：9
+echo '<br>';
+echo min(1, 3, 5, 7, 9); 		// 输出结果：1
+echo '<br>';
+echo pi();						// 输出结果：3.1415926535898
+echo '<br>';
+echo pow(2, 2);					// 输出结果：4
+echo '<br>';
+echo sqrt(9); 					// 输出结果：3
+echo '<br>';
+echo round(8.4);				// 输出结果：8
+echo '<br>';
+echo rand(1, 20);	   			// 随机输出1到20间的整数, 输出结果：16
+
+
+
+<?php
+echo time();						// 输出结果：1616747150
+echo '<br>';
+echo mktime(0, 0, 0, 3, 1, 2021);	// 输出结果：1614528000
+echo '<br>';
+echo strtotime('2021-3-1');			// 输出结果：1614528000
+echo '<br>';
+echo microtime();					// 输出结果：0.80917800 1616747411
+echo '<br>';
+echo microtime(true);				// 输出结果：1616747411.8092
+echo '<br>';
+echo date('Y-m-d H:i:s');			// 输出结果：2021-03-26 16:48:16
+echo '<br>';
+echo date('Y-m-d', 1616747140);		// 输出结果：2021-03-26
+
+
+
+
+日历的制作:
+<!doctype html>
+<html>
+<head>
+<title>制作年历</title>
+<style>
+  body { text-align: center; }
+  .box { margin: 0 auto; width: 880px; }
+  table { height: 200px; width: 200px; font-size: 12px; text-align: center; float: left; margin: 10px; font-family: arial; }
+  table tr:first-child { background: #ccc; }
+</style>
+</head>
+<body>
+<?php
+function calendar($y)
+{
+    $w = date('w', strtotime("$y-1-1"));
+    $html = '<div class="box">';
+    // 输出12个月份的表格
+    for ($m = 1; $m <= 12; ++$m) {
+        $html .= '<table>';
+        $html .= '<tr><th colspan="7">' . $y . ' 年 ' . $m . ' 月</th></tr>';
+        $html .= '<tr><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td>
+                    <td>五</td><td>六</td></tr>';
+        // 获取当前月份$m共有多少天
+        $max = date('t', strtotime("$y-$m"));
+        $html .= '<tr>';                		// 开始<tr>标签
+        for ($d = 1; $d <= $max; ++$d) {
+            if ($w && $d == 1) {        		// 如果该月的第1天不是星期日，则填充空白
+                $html .= "<td colspan=\"$w\"> </td>";
+            }
+            $html .= "<td>$d</td>";
+            if ($w == 6 && $d != $max) { 	    // 如果星期六不是该月的最后一天，则换行
+                $html .= '</tr><tr>';
+            } elseif ($d == $max) {     		// 该月的最后一天，闭合<tr>标签
+                $html .= '</tr>';
+            }
+            $w = ($w + 1 > 6) ? 0 : $w + 1;
+        }
+        $html .= '</table>';
+    }
+    $html .= '</div>';
+    return $html;
+}
+echo calendar('2021');
+?>
+</body>
+</html>
+
+
+
+
+<?php
+function sum($a, $b)
+{
+    return $a + $b;
+}
+echo call_user_func('sum', 4, 5);
+echo '<br>';
+echo call_user_func_array('sum', [10, 20]);
+
+
+
+
+
+<?php
+function test()
+{
+    // 方式1：使用global关键字取得全局变量
+    global $var;
+    echo '全局变量$var：' . $var.'<br>';
+    // 方式2：使用$GLOBALS['变量名']访问
+    echo '全局变量$str：' . $GLOBALS['str'];
+}
+$var = 100;			// 定义变量$var
+$str = 'php';		// 定义变量$str
+test();
+
+
+
+
+
+<?php
+function sum($sub1, $sub2) 
+{
+    return $sub1 + $sub2;
+}
+function avg($sub1, $sub2) 
+{
+    $sum = sum($sub1, $sub2);
+    return $sum / 2;
+}
+echo avg(78.9, 56);	
+echo '<br>';
+echo avg(92, 90);
+
+
+
+
+
+<?php
+function calculate($a, $b, $func)
+{
+    return $func($a, $b);
+}
+echo calculate(100, 200, function($a, $b) { 	// 输出结果：300
+    return $a + $b;
+});
+echo calculate(100, 200, function($a, $b) { 	// 输出结果：20000
+    return $a * $b;
+});
+
+
+
+
+<?php
+$c = 100;
+$sum = function($a, $b) use($c) {
+    return $a + $b + $c;
+};
+echo $sum(100, 200);  		// 输出结果：400
+
+

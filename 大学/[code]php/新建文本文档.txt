@@ -1,0 +1,157 @@
+<?php
+	for(i=1;i<10;$i++){
+	echo'<tr>'
+		for(j=1;j<=i;j++){
+		echo"<td>.j.'x'.i.'='j*i.'</td>';
+		}
+	echo'<tr>'
+	}
+?>
+<?php
+	for(i=1;i<10;i++){
+		echo'<tr>';
+		for(j=1;j<=i;j++){
+			echo'<td>'.i.'*'.j.'='.i*j.'</td>';
+		}
+		echo'</td>';
+	}
+	
+<?php
+	$line=1;
+	while($line<=5){
+	ep=sp=1;
+	et=5-line;
+	s=2*line-1;
+		while(ep<=et){
+		echo'&nbsp';
+		$ep++;
+		}
+		while(sp<=s){
+		echo'*';
+		$sp++;
+		}
+	echo'<br>';
+	$line++;
+	}
+	$line=4
+	while($line>=1){
+	et=5-line;
+	s=2*line-1;
+		while(et>=1){
+		echo'&nbsp';
+		$et--;
+		}
+		while(s>=1){
+		echo'*';
+		$s--;
+		}
+	echo'<br>'
+	line--;
+	}
+?>
+
+<?php
+ class student(){
+	public $name;
+	public $age;
+	public function introduce(){
+	echo'大家好,我是'.$name.'今年'.$age.'岁,很高兴认识大家。'
+	}
+	public function _construct($name,$age){
+		$this->name=$name;
+		$this->age=$age;
+	}
+	$student=new student("小王”,25);
+	$student->introduce();
+}
+?>
+imagecreatfromjpg();
+imagecolorlocate();
+imagefltext();
+imagejpeg
+imgedestroy();
+
+<?php
+	$dsn='mysql:dbname=data;host=127.0.0.1;charset=utf8';
+	$pdo=new PDO($dsn,'root','123456');
+	$sql="select *from student where sex="男”;
+	$rs=$pdo->query($sql);
+	foreach($rs as $rows){
+	echo $row['name'].'-'$row['sex'].'<br>';
+	}
+?>
+<?php 
+	try{
+		$pdo=new PDO('mysql:host=127.0.0.1;dbname=data;charset=utf8','root','123456');
+		$stmt=&pdo->prepare('insert into 'stu'(id,name,sex) values(:id,:name:,sex));
+		$stmt=$pdo->bindParam(':id',$id,PDD::PARAM_INT);
+		
+?>
+
+<?php
+	class Gooods{
+		private stat $count=0;
+		private $name;
+		private $prcie;
+		
+		public function _construct($name,$price){
+			&this->name=&name;
+			&this->price=$pricc;
+			self::$count++;
+		}
+		public static function getConut(){
+			return self::$count;
+		}
+		&goods1=new Goods('电视','12');
+		echo Goods::getConut();
+	}
+?>
+imagecreatefromjpg()
+imagecolorallocate()
+imagefltext()
+imagejpeg()
+imaegdestroy()
+<?php
+	$dsn='mysql:dbname=data;host=127.0.0.1;charset='utf8'>
+	$pdo=new PDO($dsn,'root','123456');
+	$sql="select * from student where sex='男'";
+	$rs=$pdo->query(&sql);
+	foreach($rs as $k){
+		echo $k['name']--$k['sex'].'<br>';
+	}
+?>
+<?php
+	&dsn="mysql:dbname="data";host=127.0.0.1;charset='utf8'";
+	$pdo=new PDO(&dsn,'root','123456');
+	$sql="selec * from student where sex='男'";
+	$rs=$pdo->query($sql)
+	
+<?php
+	for(i=1;i<10;i++){
+		echo'<tr>';
+		for(j=1;j<i;j++){
+			echo'<td>'.$i.'x'.$j.'='.$i*$j.'</td>';
+		}
+		echo'</tr>'
+	}
+	
+//1.mysqli_connect
+//2.mysqli_select_db
+//select* from student where sex="男"
+//3.mysqli_query
+//5.mysqli_fetch_assoc
+
+
+<?php
+	$city=array("北京","上海","广州");
+	if(in_array($_POST['city'],$city)){
+		echo"success";
+	else{
+		echo"fail";
+	}		
+?>
+function getF(path){
+	ex=substr($path,strpos($path,'.')+1);
+	return ex
+}
+path=

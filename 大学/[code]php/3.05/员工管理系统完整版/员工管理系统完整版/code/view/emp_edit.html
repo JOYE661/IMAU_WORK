@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>员工信息编辑</title>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./js/jquery.datetimepicker.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.datetimepicker.js"></script>
+<script>
+	//jQuery日历插件
+	$(function(){
+		var options = {lang:'ch',format:'Y-m-d',timepicker:false};
+		$('#birth').datetimepicker(options);
+		$('#entry').datetimepicker(options);
+	});
+</script>
+</head>
+<body class="profile">
+<div class="main">
+	<h1>编辑员工</h1>
+	<form method="post">
+	<table>
+		<tr><th>姓名：</th><td><input type="text" name="emp_name" value="<?php echo $emp_info['emp_name']; ?>" /></td></tr>
+		<tr><th>所属部门：</th><td><select name="emp_dept_id">
+			<option value="0">未选择</option>
+			<?php foreach($dept_info as $v): ?>
+				<option value="<?php echo $v['dept_id']; ?>" <?php if($v['dept_id']==$emp_info['emp_dept_id']) echo "selected"; ?> ><?php echo $v['dept_name'] ?></option>
+			<?php endforeach; ?>
+		</select></td></tr>
+		<tr><th>出生年月：</th><td><input id="birth" name="emp_birth" type="text" value="<?php echo date('Y-m-d',strtotime($emp_info['emp_birth'])); ?>"></td></tr>
+		<tr><th>入职日期：</th><td><input id="entry" name="emp_entry" type="text" value="<?php echo date('Y-m-d',strtotime($emp_info['emp_entry'])); ?>"></td></tr>
+		<tr><td colspan="2" class="td-btn">
+		<input type="submit" value="保存资料" class="button" />
+		<input type="button" value="返回列表" class="button" onclick="location.href='index.php'" />
+		</td></tr>
+	</table>
+	</form>
+</div>
+</body>
+</html>

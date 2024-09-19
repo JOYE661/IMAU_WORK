@@ -1,0 +1,18 @@
+
+cd C:\web\mysql5.7\bin
+mysqld -install mysql5.7
+
+mysqld -remove mysql5.7
+
+mysqld --initialize-insecure
+
+# 启动MySQL服务
+net start mysql5.7
+
+# 停止MySQL服务
+net stop mysql5.7
+
+cd C:\web\mysql5.7\bin
+mysql -u root
+
+mysql -uroot -p123456

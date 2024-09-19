@@ -1,0 +1,278 @@
+九九乘法表：
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1">
+    <?php
+        // 使用for语句得到乘数
+        for ($i = 1; $i < 10; $i++) {
+            // 以表格形式输出算式
+            echo '<tr>';
+            // 嵌套循环语句得到被乘数
+            for ($j = 1; $j <= $i; $j++) {
+                // 计算并输出每个算式
+                echo '<td>' . $j . '×' . $i . '=' . $j * $i . '</td>';
+            }
+            echo '</tr>';
+        }
+    ?>
+  </table>
+</body>
+</html>
+
+
+
+
+生成表格：
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表格生成器</title>
+  <style>
+    table { border: 2px solid #CFCFCF; width: 500px; border-collapse: collapse; }
+    td, th { border: 2px solid #CFCFCF; width: 40px; height: 20px; }
+    th { height: 20px; background-color: #7D8BA5; }
+    .blue { background: blue; }
+    .green { background: green; }
+  </style>
+</head>
+<body>
+  <?php
+    $row = 8;
+    $col = 20;
+    echo '<table>';
+    echo '<tr>';
+    for ($i = 1; $i <= $col; ++$i) {
+        echo '<th></th>';
+    }
+    echo '</tr>';
+    for ($i = 1; $i <= $row; ++$i) {		  // 生成表格的行
+        $color = ($i % 2 == 0) ? 'blue' : 'green';
+        echo '<tr class="' . $color . '">';
+        for ($j = 1; $j <= $col; ++$j) {	  // 生成表格的列
+            echo '<td></td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table>';
+  ?>
+</body>
+</html>
+
+
+
+
+
+输出金字塔：
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1">
+  <?php
+     $line = 1; //金字塔的初始行数
+     while($line <= 5){		
+	      $empty_pos = $star_pos = 1; //组成金字塔空格和星星的初始
+          $empty = 5 - $line;        //金字塔每行输出的最多空格数
+          $star = 2*$line-1;         //组成金字塔每行的最多星星数
+	      while($empty_pos <= $empty){     //输出金字塔每行的空格
+				echo '&nbsp;';
+				++$empty_pos;
+				}				
+	      while($star_pos <= $star){         //输出金字塔每行的星星
+			    echo '*';
+				++$star_pos;
+				}
+	echo '<br>';
+	$line++;
+	}
+?>
+
+  </table>
+</body>
+</html>
+
+
+输出正反金字塔：
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1">
+  <?php
+     $line = 1; //金字塔的初始行数
+     while($line <= 5){		
+	      $empty_pos = $star_pos = 1; //组成金字塔空格和星星的初始
+          $empty = 5 - $line;        //金字塔每行输出的最多空格数
+          $star = 2*$line-1;         //组成金字塔每行的最多星星数
+	      while($empty_pos <= $empty){     //输出金字塔每行的空格
+				echo '&nbsp;';
+				++$empty_pos;
+				}				
+	      while($star_pos <= $star){         //输出金字塔每行的星星
+			    echo '*';
+				++$star_pos;
+				}
+	echo '<br>';
+	$line++;
+	}
+    $line = 5; // 倒金字塔的初始行数
+     while($line >= 1){
+          $empty_pos = $star_pos = 1; // 组成金字塔空格和星星的初始位置
+          $empty = 5 - $line;        // 每行输出的最多空格数
+          $star = 2 * $line - 1;      // 组成金字塔每行的最多星星数
+          echo "<tr>";
+          while($empty_pos <= $empty){     // 输出金字塔每行的空格
+              echo "<td>&nbsp;</td>";
+              ++$empty_pos;
+          }				
+          while($star_pos <= $star){         // 输出金字塔每行的星星
+              echo "<td>*</td>";
+              ++$star_pos;
+          }
+          echo "</tr>";
+          $line--;
+     }
+?>
+
+  </table>
+</body>
+</html>
+
+ 
+
+
+
+内外层嵌套循环(使用break)：
+<?php
+for ($i = 0; $i < 3; $i++) {
+    echo '外层循环' . $i . '开始：';
+    for ($j = 0; $j < 2; $j++) {
+        if ($i == 1) {
+            break 2; 			// 使用break 2直接跳出双层循环
+        }
+        echo '内层循环' . $i . '-' . $j . ',';
+    }
+    echo '外层循环' . $i . '结束<br>';
+}
+
+
+
+
+Continue：
+<?php
+for ($i = 1; $i <= 10; $i++) {
+    if ($i%2 == 0) {
+        continue;
+    }
+    echo $i . '.PHP基础案例教程<br>';
+}
+
+
+
+
+
+do-while  循环：
+<?php
+$i = 5;
+do {
+    echo '☆';
+    $i--;
+} while ($i > 0);
+
+
+
+
+while 循环：
+<?php
+$i = 5;
+while ($i > 0) {
+    echo '☆';
+    $i--;
+}
+
+
+
+
+
+for 循环：
+<?php
+for ($i = 5; $i > 0; $i--) {
+    echo '☆';
+}
+
+
+
+
+<?php
+include './wrongFile.php';			// 产生一个警告
+// require './wrongFile.php');			// 产生一个致命错误
+echo 'Hello,PHP';					// 此句会执行
+
+
+
+
+
+<?php
+for ($i = 1; $i <= 5; $i++) {
+    include_once './once.php';
+}
+echo 'include_once语句引入外部文件的次数：' . $sum;
+echo '<br>';
+for ($i = 1; $i <= 5; $i++) {
+    include './once.php';
+}
+echo 'include语句引入外部文件的次数：' . $sum;
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <?php for ($i = 1; $i <= 10; ++$i): ?>
+        <?php if ($i % 2 == 0): ?>
+            <li><?php echo $i; ?></li>
+        <?php endif; ?>
+    <?php endfor; ?>
+  </ul>
+</body>
+</html>
+
+
+
+
+
+<?php
+for ($i = 1; $i <= 5; $i++) {			// 控制三角形的行
+    for ($j = 1; $j <= $i; $j++) {		// 控制每行输出的☆
+        echo '☆';
+    }
+    echo '<br>';
+}
+
+
+
+
