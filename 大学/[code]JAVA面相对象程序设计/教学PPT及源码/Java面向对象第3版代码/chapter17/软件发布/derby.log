@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Nov 16 07:38:12 CST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-716e-6ab2-000003718360 
+on database directory F:\大电脑上上的书\Java面向对象程序设计第3版课件资料\Java面向对象程序设计第3版（微课版）教学PPT课件\Java面向对象第3版代码\chapter17\软件发布\MyEnglishBook with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@15db9742 
+Loaded from file:/F:/%e5%a4%a7%e7%94%b5%e8%84%91%e4%b8%8a%e4%b8%8a%e7%9a%84%e4%b9%a6/Java%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e7%ac%ac3%e7%89%88%e8%af%be%e4%bb%b6%e8%b5%84%e6%96%99/Java%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e7%ac%ac3%e7%89%88%ef%bc%88%e5%be%ae%e8%af%be%e7%89%88%ef%bc%89%e6%95%99%e5%ad%a6PPT%e8%af%be%e4%bb%b6/Java%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%ac%ac3%e7%89%88%e4%bb%a3%e7%a0%81/chapter17/%e8%bd%af%e4%bb%b6%e5%8f%91%e5%b8%83/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=13+33
+user.dir=F:\大电脑上上的书\Java面向对象程序设计第3版课件资料\Java面向对象程序设计第3版（微课版）教学PPT课件\Java面向对象第3版代码\chapter17\软件发布
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

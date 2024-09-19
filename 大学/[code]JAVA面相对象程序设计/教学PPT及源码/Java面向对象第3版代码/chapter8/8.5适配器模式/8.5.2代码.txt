@@ -1,0 +1,45 @@
+Application.java
+public class Application{
+   public static void main(String args[]){
+      AlternateCurrent aElectric =new PowerCompany(); //交流电
+      Wash wash =new Wash();
+      wash.turnOn(aElectric); //洗衣机使用交流电
+      //对交流电aElectric进行适配得到直流电dElectric: 
+      DirectCurrent dElectric = new ElectricAdapter(aElectric); //将交流电适配成直流电 
+      Recorder recorder =new Recorder();
+      recorder.turnOn(dElectric); //录音机使用直流电
+   }
+}
+class PowerCompany implements AlternateCurrent { //交流电提供者
+    public String giveAlternateCurrent(){
+       return "10101010101010101010"; //用这样的串表示交流电
+    }
+}
+class Wash { //洗衣机使用交流电
+   String name;
+   Wash(){
+     name="洗衣机";
+   }
+   Wash(String s){
+     name=s;
+   }
+   public void turnOn(AlternateCurrent a){
+      String s=a.giveAlternateCurrent();
+      System.out.println(name+"使用交流电:\n"+s);
+      System.out.println("开始洗衣物。");
+   }
+}
+class Recorder { //录音机使用直流电
+   String name;
+   Recorder(){
+      name="录音机";
+   }
+   Recorder(String s){
+      name=s;
+   }
+   public void turnOn(DirectCurrent a){
+      String s=a.giveDirectCurrent();
+      System.out.println(name+"使用直流电:\n"+s);
+      System.out.println("开始录音。");
+   }
+}

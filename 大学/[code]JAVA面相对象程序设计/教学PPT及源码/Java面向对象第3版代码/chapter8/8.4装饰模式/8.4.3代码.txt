@@ -1,0 +1,28 @@
+SparrowDecoratorTwo.java
+public class SparrowDecoratorTwo extends Decorator{
+   public final int DISTANCE=20;    // eleFly方法能飞20米
+   SparrowDecoratorTwo (Bird bird){
+      super(bird);
+   }
+   public int fly(){
+      int distance=0;
+      distance=bird.fly()+eleFly();
+      return distance; 
+   }
+   public int eleFly(){
+      return DISTANCE;
+   }
+}
+
+
+Application.java
+public class Application{
+   public static void main(String args[]){
+      Bird bird= new Sparrow();
+      bird = new SparrowDecoratorTwo(bird); 
+      bird = new SparrowDecorator(bird);
+      bird = new SparrowDecorator(bird);  
+      bird = new SparrowDecoratorTwo(bird);
+
+   }
+}

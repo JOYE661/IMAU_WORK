@@ -1,0 +1,50 @@
+1．策略（Strategy）Strategy.java
+-----------------------------------------
+public interface Strategy {
+   public double computerAverage(double [] a);
+}
+
+2．上下文（Context）AverageScore.java
+---------------------------------------
+public class  AverageScore{
+     Strategy strategy;
+     public void setStrategy(Strategy strategy){
+         this.strategy=strategy;
+     } 
+     public double getAverage (double [] a){
+        if(strategy!=null)
+          return strategy.computerAverage(a); 
+        else {
+          System.out.println("没有求平均值的算法,得到的-1不代表平均值");
+          return -1;
+        }
+     }
+}
+3．具体策略StrategyA.java和StrategyB.java
+-------------------------------------------------
+public class StrategyA implements Strategy{
+    public double computerAverage(double [] a){
+        double score=0,sum=0;
+        for(int i=0;i<a.length;i++){
+            sum=sum+a[i];
+        }
+        score=sum/a.length;
+        return score; 
+    }
+}
+-----------------------------------------------
+import java.util.Arrays;
+public class StrategyB implements Strategy{
+    public double computerAverage(double [] a){
+        if(a.length<=2)
+            return 0;
+        double score=0,sum=0;
+        Arrays.sort(a);   //排序数组
+        for(int i=1;i<a.length-1;i++){
+           sum=sum+a[i]; 
+        }
+        score=sum/(a.length-2);
+        return score; 
+    }
+}
+

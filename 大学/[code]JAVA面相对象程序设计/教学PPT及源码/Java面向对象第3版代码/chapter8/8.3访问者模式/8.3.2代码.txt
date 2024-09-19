@@ -1,0 +1,12 @@
+Application.java 
+public class Application{
+   public static void main(String args[]) {
+      Visitor 计表员=new HomeAmmeterVisitor(); //按家用电标准计算电费的"计表员"
+      Ammeter 电表=new Ammeter();
+      电表.setElectricAmount(5678);
+      电表.accept(计表员);
+      计表员=new IndustryAmmeteVisitor(); //按工业用电标准计算电费的"计表员"
+      电表.setElectricAmount(5678);
+      电表.accept(计表员);
+  }
+}  

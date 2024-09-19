@@ -1,0 +1,60 @@
+1 抽象产品（Product）
+PenCore.java
+public abstract class PenCore{
+   String color;
+   public abstract void writeWord(String s);
+}
+
+2．具体产品（ConcreteProduct）
+RedPenCore，BluePenCore和BlackPenCore类是三个具体产品角色，代码如下：
+RedPenCore.java
+public class RedPenCore extends PenCore{
+    RedPenCore(){
+      color="红色";
+    }
+    public void writeWord(String s){
+       System.out.println("写出"+color+"的字:"+s);
+    }
+}
+BluePenCore.java
+public class BluePenCore extends PenCore{
+    BluePenCore(){
+      color="蓝色";
+    }
+    public void writeWord(String s){
+       System.out.println("写出"+color+"的字:"+s);
+    }
+}
+BlackPenCore.java
+public class BlackPenCore extends PenCore{
+    BlackPenCore(){
+      color="黑色";
+    }
+    public void writeWord(String s){
+       System.out.println("写出"+color+"的字:"+s);
+    }
+}
+3．构造者（Creator）
+PenCoreCreator.java
+public abstract class PenCoreCreator{
+   public abstract PenCore getPenCore(); //工厂方法
+}
+4．具体构造者（ConcreteCreator）
+RedCoreCreator.java
+public class RedCoreCreator extends PenCoreCreator{
+   public PenCore getPenCore() { //重写工厂方法
+      return new RedPenCore();
+   }
+}
+BlueCoreCreator.java
+public class BlueCoreCreator extends PenCoreCreator{
+   public PenCore getPenCore() { //重写工厂方法
+      return new BluePenCore();
+   }
+}
+BlackCoreCreator.java
+public class BlackCoreCreator extends PenCoreCreator{
+    public PenCore getPenCore() { //重写工厂方法
+      return new BlackPenCore();
+   }
+}

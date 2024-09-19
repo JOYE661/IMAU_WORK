@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: my.app.Example4_22
+Created-By: 11

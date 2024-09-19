@@ -1,0 +1,62 @@
+1．抽象访问者（Visitor）
+Visitor.java
+public interface Visitor{
+   public double visit(AmmeterElement elment);
+}
+
+2．抽象元素（Element）
+AmmeterElement.java
+public abstract class AmmeterElement{
+   public abstract void accept(Visitor v);
+   public abstract double showElectricAmount();
+   public abstract void setElectricAmount(double n);
+}
+
+3．具体访问者（Concrete Visitor）
+HomeAmmeterVisitor.java
+public class HomeAmmeterVisitor implements Visitor{
+    public double visit(AmmeterElement ammeter){
+      double charge=0;
+      double unitOne=0.6,unitTwo=1.05;
+      int basic = 6000;
+      double n=ammeter.showElectricAmount();
+      if(n<=basic) {
+          charge = n*unitOne;
+      }
+      else { 
+         charge =basic*unitOne+(n-basic)*unitTwo;
+      }
+      return charge;
+   }
+}
+IndustryAmmeteVisitor.java
+public class IndustryAmmeteVisitor implements Visitor{
+   public double visit(AmmeterElement ammeter){
+      double charge=0;
+      double unitOne=1.52,unitTwo=2.78;
+      int basic = 15000;
+      double n=ammeter.showElectricAmount();
+      if(n<=basic) {
+          charge = n*unitOne;
+      }
+      else { 
+         charge =basic*unitOne+(n-basic)*unitTwo;
+      }
+      return charge;
+   }
+}
+4．具体元素（Concrete Element）
+Ammeter.java
+public class Ammeter extends AmmeterElement{
+   double electricAmount;    //电表的电量
+   public void setElectricAmount(double n) {
+      electricAmount = n;
+   }
+   public void accept(Visitor visitor){
+      double feiyong=visitor.visit(this); //让访问者访问当前元素
+      System.out.println("当前电表的用户需要交纳电费:"+feiyong+"元");
+   }
+   public double showElectricAmount(){
+      return electricAmount;
+   }
+}

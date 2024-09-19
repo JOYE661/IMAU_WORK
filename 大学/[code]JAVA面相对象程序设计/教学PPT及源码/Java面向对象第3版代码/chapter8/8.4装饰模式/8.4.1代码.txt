@@ -1,0 +1,47 @@
+1．抽象组件
+Bird.java
+public abstract class Bird{
+   public abstract int fly();
+}
+
+2．具体组件
+
+Sparrow.java
+public class Sparrow extends Bird{
+   public final int DISTANCE=100;
+   public int fly(){
+      return DISTANCE;
+   }
+}
+
+3．装饰（Decorator）
+Decorator.java
+public abstract class Decorator extends Bird{
+   Bird bird;      //被装饰者
+   public Decorator(){
+   }
+   public Decorator(Bird bird){
+      this.bird=bird; 
+   }
+   public abstract int eleFly();//用于装饰fly()的方法,行为由具体装饰者去实现
+}
+
+
+4．具体装饰
+SparrowDecorator.java
+public class SparrowDecorator extends Decorator{
+   public final int DISTANCE=50;  //eleFly方法(模拟电子翅膀)能飞50米
+   SparrowDecorator(Bird bird){
+      super(bird);
+   }
+   public int fly(){   //被装饰的方法
+      int distance=0;
+      distance=bird.fly()+eleFly();//让装饰者bird首先调用fly()，然后再调用eleFly()
+      return distance; 
+   }
+   public int eleFly(){      //具体装饰者重写装饰者中用于装饰的方法
+      return DISTANCE;
+   }
+} 
+
+
