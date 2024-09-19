@@ -1,0 +1,38 @@
+tarena@ubuntu:~$ cd test0330
+tarena@ubuntu:~/test0330$ vi wait.c
+tarena@ubuntu:~/test0330$ gcc -o wait wait.c
+tarena@ubuntu:~/test0330$ ./wait
+parent pid =3823
+son pid=3824
+father's pid =3823
+som--,i=0,A-10
+som--,i=1,A-11
+som--,i=2,A-12
+som--,i=3,A-13
+som--,i=4,A-14
+a=111
+tarena@ubuntu:~/test0330$ cp wait.c globe.c
+tarena@ubuntu:~/test0330$ vi globe.c
+tarena@ubuntu:~/test0330$ vi globe.c
+tarena@ubuntu:~/test0330$ gcc -o globe globe.c
+tarena@ubuntu:~/test0330$ ./ globe
+bash: ./: 是一个目录
+tarena@ubuntu:~/test0330$ ./globe
+parent pid =3840
+I am father,A=1
+son pid=3841
+father's pid =3840
+som--,i=0,A-10
+som--,i=1,A-11
+I am father,A=2
+som--,i=2,A-12
+som--,i=3,A-13
+I am father,A=3
+som--,i=4,A-14
+I am father,A=4
+I am father,A=5
+i am main,A=6
+i am main,A=7
+i am main,A=8
+tarena@ubuntu:~/test0330$ 
+

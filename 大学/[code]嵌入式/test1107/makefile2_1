@@ -1,0 +1,10 @@
+  1 OBJ=main.o mj.o zc.o
+  2 cc=gcc
+  3 circle:$(OBJ)
+  4         $(CC) $(^) -o $@
+  5 main.o:main.c mj.h zc.h
+  6 mj.o:mj.c mj.h
+  7 zc.o:zc.c zc.h
+  8 clean:
+  9         rm circle $(OBJ)
+

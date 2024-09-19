@@ -1,0 +1,231 @@
+tarena@ubuntu:~$ cd test0427
+tarena@ubuntu:~/test0427$ cp /mnt/hgfs/UB/
+Example7.3.5-1msgr.c  Example7.6.4-1.c      
+Example7.3.5-1msgt.c  my_char.ko            
+tarena@ubuntu:~/test0427$ cp /mnt/hgfs/UB/my_char.ko
+cp: 在"/mnt/hgfs/UB/my_char.ko" 后缺少了要操作的目标文件
+请尝试执行"cp --help"来获取更多信息。
+tarena@ubuntu:~/test0427$ cp /mnt/hgfs/UB/my_char.ko ./
+tarena@ubuntu:~/test0427$ ls
+my_char.ko
+tarena@ubuntu:~/test0427$ sudo insmod my_char.ko
+[sudo] password for tarena: 
+2Sorry, try again.
+[sudo] password for tarena: 
+Sorry, try again.
+[sudo] password for tarena: 
+tarena@ubuntu:~/test0427$ ls
+my_char.ko
+tarena@ubuntu:~/test0427$ cat/proc/device
+bash: cat/proc/device: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ cat/proc/devices
+bash: cat/proc/devices: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ sudu mknod /dev/wanger c 250 0
+No command 'sudu' found, did you mean:
+ Command 'sudo' from package 'sudo' (main)
+ Command 'sudo' from package 'sudo-ldap' (universe)
+ Command 'tudu' from package 'tudu' (universe)
+sudu: command not found
+tarena@ubuntu:~/test0427$ sudo mknod /dev/wanger c 250 0
+tarena@ubuntu:~/test0427$ ls
+my_char.ko
+tarena@ubuntu:~/test0427$ ls /dev/wanger
+/dev/wanger
+tarena@ubuntu:~/test0427$ vi test.c
+tarena@ubuntu:~/test0427$ gcc -o test test.c
+tarena@ubuntu:~/test0427$ ./test
+device open failed
+tarena@ubuntu:~/test0427$ sudo ./test
+[sudo] password for tarena: 
+device open failed
+tarena@ubuntu:~/test0427$ vi test1.c
+tarena@ubuntu:~/test0427$ vi test.c
+tarena@ubuntu:~/test0427$ vi test.c
+tarena@ubuntu:~/test0427$ sudo rnmov my_char.ko
+sudo： rnmov：找不到命令
+tarena@ubuntu:~/test0427$ ls mod
+ls: 无法访问mod: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ lsmod
+Module                  Size  Used by
+my_char                12579  0 
+vmhgfs                 57265  1 
+vsock                  47098  0 
+acpiphp                23535  0 
+vmwgfx                102138  1 
+ttm                    65344  1 vmwgfx
+drm                   197692  3 vmwgfx,ttm
+vmw_balloon            12700  0 
+snd_ens1371            24819  2 
+gameport               15060  1 snd_ens1371
+snd_ac97_codec        106082  1 snd_ens1371
+ac97_bus               12642  1 snd_ac97_codec
+snd_pcm                80845  2 snd_ens1371,snd_ac97_codec
+psmouse                72846  0 
+serio_raw              13027  0 
+snd_seq_midi           13132  0 
+snd_rawmidi            25424  2 snd_ens1371,snd_seq_midi
+snd_seq_midi_event     14475  1 snd_seq_midi
+snd_seq                51567  2 snd_seq_midi,snd_seq_midi_event
+snd_timer              28931  2 snd_pcm,snd_seq
+snd_seq_device         14172  3 snd_seq_midi,snd_rawmidi,snd_seq
+snd                    62064  11 snd_ens1371,snd_ac97_codec,snd_pcm,snd_rawmidi,snd_seq,snd_timer,snd_seq_device
+joydev                 17393  0 
+soundcore              14635  1 snd
+btusb                  17912  2 
+snd_page_alloc         14108  1 snd_pcm
+vmci                   71337  2 vmhgfs,vsock
+i2c_piix4              13093  0 
+rfcomm                 38139  12 
+bnep                   17830  2 
+bluetooth             158438  23 btusb,rfcomm,bnep
+nfsd                  229850  13 
+parport_pc             32114  1 
+nfs                   307263  0 
+ppdev                  12849  0 
+lockd                  78804  2 nfsd,nfs
+fscache                50642  1 nfs
+auth_rpcgss            39597  2 nfsd,nfs
+nfs_acl                12771  2 nfsd,nfs
+sunrpc                205647  19 nfsd,nfs,lockd,auth_rpcgss,nfs_acl
+mac_hid                13077  0 
+shpchp                 32325  0 
+lp                     17455  0 
+parport                40930  3 parport_pc,ppdev,lp
+pcnet32                41110  0 
+usbhid                 41906  0 
+hid                    77367  1 usbhid
+mptspi                 22474  2 
+mptscsih               39530  1 mptspi
+mptbase                96852  2 mptspi,mptscsih
+floppy                 60310  0 
+vmw_pvscsi             18334  0 
+vmxnet3                44924  0 
+tarena@ubuntu:~/test0427$ cat /proc devices
+cat: /proc: 是一个目录
+cat: devices: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ ls /dev/wanger
+/dev/wanger
+tarena@ubuntu:~/test0427$ cat /prov devices
+cat: /prov: 没有那个文件或目录
+cat: devices: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ cat/proc/devices
+bash: cat/proc/devices: 没有那个文件或目录
+tarena@ubuntu:~/test0427$ cat /proc/devices
+Character devices:
+  1 mem
+  4 /dev/vc/0
+  4 tty
+  4 ttyS
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+  5 ttyprintk
+  6 lp
+  7 vcs
+ 10 misc
+ 13 input
+ 14 sound
+ 21 sg
+ 29 fb
+ 99 ppdev
+108 ppp
+116 alsa
+128 ptm
+136 pts
+180 usb
+189 usb_device
+216 rfcomm
+226 drm
+250 char
+251 hidraw
+252 usbmon
+253 bsg
+254 rtc
+
+Block devices:
+  1 ramdisk
+  2 fd
+259 blkext
+  7 loop
+  8 sd
+  9 md
+ 11 sr
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+252 device-mapper
+253 virtblk
+254 mdp
+tarena@ubuntu:~/test0427$ sudo rnmod my_char.ko
+sudo： rnmod：找不到命令
+tarena@ubuntu:~/test0427$ sudo rmmod mu_char.ko
+ERROR: Module mu_char does not exist in /proc/modules
+tarena@ubuntu:~/test0427$ lsmod
+Module                  Size  Used by
+my_char                12579  0 
+vmhgfs                 57265  1 
+vsock                  47098  0 
+acpiphp                23535  0 
+vmwgfx                102138  1 
+ttm                    65344  1 vmwgfx
+drm                   197692  3 vmwgfx,ttm
+vmw_balloon            12700  0 
+snd_ens1371            24819  2 
+gameport               15060  1 snd_ens1371
+snd_ac97_codec        106082  1 snd_ens1371
+ac97_bus               12642  1 snd_ac97_codec
+snd_pcm                80845  2 snd_ens1371,snd_ac97_codec
+psmouse                72846  0 
+serio_raw              13027  0 
+snd_seq_midi           13132  0 
+snd_rawmidi            25424  2 snd_ens1371,snd_seq_midi
+snd_seq_midi_event     14475  1 snd_seq_midi
+snd_seq                51567  2 snd_seq_midi,snd_seq_midi_event
+snd_timer              28931  2 snd_pcm,snd_seq
+snd_seq_device         14172  3 snd_seq_midi,snd_rawmidi,snd_seq
+snd                    62064  11 snd_ens1371,snd_ac97_codec,snd_pcm,snd_rawmidi,snd_seq,snd_timer,snd_seq_device
+joydev                 17393  0 
+soundcore              14635  1 snd
+btusb                  17912  2 
+snd_page_alloc         14108  1 snd_pcm
+vmci                   71337  2 vmhgfs,vsock
+i2c_piix4              13093  0 
+rfcomm                 38139  12 
+bnep                   17830  2 
+bluetooth             158438  23 btusb,rfcomm,bnep
+nfsd                  229850  13 
+parport_pc             32114  1 
+nfs                   307263  0 
+ppdev                  12849  0 
+lockd                  78804  2 nfsd,nfs
+fscache                50642  1 nfs
+auth_rpcgss            39597  2 nfsd,nfs
+nfs_acl                12771  2 nfsd,nfs
+sunrpc                205647  19 nfsd,nfs,lockd,auth_rpcgss,nfs_acl
+mac_hid                13077  0 
+shpchp                 32325  0 
+lp                     17455  0 
+parport                40930  3 parport_pc,ppdev,lp
+pcnet32                41110  0 
+usbhid                 41906  0 
+hid                    77367  1 usbhid
+mptspi                 22474  2 
+mptscsih               39530  1 mptspi
+mptbase                96852  2 mptspi,mptscsih
+floppy                 60310  0 
+vmw_pvscsi             18334  0 
+vmxnet3                44924  0 
+tarena@ubuntu:~/test0427$ ls /dev/wanger
+

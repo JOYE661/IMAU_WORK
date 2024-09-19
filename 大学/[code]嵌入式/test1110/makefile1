@@ -1,0 +1,12 @@
+main: main.o myDisplay.o inputNum.o Caculator.o
+	gcc -o main main.o myDisplay.o inputNum.o Caculator.o
+main.o: main.c
+	gcc -c main.c
+inputNum.o: inputNum.c
+	gcc -c myDisplay.c
+Caculator.o: Caculator.c
+	gcc -c Caculator.c
+
+clean:
+	rm *.o
+

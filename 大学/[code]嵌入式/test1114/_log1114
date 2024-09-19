@@ -1,0 +1,27 @@
+tarena@ubuntu:~$ cd test1114
+tarena@ubuntu:~/test1114$ vim p2.c
+tarena@ubuntu:~/test1114$ gcc p2.c -o p2
+p2.c: 在函数‘main’中:
+p2.c:14:9: 警告： 赋值时将指针赋给整数，未作类型转换 [默认启用]
+p2.c:15:9: 警告： 赋值时将指针赋给整数，未作类型转换 [默认启用]
+p2.c:16:14: 错误： ‘P_y’未声明(在此函数内第一次使用)
+p2.c:16:14: 附注： 每个未声明的标识符在其出现的函数内只报告一次
+tarena@ubuntu:~/test1114$ vim p2.c
+tarena@ubuntu:~/test1114$ gcc p2.c -o p2
+p2.c: 在函数‘main’中:
+p2.c:14:9: 警告： 赋值时将指针赋给整数，未作类型转换 [默认启用]
+p2.c:15:9: 警告： 赋值时将指针赋给整数，未作类型转换 [默认启用]
+tarena@ubuntu:~/test1114$ ./p2
+plz input a and b:
+2
+4
+段错误 (核心已转储)
+tarena@ubuntu:~/test1114$ vim p2.c
+tarena@ubuntu:~/test1114$ vim p2.c
+tarena@ubuntu:~/test1114$ 
+tarena@ubuntu:~/test1114$ gcc p2.c -o p2
+tarena@ubuntu:~/test1114$ ./p2
+plz input a and b:
+2
+4
+a=4,b=2tarena@ubuntu:~/test1114$ 
