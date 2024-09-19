@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "数据结构树实验", "数据结构树实验\数据结构树实验.vcxproj", "{D590ABEA-57F5-4D90-8787-B6D3EE61E5CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D590ABEA-57F5-4D90-8787-B6D3EE61E5CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D590ABEA-57F5-4D90-8787-B6D3EE61E5CD}.Debug|Win32.Build.0 = Debug|Win32
+		{D590ABEA-57F5-4D90-8787-B6D3EE61E5CD}.Release|Win32.ActiveCfg = Release|Win32
+		{D590ABEA-57F5-4D90-8787-B6D3EE61E5CD}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

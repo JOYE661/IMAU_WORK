@@ -1,0 +1,13 @@
+﻿生成启动时间为 2022/12/23 17:57:27。
+     1>项目“C:\Users\17529\Desktop\C++\实验报告5.结构体\实验报告5.结构体\实验报告5.结构体.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "书架管理.cpp"
+         书架管理.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\17529\Desktop\C++\实验报告5.结构体\Debug\实验报告5.结构体.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\17529\Desktop\C++\实验报告5.结构体\Debug\实验报告5.结构体.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\17529\Desktop\C++\实验报告5.结构体\Debug\实验报告5.结构体.lib" /MACHINE:X86 "Debug\书架管理.obj"
+         实验报告5.结构体.vcxproj -> C:\Users\17529\Desktop\C++\实验报告5.结构体\Debug\实验报告5.结构体.exe
+     1>已完成生成项目“C:\Users\17529\Desktop\C++\实验报告5.结构体\实验报告5.结构体\实验报告5.结构体.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.78

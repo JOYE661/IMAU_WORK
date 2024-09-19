@@ -1,0 +1,16 @@
+﻿生成启动时间为 2023/2/9 11:48:02。
+     1>项目“C:\Users\17529\Desktop\C++\栈SqStack\栈SqStack\栈SqStack.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt SqStack.cpp
+         SqStack.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\math.h(982): warning C4005: “OVERFLOW”: 宏重定义
+                 c:\users\17529\desktop\c++\栈sqstack\栈sqstack\sqstack.cpp(7) : 参见“OVERFLOW”的前一个定义
+     1>c:\users\17529\desktop\c++\栈sqstack\栈sqstack\sqstack.cpp(208): warning C4715: “GetTop_Link”: 不是所有的控件路径都返回值
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\17529\Desktop\C++\栈SqStack\Debug\栈SqStack.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\17529\Desktop\C++\栈SqStack\Debug\栈SqStack.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\17529\Desktop\C++\栈SqStack\Debug\栈SqStack.lib" /MACHINE:X86 Debug\SqStack.obj
+         栈SqStack.vcxproj -> C:\Users\17529\Desktop\C++\栈SqStack\Debug\栈SqStack.exe
+     1>已完成生成项目“C:\Users\17529\Desktop\C++\栈SqStack\栈SqStack\栈SqStack.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.38

@@ -1,0 +1,13 @@
+﻿生成启动时间为 2022/12/4 13:22:18。
+     1>项目“C:\Users\17529\Desktop\C++\数据结构约瑟夫环实验\数据结构约瑟夫环实验\数据结构约瑟夫环实验.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "约瑟夫环.cpp"
+         约瑟夫环.cpp
+     1>c:\users\17529\desktop\c++\数据结构约瑟夫环实验\数据结构约瑟夫环实验\约瑟夫环.cpp(20): error C2057: 应输入常量表达式
+     1>c:\users\17529\desktop\c++\数据结构约瑟夫环实验\数据结构约瑟夫环实验\约瑟夫环.cpp(20): error C2466: 不能分配常量大小为 0 的数组
+     1>c:\users\17529\desktop\c++\数据结构约瑟夫环实验\数据结构约瑟夫环实验\约瑟夫环.cpp(20): error C2133: “a”: 未知的大小
+     1>已完成生成项目“C:\Users\17529\Desktop\C++\数据结构约瑟夫环实验\数据结构约瑟夫环实验\数据结构约瑟夫环实验.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.14

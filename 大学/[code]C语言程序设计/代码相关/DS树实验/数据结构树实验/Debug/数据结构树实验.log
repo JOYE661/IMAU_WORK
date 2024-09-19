@@ -1,0 +1,13 @@
+﻿生成启动时间为 2022/12/5 16:33:37。
+     1>项目“C:\Users\17529\Desktop\C++\数据结构树实验\数据结构树实验\数据结构树实验.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "二叉树.cpp"
+         二叉树.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\17529\Desktop\C++\数据结构树实验\Debug\数据结构树实验.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\17529\Desktop\C++\数据结构树实验\Debug\数据结构树实验.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\17529\Desktop\C++\数据结构树实验\Debug\数据结构树实验.lib" /MACHINE:X86 "Debug\二叉树.obj"
+         数据结构树实验.vcxproj -> C:\Users\17529\Desktop\C++\数据结构树实验\Debug\数据结构树实验.exe
+     1>已完成生成项目“C:\Users\17529\Desktop\C++\数据结构树实验\数据结构树实验\数据结构树实验.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.93
