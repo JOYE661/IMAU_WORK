@@ -1,0 +1,41 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nnd.dao.RoomDao">
+    <resultMap id="RoomMap" type="Room">
+        <id column="roomId" property="roomId"/>
+        <result column="roomIcon" property="roomIcon"/>
+        <result column="roomName" property="roomName"/>
+        <result column="sensorNum" property="sensorNum"/>
+        <result column="temperature" property="temperature"/>
+        <result column="humidity" property="humidity"/>
+        <result column="brightness" property="brightness"/>
+    </resultMap>
+
+
+    <select id="queryAllRooms" resultMap="RoomMap">
+        select *
+        from room
+    </select>
+    <select id="queryRoomById" parameterType="int" resultMap="RoomMap">
+        select *
+        from room
+        where roomId = #{roomId}
+    </select>
+    <insert id="addRoom" parameterType="Room">
+        insert into room(roomId,roomIcon,roomName,sensorNum,temperature,humidity,brightness)
+        values(0,#{roomIcon},#{roomName},#{sensorNum},#{temperature},#{humidity},#{brightness})
+    </insert>
+    <delete id="deleteRoomById" parameterType="int">
+        delete from room
+        where roomId = #{roomId}
+    </delete>
+    <update id="updateRoom" parameterType="Room">
+        update room
+        set roomIcon = #{roomIcon},
+        roomName = #{roomName},
+        sensorNum = #{sensorNum},
+        temperature = #{temperature},
+        humidity = #{humidity},
+        brightness = #{brightness}
+        where roomId = #{roomId}
+    </update>
+</mapper>
