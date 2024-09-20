@@ -1,0 +1,14 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Login",
+    "pages/Register",
+    "pages/hallDetail",
+    "pages/Purifier",
+    "pages/LedLight",
+    "pages/DoorLock",
+    "pages/Kettle",
+    "pages/ForgetPassword",
+    "pages/PeopleAlter"
+  ]
+}
