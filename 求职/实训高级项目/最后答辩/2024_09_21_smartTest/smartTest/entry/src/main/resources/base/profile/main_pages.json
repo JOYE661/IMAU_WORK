@@ -1,0 +1,30 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Login",
+    "pages/Register",
+    "pages/hall",
+    "pages/Purifier",
+    "pages/LedLight",
+    "pages/DoorLock",
+    "pages/Kettle",
+    "pages/MyPage",
+    "pages/OpenPage",
+    "pages/MyPageList1",
+    "pages/MyPageList2",
+    "pages/MyPageList3",
+    "pages/MyPageList4",
+    "pages/AddRoomPage",
+    "pages/ZwPage",
+    "pages/GJPage",
+    "pages/TransitionPage",
+    "pages/PrivacyPage",
+    "pages/AboutPage",
+    "pages/HealthCenter",
+    "pages/HelpCenter",
+    "pages/LostPasswordPage",
+    "pages/Customer",
+    "pages/AddEquipments"
+
+  ]
+}
