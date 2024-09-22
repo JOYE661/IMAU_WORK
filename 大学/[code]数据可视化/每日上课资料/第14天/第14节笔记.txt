@@ -1,0 +1,41 @@
+复习:
+
+学习:
+	关于时间的知识点
+	
+
+	DataFrame 行列操作学习
+	
+	行:
+		追加:append
+			-  1. 字典:必须指定行标签或者ignore_index=True
+				{k:v,k1:v1}
+			
+			-  2.列表,最外层列表对应的元素,作为一行数据
+				①: 一维列表
+					[1,2,3,4]
+				②: 二维列表
+					[[1,2],[3,4]]
+			-  3.DataFrame
+					找对应的行标签和列标签
+		删除:
+			drop() : 
+				inplace=True(修改源数据)
+
+	属性:
+		
+		
+		
+pd时间:
+--- python时间
+
+	time  --->struct_time  --->时间字符串
+	
+	
+	
+	 ①:datetime---->字符串: strftime()   
+	 ②:时间字符串--->datetime :strptime()
+	 ①和② 都需要确定格式化方式
+	 
+	 
+
