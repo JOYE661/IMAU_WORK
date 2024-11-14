@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Class3_02ArrFindMaxDate {
-//´Ó¼üÅÌÊäÈë5¸öÕûÊı ÕÒ³ö×î´óÖµ²¢Êä³ö
+//ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner input;
