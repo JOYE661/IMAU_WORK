@@ -1,0 +1,22 @@
+# 每个层级的缩进需要对应一致
+server:
+  port: 8181
+# 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: 159632nm
+
+# 配置mybatis
+mybatis:
+  type-aliases-package: com.nnd.pojo
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+# 配置日志
+logging:
+  level:
+    com:
+      nnd:
+        dao: debug

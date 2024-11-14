@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function func()
+			{
+				var x=document.getElementById("number").value;
+				var p=document.getElementById("result")
+				var s='';
+				while(x!=0)
+				{
+					r=x%10;
+					x=parseInt(x/10);
+					s=s+r;
+				}
+				var a='';
+				var b=a+x;
+				if(s=b){
+				p.innerHTML="是回文数";
+				}
+				else{
+				p.innerHTML="不是回文数";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="number">
+		<input type="button" value="判断是否回文数" onclick="func()">
+		<span id="result"> </span>
+	</body>
+</html>

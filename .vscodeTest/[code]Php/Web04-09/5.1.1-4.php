@@ -1,0 +1,3 @@
+<?php
+// 错误信息：Fatal error: Uncaught Error: Call to undefined function mb_strlen()...
+echo mb_strlen('PHP基础案例教程'); 

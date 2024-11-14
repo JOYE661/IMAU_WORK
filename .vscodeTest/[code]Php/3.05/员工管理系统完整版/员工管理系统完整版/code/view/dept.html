@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>部门管理</title>
+<link rel="stylesheet" href="./css/common.css" />
+</head>
+<body>
+<div class="box list fixed">
+	<div class="title">部门管理</div>
+	<form method="post">
+	<table>
+		<tr><th>ID</th><th>部门名称</th><th width="140">操作</th></tr>
+		<?php foreach($dept_info as $v): ?>
+			<tr><td><?php echo $v['dept_id'] ?></td><td><?php echo $v['dept_name'] ?></td>
+			<td><a class="icon icon-edit" href="?action=rename&id=<?php echo $v['dept_id'] ?>">修改</a><a class="icon icon-del" href="?action=del&id=<?php echo $v['dept_id'] ?>">删除</a></td></tr>
+		<?php endforeach; ?>
+	</table>
+	</form>
+	<div class="action">
+		<form method="post" action="?action=add">
+			<div>添加部门：<input type="text" name="dept_name" /> <input type="submit" value="提交" /></div>
+		</form>
+		<?php if($action=="rename"): ?>
+			<form method="post" action="?action=rename&id=<?php echo $id; ?>">
+			<p>修改部门名称：<input type="text" name="dept_name" value="<?php echo $rename; ?>" /> <input type="submit" value="提交" /></p>
+			</form>
+		<?php endif; ?>
+		<div class="right"><a href="./index.php">返回员工列表</a></div>
+	</div>
+</div>
+</body>
+</html>

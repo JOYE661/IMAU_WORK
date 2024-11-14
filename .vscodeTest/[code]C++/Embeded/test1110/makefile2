@@ -1,0 +1,15 @@
+OBJ= main.o myDisplay.o inputNum.o Caculator.o
+TARGET = main
+$(TARGET):$(OBJ)
+	gcc -o $@ $^
+main.o: main.c
+	gcc -c $^
+inputNum.o: inputNum.c
+	gcc -c $^
+myDisplay.o: myDisplay.c
+	gcc -c $^
+Caculator.o: Caculator.c
+	gcc -c $^
+
+clean:
+	rm $(OBJ) $(TARGET)

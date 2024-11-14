@@ -1,0 +1,99 @@
+tarena@ubuntu:~$ cd test0309
+tarena@ubuntu:~/test0309$ ls
+tarena@ubuntu:~/test0309$ vi test1.txt
+tarena@ubuntu:~/test0309$ vi test1.txt
+tarena@ubuntu:~/test0309$ ln test1.txt test2.txt
+tarena@ubuntu:~/test0309$ vi test2.txt
+tarena@ubuntu:~/test0309$ ln -s test1.txt test3.txt
+tarena@ubuntu:~/test0309$ vi test3.txt
+tarena@ubuntu:~/test0309$ rm test1.txt
+tarena@ubuntu:~/test0309$ ln
+ln: 缺少了文件操作数
+请尝试执行"ln --help"来获取更多信息。
+tarena@ubuntu:~/test0309$ ls
+test2.txt  test3.txt
+tarena@ubuntu:~/test0309$ vi test2.txt
+tarena@ubuntu:~/test0309$ vi test3.txt
+tarena@ubuntu:~/test0309$ ls -l
+总用量 4
+-rw-rw-r-- 1 tarena tarena  0  3月  9 16:17 test1.txt
+-rw-rw-r-- 1 tarena tarena 12  3月  9 16:17 test2.txt
+lrwxrwxrwx 1 tarena tarena  9  3月  9 16:13 test3.txt -> test1.txt
+tarena@ubuntu:~/test0309$ ll
+总用量 12
+drwxrwxr-x  2 tarena tarena 4096  3月  9 16:17 ./
+drwxr-xr-x 34 tarena tarena 4096  3月  9 16:06 ../
+-rw-rw-r--  1 tarena tarena    0  3月  9 16:17 test1.txt
+-rw-rw-r--  1 tarena tarena   12  3月  9 16:17 test2.txt
+lrwxrwxrwx  1 tarena tarena    9  3月  9 16:13 test3.txt -> test1.txt
+tarena@ubuntu:~/test0309$ ls -l
+总用量 4
+-rw-rw-r-- 1 tarena tarena  0  3月  9 16:17 test1.txt
+-rw-rw-r-- 1 tarena tarena 12  3月  9 16:17 test2.txt
+lrwxrwxrwx 1 tarena tarena  9  3月  9 16:13 test3.txt -> test1.txt
+tarena@ubuntu:~/test0309$ cat test3.txt
+tarena@ubuntu:~/test0309$ ls
+test1.txt  test2.txt  test3.txt
+tarena@ubuntu:~/test0309$ mkdir aaa
+tarena@ubuntu:~/test0309$ ls
+aaa  test1.txt  test2.txt  test3.txt
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ gcc -o 5.2-1 5.2-1.c
+5.2-1.c: 在函数‘main’中:
+5.2-1.c:10:9: 警告： 格式 ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int’ [-Wformat]
+tarena@ubuntu:~/test0309$ ./5.2-1
+Dir create successs!tarena@ubuntu:~/test0309$ ls
+5.2-1  5.2-1.c  aaa  test1.txt  test2.txt  test3.txt  zhang
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ ./5.2-1
+Dir create failed,error no=17,err info:File exists
+tarena@ubuntu:~/test0309$ ./5.2-1 wang
+Dir create failed,error no=17,err info:File exists
+tarena@ubuntu:~/test0309$ vi 5.2=1.c
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ ./5.2-1 wang
+Dir create failed,error no=17,err info:File exists
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ cp 5.2-1.c 5.2-2.c
+tarena@ubuntu:~/test0309$ vi 5.2-2.c
+tarena@ubuntu:~/test0309$ vi 5.2-2.c
+tarena@ubuntu:~/test0309$ gcc -o 5.2-2 5.2-2.c
+tarena@ubuntu:~/test0309$ ./5.2-2
+/home/tarena/test0309
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ ./5.2-1 wang
+Dir create failed,error no=17,err info:File exists
+tarena@ubuntu:~/test0309$ ls
+5.2-1    5.2-1.c  5.2-2.c  test1.txt  test3.txt
+5.2=1.c  5.2-2    aaa      test2.txt  zhang
+tarena@ubuntu:~/test0309$ cp 5.2-2.c 5.2-4.c
+tarena@ubuntu:~/test0309$ vi 5.2-4.c
+tarena@ubuntu:~/test0309$ vi 5.2-4.c
+tarena@ubuntu:~/test0309$ gcc -o 5.2-4 5.2-4.c
+tarena@ubuntu:~/test0309$ ./5.2-4 zhang
+is dir
+tarena@ubuntu:~/test0309$ ./5.2-4 5.2-4
+is file
+tarena@ubuntu:~/test0309$ vi 5.2-2.c
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ ls
+5.2-1    5.2-1.c  5.2-2.c  5.2-4.c  test1.txt  test3.txt
+5.2=1.c  5.2-2    5.2-4    aaa      test2.txt  zhang
+tarena@ubuntu:~/test0309$ ./5.2-1 wang
+Dir create failed,error no=17,err info:File exists
+tarena@ubuntu:~/test0309$ clear
+
+tarena@ubuntu:~/test0309$ ls
+5.2-1    5.2-1.c  5.2-2.c  5.2-4.c  test1.txt  test3.txt
+5.2=1.c  5.2-2    5.2-4    aaa      test2.txt  zhang
+tarena@ubuntu:~/test0309$ vi 5.2-1.c
+tarena@ubuntu:~/test0309$ gcc -o 5 5.2-1.c 
+5.2-1.c: 在函数‘main’中:
+5.2-1.c:10:9: 警告： 格式 ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int’ [-Wformat]
+tarena@ubuntu:~/test0309$ ./5 bbb
+Dir create successs!tarena@ubuntu:~/test0309$ ls
+5      5.2=1.c  5.2-2    5.2-4    aaa  test1.txt  test3.txt
+5.2-1  5.2-1.c  5.2-2.c  5.2-4.c  bbb  test2.txt  zhang
+tarena@ubuntu:~/test0309$ ./5 wang
+Dir create successs!tarena@ubuntu:~/test0309$ 

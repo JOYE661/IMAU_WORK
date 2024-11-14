@@ -1,0 +1,25 @@
+
+1.3.1
+
+cd C:\web\apache2.4\bin
+
+httpd -k install -n Apache2.4
+
+httpd -k uninstall -n Apache2.4
+
+netstat -ano
+
+tasklist | findstr "2440"
+
+cd C:\Apache24\bin
+httpd -k install -n Apache24
+net start Apache24
+
+httpd -k uninstall -n Apache24
+
+1.3.2
+
+cd C:\web\php7.2
+php -S localhost:8081 -t "C:\web\apache2.4\htdocs"
+
+

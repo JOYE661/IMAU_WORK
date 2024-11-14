@@ -1,0 +1,9 @@
+ 1 circle:main.o mj.o zc.o
+  2         gcc -c main.o mj.o zc.o -o circle
+  3 main.o:main.c mj.h zc.h
+  4         gcc -c main.c -o main.o
+  5 mj.o:mj.c mj.h
+  6         gcc -c mj.c -o mj.o
+  7 zc.o:zc.c zc.h
+  8         gcc -c zc.c -o zc.o
+

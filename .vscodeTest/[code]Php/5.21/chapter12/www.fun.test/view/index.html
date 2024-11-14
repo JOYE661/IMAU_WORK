@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?=config('APP_TITLE')?></title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <?php require './view/common/top.html'; ?>
+    <div class="main container">
+      <div class="wp">
+        <div class="wp-l">
+          <?php if ($author): ?>
+            <div class="wp-l-subject"><a href="?author=<?=$author?>">查看用户发表的内容</a></div>
+          <?php elseif ($cid): foreach ($category as $v): if ($v['id'] == $cid): ?>
+            <div class="wp-l-subject"><a href="?cid=<?=$cid?>"><?=$v['name']?></a></div>
+          <?php endif; endforeach; endif; ?>
+          <?php foreach ($list as $v): ?>
+          <div class="wp-l-lst">
+            <?php if ($v['cname']): ?><div class="wp-l-cate"><?=htmlspecialchars($v['cname'])?></div><?php endif; ?>
+            <div class="wp-l-author">
+              <div class="wp-l-author-name">
+                <img src="<?=($v['avatar'] ? './uploads/avatar/' . $v['avatar'] : './images/noavatar.gif')?>">
+                <a href="?author=<?=$v['uid']?>"><?=$v['name']?></a>
+              </div>
+              <div class="wp-l-author-time"><?=date('Y-m-d', $v['time'])?></div>
+            </div>
+            <div class="wp-l-content">
+               <a href="show.php?id=<?=$v['id']?>" target="_blank"><?=htmlspecialchars(mb_strimwidth($v['content'], 0, 200))?>...</a>
+            </div>
+            <div class="wp-l-atch">
+              <?php if (!empty($v['preview'])): if ($v['type'] == 'pic'): ?>
+                <a href="show.php?id=<?=$v['id']?>" target="_blank"><img src="./uploads/picture/<?=$v['preview']?>"></a>
+              <?php elseif ($v['type'] == 'video'): ?>
+                <iframe src="<?=htmlspecialchars($v['preview'])?>" width="100%" height="335" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+              <?php endif; endif; ?>
+            </div>
+            <div class="wp-l-act">
+              <a class="wp-l-act-hits" href="show.php?id=<?=$v['id']?>" title="访问量"><?=$v['hits']?></a>
+              <a class="wp-l-act-reply" href="show.php?id=<?=$v['id']?>#reply" title="回复量"><?=$v['reply']?></a>
+            </div>
+            <?php if (IS_ADMIN || $v['uid'] == user('id')): ?>
+            <div class="wp-l-adm">
+              <a href="post.php?id=<?=$v['id']?>">[编辑]</a><a class="js-post-confirm" href="post.php?action=del&id=<?=$v['id']?>&token=<?=TOKEN?>">[删除]</a>
+            </div>
+            <?php endif; ?>
+          </div>
+          <?php endforeach; ?>
+          <div class="wp-l-page">
+            <?=page_html("./?type=$type&cid=$cid&page=", $total, $page, config('APP_PAGESIZE'))?>
+          </div>
+        </div>
+        <?php require './view/common/slide.html'; ?>
+      </div>
+    </div>
+    <?php require './view/common/footer.html'; ?>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+tarena@ubuntu:~$ cd test1107
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ makefile
+makefile: command not found
+tarena@ubuntu:~/test1107$ vim makefile
+tarena@ubuntu:~/test1107$ make
+cc    -c -o test1.o test1.c
+gcc test1.o -o hello
+tarena@ubuntu:~/test1107$ ./test1.c
+bash: ./test1.c: 权限不够
+tarena@ubuntu:~/test1107$ ./test1
+bash: ./test1: 没有那个文件或目录
+tarena@ubuntu:~/test1107$ ./test.o
+bash: ./test.o: 没有那个文件或目录
+tarena@ubuntu:~/test1107$ sh test1.c
+test1.c: 2: test1.c: Syntax error: "(" unexpected
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ sh test1.c
+test1.c: 2: test1.c: Syntax error: "(" unexpected
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ sh test1.c
+test1.c: 2: test1.c: Syntax error: "(" unexpected
+tarena@ubuntu:~/test1107$ vim makefile
+tarena@ubuntu:~/test1107$ cat test1.c
+#include<stdio.h>
+int main()
+{
+    printf("fuck");
+    return 0;
+}
+
+tarena@ubuntu:~/test1107$ vim test1.c
+tarena@ubuntu:~/test1107$ sh test1.c
+test1.c: 2: test1.c: Syntax error: "(" unexpected
+tarena@ubuntu:~/test1107$ vim testa.c
+tarena@ubuntu:~/test1107$ vim testb.c
+tarena@ubuntu:~/test1107$ vim main.c
+tarena@ubuntu:~/test1107$ vim zc.h
+tarena@ubuntu:~/test1107$ vim zc.c
+tarena@ubuntu:~/test1107$ vim mj.h
+tarena@ubuntu:~/test1107$ vim mj.c
+tarena@ubuntu:~/test1107$ vim makefile
+tarena@ubuntu:~/test1107$ vim zc.h
+tarena@ubuntu:~/test1107$ vim mj.h
+tarena@ubuntu:~/test1107$ vim mj.c
+tarena@ubuntu:~/test1107$ vim makefile
+tarena@ubuntu:~/test1107$ cim mj.c
+No command 'cim' found, but there are 20 similar ones
+cim: command not found
+tarena@ubuntu:~/test1107$ vim mj.c
+tarena@ubuntu:~/test1107$ make
+cc    -c -o main.o main.c
+cc    -c -o mj.o mj.c
+cc    -c -o zc.o zc.c
+cc main.o mj.o zc.o -o circle
+tarena@ubuntu:~/test1107$ ls
+circle  main.o     makefile1~  mj.c  test1.c  testb.c  zc.o
+hello   makefile   makefile2   mj.h  test1.o  zc.c
+main.c  makefile1  makefile2~  mj.o  testa.c  zc.h
+tarena@ubuntu:~/test1107$ ./circle
+please enter r:
+4
+zc=25.120001,mj=50.240002tarena@ubuntu:~/test1107$ 
+tarena@ubuntu:~/test1107$ make clean
+rm circle main.o mj.o zc.o
+tarena@ubuntu:~/test1107$ ls
+hello   makefile   makefile1~  makefile2~  mj.h     test1.o  testb.c  zc.h
+main.c  makefile1  makefile2   mj.c        test1.c  testa.c  zc.c
+tarena@ubuntu:~/test1107$ vim makefile
+
+[已修改但尚未保存]
+
+请按 ENTER 或其它命令继续
+tarena@ubuntu:~/test1107$ ./circle
+bash: ./circle: 没有那个文件或目录
+tarena@ubuntu:~/test1107$ make
+cc    -c -o main.o main.c
+cc    -c -o mj.o mj.c
+cc    -c -o zc.o zc.c
+cc main.o mj.o zc.o -o circle
+tarena@ubuntu:~/test1107$ ./cirle
+bash: ./cirle: 没有那个文件或目录
+tarena@ubuntu:~/test1107$ ./circle
+please enter r:
+5
+zc=31.400000,mj=78.500000tarena@ubuntu:~/test1107$ 
+tarena@ubuntu:~/test1107$ 

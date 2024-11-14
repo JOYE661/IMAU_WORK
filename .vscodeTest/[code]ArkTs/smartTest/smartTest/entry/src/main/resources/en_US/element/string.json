@@ -1,0 +1,364 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Smart Home"
+    },
+    {
+      "name": "page_close",
+      "value": "close"
+    },
+    {
+      "name": "scene_clean",
+      "value": "automatically clean when leaving home"
+    },
+    {
+      "name": "scene_openair",
+      "value": "automatically turn on air purification when PM2.5 is too high"
+    },
+    {
+      "name": "scene_openLight",
+      "value": "automatically turn on the lights when returning home"
+    },
+    {
+      "name": "scene_name",
+      "value": "intelligent scene"
+    },
+    {
+      "name": "dialog_value",
+      "value": "value"
+    },
+    {
+      "name": "dialog_max",
+      "value": "max"
+    },
+    {
+      "name": "my_family",
+      "value": "my family"
+    },
+    {
+      "name": "devices_number",
+      "value": "0 devices in total"
+    },
+    {
+      "name": "addEquipments_string1",
+      "value": "you don't have a smart device yet"
+    },
+    {
+      "name": "addEquipments_string2",
+      "value": "After adding the device, we will manage your smart home for you!"
+    },
+    {
+      "name": "addEquipments_string3",
+      "value": "add device immediately"
+    },
+    {
+      "name": "air_cleaner",
+      "value": "air cleaner"
+    },
+    {
+      "name": "particulate_matter_air_cleaner",
+      "value": "particulate matter 2.5"
+    },
+    {
+      "name": "indoor_air_quality_air_cleaner",
+      "value": "Indoor air quality: Excellent"
+    },
+    {
+      "name": "open_air_cleaner",
+      "value": "open"
+    },
+    {
+      "name": "auto_air_cleaner",
+      "value": "auto"
+    },
+    {
+      "name": "sleep_air_cleaner",
+      "value": "sleep"
+    },
+    {
+      "name": "filterlife_air_cleaner",
+      "value": "filter life(%)"
+    },
+    {
+      "name": "temperature_air_cleaner",
+      "value": "temperature(℃)"
+    },
+    {
+      "name": "humidity_air_cleaner",
+      "value": "humidity(℃)"
+    },
+
+    {
+      "name": "privacy_message1",
+      "value": "Please read the following privacy agreement and click OK to indicate your acceptance:"
+    },
+    {
+      "name": "privacy_message2",
+      "value": "Here is the content of the agreement, please read carefully:"
+    },
+    {
+      "name": "privacy_message3",
+      "value": "We respect and protect your privacy, and the information collected is only used to enhance the service experience. It is strictly confidential and will not be disclosed to third parties unless required by law"
+    },
+    {
+      "name": "privacy_message4",
+      "value": "(If you want to read the complete content of the privacy agreement, please click here)"
+    },
+    {
+      "name": "button_ok",
+      "value": "ok"
+    },
+    {
+      "name": "button_cancel",
+      "value": "cancel"
+    },
+    {
+      "name": "Home_roomName1",
+      "value": "Outside"
+    },
+    {
+      "name": "Home_roomName2",
+      "value": "Master bedroom"
+    },
+    {
+      "name": "Home_roomName3",
+      "value": "kitchen"
+    },
+    {
+      "name": "AddRoomPage_roomName4",
+      "value":"Living room"
+    },
+    {
+      "name": "AddRoomPage_roomName5",
+      "value":"Garage"
+    },
+    {
+      "name": "add_room",
+      "value":"AddRoom"
+    },
+    {
+      "name": "devices",
+      "value": "Devices"
+    },
+    {
+      "name": "app_name",
+      "value": "Smart Home App"
+    },
+    {
+      "name": "user_prompt",
+      "value": "please enter your username"
+    },
+    {
+      "name": "password_prompt",
+      "value": "Please enter your password."
+    },
+    {
+      "name": "forgot_password",
+      "value": "forgot password"
+    },
+    {
+      "name": "register",
+      "value": "register"
+    },
+    {
+      "name": "app_login",
+      "value": "Login"
+    },
+    {
+      "name": "username_err",
+      "value": "The format of the username is incorrect"
+    },
+    {
+      "name": "password_err",
+      "value": "the login password format is incorrect"
+    },
+    {
+      "name": "privacy_message",
+      "value": "privacy_message"
+    },
+    {
+      "name": "Specific_Privacy_Agreement",
+      "value": "Introduction+\n'\\n' +\nWe (full name of the company) attach great importance to your privacy rights and are committed to protecting your personal information. This privacy agreement aims to explain to you how we collect, use, store, and share your personal information, as well as how you exercise your relevant rights. Please carefully read this privacy agreement before using our services (including but not limited to websites, applications, etc.). \\n' +\n'\\n' +\n2. Information Collection+\n'\\n' +\nPersonal Information: We may collect your name, contact information (such as phone number, email address), address, gender, age, and other personal information, which is usually provided when you register an account, use the service, or participate in specific activities. \\n' +\nUsage data: We also collect data about how you use our services, such as visit time, browsing history, search queries, etc., in order to optimize our services and provide you with a more personalized experience. \\n' +\nSensitive information: We will not collect your sensitive information (such as health information, financial information) unless we have obtained your explicit consent or legal requirements. \\n' +\n3. Use of Information+\n'\\n' +\nWe will use your personal information to provide the services you request, improve our products and services, conduct market research, and send you notifications and marketing information related to our services (unless you choose not to receive them). \\n' +\nWe will not sell your personal information to third parties, but we may share it with third parties in the following situations:+\nWith your explicit consent; \\n' +\nCollaborate with our service providers (such as payment processors, data storage providers) to support our services; \\n' +\nComply with legal obligations or respond to government requests; \\n' +\nWhen it comes to legal proceedings such as corporate mergers, acquisitions, or bankruptcies. \\n' +\n4. Storage and Security of Information+\n'\\n' +\nWe will take reasonable technical and organizational measures to protect your personal information from unauthorized access, use, disclosure, destruction, or loss. \\n' +\nYour personal information may be stored on servers located in your country/region or elsewhere. We comply with applicable data protection laws and take appropriate measures to ensure the security of cross-border data transfer. \\n' +\n5. Your Rights+\n'\\n' +\nAccess and Correction: You have the right to access and correct the personal information we hold about you. \\n' +\nDelete: In certain circumstances, you have the right to request us to delete your personal information. \\n' +\nObjections and Restrictions: You have the right to object to our processing of your personal information, or to restrict our processing of your personal information in specific circumstances. \\n' +\nData Portability Right: Where applicable, you have the right to request that we provide your personal information in a portable format. \\n' +\n6. Change \\ n+\n'\\n' +\nWe have the right to modify this privacy agreement at any time. Any modifications will be published on this website or related services and will take effect from the date of publication. Please regularly review this privacy agreement for the latest information. \\n' +\n'\\n' +\n7. Contact Us+\n'\\n' +\nIf you have any questions about this privacy agreement or need to exercise your rights, please contact us through the following methods: [Contact information, such as email address, phone number, or contact form link]\n"
+    },
+    {
+      "name": "User_Registration",
+      "value": "User_Registration"
+    },
+    {
+      "name": "Enter_email",
+      "value": "Please enter your email address"
+    },
+    {
+      "name": "Confirm_password",
+      "value": "Please enter the confirmation password"
+    },
+    {
+      "name": "phone_number",
+      "value": "Please enter your phone number"
+    },
+    {
+      "name": "code1",
+      "value": "Please obtain the verification code"
+    },
+    {
+      "name": "code2",
+      "value": "Obtain the verification code"
+    },
+    {
+      "name": "register1",
+      "value": "register"
+    },
+    {
+      "name": "privacy_message5",
+      "value": "Please check and agree to the<<User Privacy Agreement>>"
+    },
+    {
+      "name": "MyPage_QRcode",
+      "value": "QR code"
+    },
+    {
+      "name": "MyPage_Usermessage",
+      "value": "User message"
+    },
+    {
+      "name": "MyPage_Username",
+      "value": "Username："
+    },
+    {
+      "name": "MyPage_PQRcode",
+      "value": "personal QRcode："
+    },
+    {
+      "name": "MyPage_nickame",
+      "value": "Nickname："
+    },
+    {
+      "name": "MyPage_email",
+      "value": "email："
+    },
+    {
+      "name": "MyPage_phoneNumber",
+      "value": "Phone Number："
+    },
+    {
+      "name": "MyPage_avatar",
+      "value": "avatar："
+    },
+    {
+      "name": "MyPage_Imageselect",
+      "value": "Select Image"
+    },
+    {
+      "name": "MyPage_ChangeName",
+      "value": "Change Username"
+    },
+    {
+      "name": "MyPage_ChangeNickname",
+      "value": "Change Nickname"
+    },
+    {
+      "name": "MyPage_ChangeEmail",
+      "value": "Change Email"
+    },
+    {
+      "name": "MyPage_ChangePhone",
+      "value": "Change Phone"
+    },
+    {
+      "name": "Message_device_message",
+      "value": "Device Message"
+    },
+    {
+      "name": "Message_system_message",
+      "value": "System Message"
+    },
+    {
+      "name": "Message_enter_query_content",
+      "value": "Please enter the query content"
+    },
+    {
+      "name": "New_password",
+      "value": "Please enter a new password"
+    },
+    {
+      "name": "SmartFingerprint_AntitheftLock",
+      "value": "SmartFingerprintAntitheftLock"
+    },
+    {
+      "name": "Devicestatus_isconnected",
+      "value":"Devicestatusisconnected"
+    },
+    {
+      "name": "Access_Log",
+      "value":"AccessLog"
+    },
+    {
+      "name": "Repair_Request",
+      "value":"RepairRequest"
+    },
+    {
+      "name": "Enroll_NewFingerprint",
+      "value":"EnrollNewFingerprint"
+    },
+    {
+      "name": "Hijacking_Alert",
+      "value":"HijackingAlert"
+    },
+    {
+      "name": "first_fingerprint",
+      "value":"firstfingerprint"
+    },
+    {
+      "name": "Second_fingerprint",
+      "value":"Secondfingerprint"
+    },
+    {
+      "name": "Third_fingerprint",
+      "value":"Thirdfingerprint"
+    },
+    {
+      "name": "more_action",
+      "value":"more operations"
+    },
+    {
+      "name": "add_favorites",
+      "value":"add favorites"
+    },
+    {
+      "name": "add_success",
+      "value":"add successfully"
+    },
+    {
+      "name": "refresh_page",
+      "value":"refresh page"
+    },
+    {
+      "name": "refresh_success",
+      "value":"refresh successfully"
+    },
+    {
+      "name": "copy_link",
+      "value":"copy link"
+    },{
+      "name": "action_success",
+      "value":"successful operation"
+    },
+    {
+      "name": "exit",
+      "value":"quit"
+    },
+    {
+      "name": "cancel_action",
+      "value":"cancel operation"
+    }
+  ]
+}

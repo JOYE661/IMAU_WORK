@@ -1,0 +1,246 @@
+tarena@ubuntu:~$ cd test1110
+tarena@ubuntu:~/test1110$ ls
+Caculator.c  Caculator.s  inputNum.o  main    main.s       myDisplay.o
+Caculator.h  inputNum.c   inputNum.s  main.c  myDisplay.c  myDisplay.s
+Caculator.i  inputNum.h   _log1110    main.i  myDisplay.h
+Caculator.o  inputNum.i   _log1110~   main.o  myDisplay.i
+tarena@ubuntu:~/test1110$ cat main.c
+#include<stdio.h>
+#include"myDisplay.h"
+#include"inputNum.h"
+int main(){
+    int a[5];
+
+    readNums(a,5);
+    display(a,5);
+
+    return 0;
+}
+
+
+tarena@ubuntu:~/test1110$ vim main.c
+tarena@ubuntu:~/test1110$ vim myDisplay.h
+tarena@ubuntu:~/test1110$ cat myDisplay.h
+#ifndef _MYDISPLAY_H
+#define _MYDISPLAY_H
+
+void display(int a[], int n);
+#endif
+tarena@ubuntu:~/test1110$ cat inputNum.h
+#ifndef _INPUTNUM_H
+#define _INPUTNUM_H
+void readNums(int arr[],int n);
+
+
+#endif
+tarena@ubuntu:~/test1110$ cat myDisplay.c
+#include<stdio.h>
+#include"Caculator.h"
+#include"myDisplay.h"
+void display(int a[],int n){
+    printf("sum=:%d\n",sumNums(a,n));
+}
+
+tarena@ubuntu:~/test1110$ cat inputNum.c
+#include<stdio.h>
+#include"inputNum.h"
+void readNums(int arr[],int n){
+    printf("plz enter num for %d \n",n);
+    int i;
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+}
+
+tarena@ubuntu:~/test1110$ cat Caculator.h
+#ifndef _CACULATOR_H
+#define _CACULATOR_H
+
+int sumNums(int arr[],int n);
+#endif
+tarena@ubuntu:~/test1110$ cat Caculator.c
+#include<stdio.h>
+#include"Caculator.h"
+int sumNums(int arr[],int n){
+    int sum=0;
+    int i;
+    for(i=0;i<n;i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+
+tarena@ubuntu:~/test1110$ ls
+Caculator.c  Caculator.s  inputNum.o  main    main.s       myDisplay.o
+Caculator.h  inputNum.c   inputNum.s  main.c  myDisplay.c  myDisplay.s
+Caculator.i  inputNum.h   _log1110    main.i  myDisplay.h
+Caculator.o  inputNum.i   _log1110~   main.o  myDisplay.i
+tarena@ubuntu:~/test1110$ ./main
+plz enter num for 5 
+1 2 3 4 5
+sum=:15
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ make
+gcc -c main.c
+gcc -o main main.o myDisply.o inputNum.o Caculator.o
+gcc.real: 错误： myDisply.o：没有那个文件或目录
+make: *** [main] 错误 1
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ make
+gcc -o main main.o myDisplay.o inputNum.o Caculator.o
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ cat makefile
+main: main.o myDisplay.o inputNum.o Caculator.o
+	gcc -o main main.o myDisplay.o inputNum.o Caculator.o
+main.o: main.c
+	gcc -c main.c
+inputNum.o: inputNum.c
+	gcc -c myDisplay.c
+Caculator.o: Caculator.c
+	gcc -c Caculator.c
+
+clean:
+	rm *.o
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ make
+make: “main”是最新的。
+tarena@ubuntu:~/test1110$ ls
+Caculator.c  inputNum.c  _log1110   main.o      myDisplay.c
+Caculator.h  inputNum.h  _log1110~  main.s      myDisplay.h
+Caculator.i  inputNum.i  main       makefile    myDisplay.i
+Caculator.o  inputNum.o  main.c     makefile1   myDisplay.o
+Caculator.s  inputNum.s  main.i     makefile1~  myDisplay.s
+tarena@ubuntu:~/test1110$ main
+No command 'main' found, did you mean:
+ Command 'moin' from package 'python-moinmoin' (main)
+ Command 'man' from package 'man-db' (main)
+ Command 'amin' from package 'orville-write' (universe)
+ Command 'mail' from package 'mailutils' (universe)
+ Command 'cain' from package 'cain' (universe)
+ Command 'rain' from package 'bsdgames' (universe)
+main: command not found
+tarena@ubuntu:~/test1110$ ./main
+plz enter num for 5 
+1 3 5 7 9
+sum=:25
+tarena@ubuntu:~/test1110$ cat makefile
+OBJ= main.o myDisplay.o inputNum.o Caculator.o
+TARGET = main
+$(TARGET):$(OBJ)
+	gcc -o $@ $^
+main.o: main.c
+	gcc -c $^
+inputNum.o: inputNum.c
+	gcc -c $^
+myDisplay.o: myDisplay.c
+	gcc -c $^
+Caculator.o: Caculator.c
+	gcc -c $^
+
+clean:
+	rm $(OBJ) $(TARGET)
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ make
+make: “main”是最新的。
+tarena@ubuntu:~/test1110$ cat makefile
+OBJ= main.o myDisplay.o inputNum.o Caculator.o
+TARGET = main
+CFLAGS = -Wall -g
+$(TARGET):$(OBJ)
+	$(CC) $^ -o $@ $(CFLAGS)
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+clean:
+	rm $(OBJ) $(TARGET)
+tarena@ubuntu:~/test1110$ ^C
+tarena@ubuntu:~/test1110$ vim makefile
+tarena@ubuntu:~/test1110$ gdb main
+GNU gdb (Ubuntu/Linaro 7.4-2012.02-0ubuntu2) 7.4-2012.02
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /home/tarena/test1110/main...(no debugging symbols found)...done.
+(gdb) list
+没有符号表被读取。请使用 "file" 命令。
+(gdb) kill
+The program is not being run.
+(gdb) list 0
+没有符号表被读取。请使用 "file" 命令。
+(gdb) quit
+tarena@ubuntu:~/test1110$ make clean
+rm main.o myDisplay.o inputNum.o Caculator.o main
+tarena@ubuntu:~/test1110$ make
+cc -c main.c -o main.o -Wall -g
+cc -c myDisplay.c -o myDisplay.o -Wall -g
+cc -c inputNum.c -o inputNum.o -Wall -g
+cc -c Caculator.c -o Caculator.o -Wall -g
+cc main.o myDisplay.o inputNum.o Caculator.o -o main -Wall -g
+tarena@ubuntu:~/test1110$ gdb
+GNU gdb (Ubuntu/Linaro 7.4-2012.02-0ubuntu2) 7.4-2012.02
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>.
+(gdb) list
+没有符号表被读取。请使用 "file" 命令。
+(gdb) gdb list
+Undefined command: "gdb".  Try "help".
+(gdb) quit
+tarena@ubuntu:~/test1110$ gdb main
+GNU gdb (Ubuntu/Linaro 7.4-2012.02-0ubuntu2) 7.4-2012.02
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /home/tarena/test1110/main...done.
+(gdb) list
+1	#include<stdio.h>
+2	#include"myDisplay.h"
+3	#include"inputNum.h"
+4	int main(){
+5	    int a[5];
+6	
+7	    readNums(a,5);
+8	    display(a,5);
+9	
+10	    return 0;
+(gdb) break 7
+Breakpoint 1 at 0x804843d: file main.c, line 7.
+(gdb) break 8
+Breakpoint 2 at 0x8048451: file main.c, line 8.
+(gdb) run
+Starting program: /home/tarena/test1110/main 
+
+Breakpoint 1, main () at main.c:7
+7	    readNums(a,5);
+(gdb) print a
+$1 = {-1209695691, -1208036752, 0, 134513961, -1208197132}
+(gdb) next
+plz enter num for 5 
+1 2 3 4 5
+
+Breakpoint 2, main () at main.c:8
+8	    display(a,5);
+(gdb) print a
+$2 = {1, 2, 3, 4, 5}
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 3294] will be killed.
+
+Quit anyway? (y or n) y
+tarena@ubuntu:~/test1110$ 
+

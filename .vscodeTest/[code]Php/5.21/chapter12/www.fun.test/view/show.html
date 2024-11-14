@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?=config('APP_TITLE')?></title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <?php require './view/common/top.html'; ?>
+    <div class="main container">
+      <div class="wp">
+        <div class="wp-l">
+          <div class="wp-l-nav">
+            <a href="./">首页</a><i></i><a href="./?type=<?=$type?>"><?=config('APP_NAV')[$type]?></a><i></i>查看内容
+          </div>
+          <div class="wp-l-lst">
+            <div class="wp-l-cate"><?=htmlspecialchars($post['cname'])?></div>
+            <div class="wp-l-author">
+              <div class="wp-l-author-name">
+                <img src="<?=$post['avatar'] ? ('./uploads/avatar/' . $post['avatar']) : './images/noavatar.gif'?>"><a href="./?author=<?=$post['uid']?>" target="_blank"><?=$post['name']?></a>
+              </div>
+              <div class="wp-l-author-time"><?=date('Y-m-d', $post['time'])?></div>
+            </div>
+            <div class="wp-l-content">
+              <?=nl2br(str_replace(' ', '&nbsp;', htmlspecialchars($post['content'])))?>
+            </div>
+            <?php foreach ($atch as $v): ?>
+              <div class="wp-l-atch">
+                <?php if ($type == 'pic'): ?>
+                  <img src="./uploads/picture/<?=$v['content']?>">
+                <?php elseif ($type == 'video'): ?>
+                  <iframe src="<?=htmlspecialchars($v['content'])?>" width="100%" height="335" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <?php endif; ?>
+              </div>
+            <?php endforeach; ?>
+            <div class="wp-l-act">
+              <a class="wp-l-act-hits" href="show.php?id=<?=$id?>" title="阅读量"><?=$post['hits']?></a>
+              <a class="wp-l-act-reply" href="show.php?id=<?=$id?>#reply" title="回复量"><?=$post['reply']?></a>
+            </div>
+            <?php if (IS_ADMIN || $post['uid'] == user('id')): ?>
+            <div class="wp-l-adm">
+              <a href="./post.php?id=<?=$id?>">[编辑]</a><a class="js-post-confirm" href="./post.php?action=del&id=<?=$id?>&token=<?=TOKEN?>">[删除]</a>
+            </div>
+            <?php endif; ?>
+            <div class="wp-l-cmt" id="reply">
+              <div class="wp-l-cmt-p">
+                <span>发表评论</span>
+                <form method="post" action="?action=reply&id=<?=$id?>&token=<?=TOKEN?>">
+                  <textarea name="reply" placeholder="200字以内" required></textarea>
+                  <input class="ui-btn" type="submit" value="评论">
+                </form>
+              </div>
+              <?php $page_html = page_html("show.php?id=$id&page=", $total, $page, config('APP_REPLY_PAGESIZE'), '#reply'); ?>
+              <?php if($page_html): ?><div class="wp-l-cmt-page wp-l-cmt-page-top"><?=$page_html?></div><?php endif; ?>
+              <?php foreach ($reply as $v): ?>
+              <div class="wp-l-cmt-lst">
+                <div class="wp-l-cmt-inf">
+                  <img src="<?=($v['avatar'] ? './uploads/avatar/' . $v['avatar'] : './images/noavatar.gif')?>"><?=$v['name']?><span><?=date('Y-m-d H:i', $v['time'])?></span>
+                  <?php if (IS_ADMIN || $v['uid'] == user('id')): ?>
+                    <a class="wp-l-cmt-adm" href="?id=<?=$id?>&action=reply_del&del=<?=$v['id']?>&token=<?=TOKEN?>">[删除]</a>
+                  <?php endif; ?>
+                </div>
+                <p><?=htmlspecialchars($v['content'])?></p>
+              </div>
+              <?php endforeach; ?>
+              <div class="wp-l-cmt-page"><?=$page_html?></div>
+            </div>
+          </div>
+        </div>
+        <?php require './view/common/slide.html'; ?>
+      </div>
+    </div>
+    <?php require './view/common/footer.html'; ?>
+  </body>
+</html>

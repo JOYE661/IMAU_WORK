@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#para{
+				font-size: 12px;
+			}
+		</style>
+		<script>
+			function func()
+			{
+				var x=document.getElementById("fs").value;
+				var oP=document.getElementById("para");
+				oP.style.fontSize=x;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+           字体大小：<input type="text" id="fs">
+           <input type="button" value="确定" onclick="func()">
+           <p id="para">网页最主要由3部分组成：结构、样式和行为。网页标准由是W3C组织制定的，目前最新版本是HTML5、CSS3和JavaScript。</p>
+       </div>
+	</body>
+</html>

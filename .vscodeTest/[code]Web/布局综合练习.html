@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			#father #top{
+				width:800px;
+				height: 140px;
+				background:darkcyan;
+				margin: 10px;
+			}
+			#father #top li{
+				position:relative;
+				height: 20px;
+				background:white;
+				list-style-type:none;
+				display:inline-block;
+				margin: 0px 2px;
+				padding: 3px;
+				float:right;
+				border-radius: 0px 0px 10px 10px;
+				right:10px;
+			}
+			#father #top a{
+				color: orange;
+				text-decoration: none;
+			}
+			#father #top li:hover{
+				background-color:orange;
+				color: white;
+			}
+			#father #mid1{
+				width:590px;
+				height:420px;
+				margin-left:10px;
+				background:cadetblue;
+				float:left;
+			}
+			#father #mid1 #a{
+				padding: 30px;
+			}
+			#father #mid1 #a h3{
+				border-bottom: 1px solid;
+			}
+			#father #mid1 #a #b{
+				display: block;
+				background-image: url(img/03.jpg);
+				background-size: 100% 100%;
+				width: 30px;
+				height: 30px;
+				float:right;
+				position: relative;
+				bottom:-10px;
+			}
+			#father #mid1 #a3 #a2{
+				width:100px;
+				height:100px;
+				border:3px solid white;
+				padding: 5px;
+				margin:0px 10px 30px 0px;
+				border-radius:10px;
+				
+				float:left;
+			}
+			#father #mid1 #a3{
+				margin: 0px 30px;
+			}
+			#father #mid1 #a3 p{
+				font-size: 14px;
+				line-height: 30px;
+			}
+			#father #mid2{
+				width:200px;
+				height: 420px;
+				margin-left:10px;
+				background:cadetblue;
+				float:left;
+			} 
+			#father #null{
+				clear:both;
+			}
+			#father #bottom{
+				width:800px;
+				height: 60px;
+				background:darkcyan;
+				margin: 10px;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+			<div id="top">
+				<ui>
+					<li><a href="#">联系我们<a></li>
+					<li><a href="#">意见建议<a></li>
+					<li><a href="#">返回首页<a></li>
+				</ui>
+			</div>
+			<div id="mid1">
+				<div id="a">
+				<span id="b"></span>
+				<h3>我的学校</h3>
+				</div>
+				<div id="a3">
+				<img src="img/imau.png" id="a2">
+				<p>&nbsp&nbsp内蒙古农业大学是一所以农林为主，以草原畜牧业为特色，具有农、工、理、经、管、文、法、艺等8个学科门类的多科性大学，具备培养高职高专、学士、硕士及博士的完整高等教育体系。2001年成为国家西部大开发“一省一校”重点支持建设的大学，2012年成为国家林业局（现国家林业和草原局）和自治区人民政府“省部共建”高校，2013年进入国家“中西部高等教育振兴计划”支持院校行列。</p>
+				</div>
+			</div>
+			<div id="mid2">
+			</div>
+			<div id="null"></div>
+			<div id="bottom">
+			</div>
+		</div>
+	</body>
+</html>

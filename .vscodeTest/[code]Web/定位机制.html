@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width:900px;
+				height:2000px;
+				border:1px solid red;
+				margin:auto;
+				position:relative;
+			}
+			#top{
+				width:60px;
+				height:60px;
+				border:2px solid#e2e2e2;
+				background-color:#c1c1c1;
+				color:white;
+				font:bold 32px Africa,黑体;
+				text-align:center;
+				line-height:60px;
+				position:fixed;
+				right:30px;
+				bottom:20px;
+			}
+			#box img{
+				width:100px;
+				height:100px;
+			}
+			#box img:nth-child(2){
+				position:relative;
+				top:50px;
+				left:-50px;
+			}
+			#box img:nth-child(3){
+				position:relative;
+				top:100px;
+				left:-100px;
+			}
+			#bee{
+				display:block;
+				width:40px;
+				height:40px;
+				background-image:url(img/03.jpg);
+				background-size:100% 100%;
+				position:absolute;
+				left:10px;
+				bottom:60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="image/2.jpg">
+			<img src="image/3.jpg">
+			<img src="image/4.jpg">
+			
+		</div>
+		<div id="top">TOP<span id="bee"></span></div>
+		
+	</body>
+</html>

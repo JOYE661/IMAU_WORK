@@ -1,0 +1,41 @@
+tarena@ubuntu:~$ cd test1110
+tarena@ubuntu:~/test1110$ vim main.c
+tarena@ubuntu:~/test1110$ vim myDisplay.h
+tarena@ubuntu:~/test1110$ vim myDisplay.c
+tarena@ubuntu:~/test1110$ vim Caculator.h
+tarena@ubuntu:~/test1110$ vim Caculator.c
+tarena@ubuntu:~/test1110$ vim main.c
+tarena@ubuntu:~/test1110$ vim inputNum.h
+tarena@ubuntu:~/test1110$ vim inputNum.c
+tarena@ubuntu:~/test1110$ vim main.c
+tarena@ubuntu:~/test1110$ gcc -E main.c -o main.i
+tarena@ubuntu:~/test1110$ gcc -E myDisplay.c -o myDisplay.i
+tarena@ubuntu:~/test1110$ gcc -E inputNum.c -o inputNum.i
+tarena@ubuntu:~/test1110$ gcc -E Caculator.c -o Caculator.i
+tarena@ubuntu:~/test1110$ ls
+Caculator.c  Caculator.i  inputNum.h  _log1110  main.i       myDisplay.h
+Caculator.h  inputNum.c   inputNum.i  main.c    myDisplay.c  myDisplay.i
+tarena@ubuntu:~/test1110$ gcc -S main.c myDisplay.c inputNum.c Caculator.c
+myDisplay.c: 在函数‘display’中:
+myDisplay.c:5:19: 错误： expected ‘)’ before ‘sumNums’
+tarena@ubuntu:~/test1110$ vim myDisplay.c
+tarena@ubuntu:~/test1110$ gcc -S main.c myDisplay.c inputNum.c Caculator.c
+tarena@ubuntu:~/test1110$ gcc -c main.c myDisplay.c inputNum.c Caculator.c
+tarena@ubuntu:~/test1110$ gcc -o main.o myDisplay.o inputNum.o Caculator.o
+/usr/lib/gcc/i686-linux-gnu/4.6/../../../i386-linux-gnu/crt1.o: In function `_start':
+(.text+0x18): undefined reference to `main'
+collect2: ld 返回 1
+tarena@ubuntu:~/test1110$ ls
+Caculator.c  Caculator.s  inputNum.o  main.i       myDisplay.i
+Caculator.h  inputNum.c   inputNum.s  main.s       myDisplay.o
+Caculator.i  inputNum.h   _log1110    myDisplay.c  myDisplay.s
+Caculator.o  inputNum.i   main.c      myDisplay.h
+tarena@ubuntu:~/test1110$ gcc -o main.o myDisplay.o inputNum.o Caculator.o main
+gcc.real: 错误： main：没有那个文件或目录
+tarena@ubuntu:~/test1110$ gcc main -o main.o myDisplay.o inputNum.o Caculator.o
+gcc.real: 错误： main：没有那个文件或目录
+tarena@ubuntu:~/test1110$ gcc  main.o myDisplay.o inputNum.o Caculator.o -o main
+gcc.real: 错误： main.o：没有那个文件或目录
+tarena@ubuntu:~/test1110$ gcc -c main.s
+tarena@ubuntu:~/test1110$ gcc  main.o myDisplay.o inputNum.o Caculator.o -o main
+tarena@ubuntu:~/test1110$ 

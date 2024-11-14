@@ -1,0 +1,44 @@
+//1.将1个3*2的矩阵存入1个3*2的二维数组中，找出最大值和它的行下标，列下表，并输出
+//2.转置矩阵并输出
+#include<stdio.h>
+int main()
+{
+    int a[3][3],i,j,row,col,temp;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            scanf("%d",&a[i][j]);
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+            printf("%4d",a[i][j]);
+        printf("\n");
+    }
+    //创建输出二维数组
+    row=0;col=0;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            if (a[i][j]>a[row][col])
+                {
+                    row=i;
+                    col=j;
+                }
+    printf("max=a[%d][%d]\n",row,col,a[row][col]);
+    //查找最大值并输出下标
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+        {
+            if(i<=j)
+            {
+                temp=a[i][j];
+            a[i][j]=a[j][i];
+            a[j][i]=temp;
+            }
+        }
+    //转置
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+            printf("%4d",a[i][j]);
+        printf("\n");
+    }
+}

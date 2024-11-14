@@ -1,0 +1,32 @@
+body{margin:0;padding:0;font-size:12px;}
+.box{margin:20px;}
+.title{font-size:22px;font-weight:bold;text-align:center;}
+.list table{width:100%;margin-top:10px;border-collapse:collapse;;border:1px solid #B5D6E6;min-width:460px;}
+.list table th,.box table td{height:20px;border:1px solid #B5D6E6;}
+.list table th{background-color:#E8F6FC;font-weight:normal;}
+.list table td{text-align:center;}
+.list a{color:#444;text-decoration:none;}
+.list a:hover{text-decoration:underline;}
+.action{padding:10px 0;float:right;font-size:12px;}
+.action a{margin-left:10px;}
+.icon{display:inline-block;text-indent:16px;margin:2px;}
+.icon-edit{background:url(../images/edit.gif) no-repeat;}
+.icon-del{background:url(../images/del.gif) no-repeat;}
+.search{padding:10px 0;float:right;}
+.page{text-align:right;margin-top:10px;}
+.page a{margin-left:5px;}
+
+.fixed{width:500px;margin-left:auto;margin-right:auto;}
+.right{text-align:right;}
+.action .right{margin:10px 0;}
+
+.profile{background-color:#eee;}
+.profile .main{width:400px;margin:15px auto;padding:20px;border:1px solid #ccc;background-color:#fff;}
+.profile .main h1{font-size:20px;text-align:center;}
+.profile table{margin:0 auto;}
+.profile table th{font-weight:normal;text-align:right;}
+.profile table input[type="text"]{width:180px;border:1px solid #ccc;height:22px;padding-left:4px;}
+.profile table .button{background-color:#0099ff;border:1px solid #0099ff;color:#fff;width:80px;height:25px;margin:0 5px;cursor:pointer;}
+.profile table .td-btn{text-align:center;padding-top:10px;}
+.profile table td{font-size:14px;padding:5px 0;}
+.profile table select{border:1px solid #ccc;min-width:80px;height:25px;width:186px;}

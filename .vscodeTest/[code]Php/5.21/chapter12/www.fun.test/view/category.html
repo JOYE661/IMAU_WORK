@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>栏目管理 - <?=config('APP_TITLE')?></title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <?php require './view/common/top.html'; ?>
+    <div class="main container">
+      <div class="wp">
+        <div class="wp-l">
+          <div class="wp-l-edit">
+            <div class="wp-l-edit-title">编辑栏目</div>
+            <form method="post" action="?token=<?=TOKEN?>" enctype="multipart/form-data">
+              <table class="edit-cate">
+                <tr><th width="60">删除</th><th>排序</th><th>名称</th><th width="250">上传封面</th></tr>
+                <?php foreach ($category as $v): ?>
+                <tr class="hover">
+                  <td><input class="js-cate-disable" type="checkbox" name="del[]" value="<?=$v['id']?>"></td>
+                  <td class="edit-cate-sort"><input type="text" name="save[<?=$v['id']?>][sort]" value="<?=$v['sort']?>"></td>
+                  <td><input type="text" name="save[<?=$v['id']?>][name]" value="<?=htmlspecialchars($v['name'])?>" required></td>
+                  <td class="edit-cate-file">
+                    <?php if ($v['cover']): ?>
+                      <img src="./uploads/category/<?=$v['cover']?>"><label><input class="js-cate-ck" type="checkbox" name="del_cover[]" value="<?=$v['id']?>">删除</label>
+                    <?php endif; ?>
+                    <input type="file" name="save_cover[<?=$v['id']?>]">
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+                <tr class="hover hide js-cate-new">
+                  <td><span class="edit-cate-cancel js-cate-cancel">[取消]</span></td>
+                  <td class="edit-cate-sort"><input type="text" name="add[_ID_][sort]" disabled></td>
+                  <td><input type="text" name="add[_ID_][name]" disabled required></td>
+                  <td class="edit-cate-file"><input type="file" name="add_cover[_ID_]" disabled></td>
+                </tr>
+                <tr><td class="edit-cate-add" colspan="4"><span class="js-cate-add"><i>添加栏目</i></span></td></tr>
+                <tr><td class="edit-cate-act" colspan="4"><input class="ui-btn" type="submit" value="提交修改"></td></tr>
+              </table>
+            </form>
+          </div>
+        </div>
+        <?php require './view/common/slide.html'; ?>
+      </div>
+    </div>
+    <?php require './view/common/footer.html'; ?>
+  </body>
+</html>

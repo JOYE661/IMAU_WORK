@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?=$id ? '编辑' : '发布'?>内容 - <?=config('APP_TITLE')?></title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <?php require './view/common/top.html'; ?>
+    <div class="main container">
+      <div class="wp">
+        <div class="wp-l">
+          <div class="wp-l-subject"><a href="#"><?=$id ? '编辑': '发布'?><?=config('APP_NAV')[$type]?></a></div>
+          <div class="wp-l-post">
+            <form method="post" action="?id=<?=$id?>&type=<?=$type?>&token=<?=TOKEN?>" enctype="multipart/form-data">
+              <p>所属栏目：
+                <select name="cid">
+                  <option value="0">- 未选择 -</option>
+                  <?php foreach ($category as $v): ?>
+                    <option value="<?=$v['id']?>" <?=($post['cid']==$v['id']) ? 'selected' : ''?>><?=$v['name']?></option>
+                  <?php endforeach; ?>
+                </select>
+              </p>
+              <?php if ($type=='pic'): ?>
+              <p>上传图片：</p>
+              <ul>
+                <li><input type="file" name="pic[]" <?=$id ? '' : 'required'?>><i class="js-post-add">[+]</i><i class="js-post-del">[-]</i></li>
+              </ul>
+              <?php if(!empty($atch)): ?>
+              <p>已上传图片：</p>
+              <ul class="wp-l-post-pic">
+                <?php foreach($atch as $v): ?>
+                  <li><a href="./uploads/picture/<?=$v['content']?>" target="_blank"><img src="./uploads/picture/<?=$v['content']?>"></a><label><input class="js-post-ck" type="checkbox" name="del[]" value="<?=$v['id']?>">删除</label></li>
+                <?php endforeach; ?>
+              </ul>
+              <?php endif; ?>
+              <?php endif; ?>
+              <?php if($type == 'video'): ?>
+              <p>链接视频：<span>（支持优酷、腾讯、爱奇艺、bilibili等主流视频网站）</span></p>
+              <ul>
+                <?php foreach (($atch ?: [['id' => 0, 'content' => '']]) as $v): ?>
+                  <li><input type="text" name="video[]" value="<?=htmlspecialchars($v['content'])?>" placeholder="视频嵌入代码" required><i class="js-post-add">[+]</i><i class="js-post-del">[-]</i></li>
+                <?php endforeach; ?>
+              </ul>
+              <?php endif; ?>
+              <p>文字内容：</p>
+              <textarea class="wp-l-post-text" name="content" placeholder="1000个字以内"><?=htmlspecialchars($post['content'])?></textarea>
+              <div class="wp-l-post-act"><input class="ui-btn" type="submit" value="<?=$id ? '编辑' : '发布'?>"></div>
+              <input type="hidden" name="atch_max" value="<?=config('APP_ATTACHMENT_MAX')?>" disabled>
+            </form>
+          </div>
+        </div>
+        <?php require './view/common/slide.html'; ?>
+      </div>
+    </div>
+    <?php require './view/common/footer.html'; ?>
+  </body>
+</html>

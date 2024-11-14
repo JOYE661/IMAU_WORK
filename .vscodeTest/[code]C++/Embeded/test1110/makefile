@@ -1,0 +1,9 @@
+OBJ= main.o myDisplay.o inputNum.o Caculator.o
+TARGET = main
+CFLAGS = -Wall -g
+$(TARGET):$(OBJ)
+	$(CC) $^ -o $@ $(CFLAGS)
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+clean:
+	rm $(OBJ) $(TARGET)

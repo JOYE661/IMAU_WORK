@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width:300px;
+				background-color:gray;
+				margin:50px auto;
+				padding: 15px;
+			}
+			#box p:nth-child(3){
+				text-align:right;
+				cursor: pointer;
+			}
+			#color input{
+				width:35px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <p id="para" onclick="change()">点我试试</p>
+		<script>
+			function change(){
+				var oP=document.getElementById("para")
+				oP.align="right";
+				oP.innerHTML="通过DOM操作元素";
+				oP.style.color="rgb(255,0,0)";
+				oP.style.fontSize="40px";
+			}
+		</script> -->
+		<img src="image/南瓜灯off.jpg" id="image" onclick="light()">
+		<script>
+			var f=0;
+			function light(){
+				var oImg=document.getElementById("image");
+				//alert(oImg.src.length);
+				if(oImg.src.indexOf("off")!=-1)
+				{
+					oImg.src="image/南瓜灯on.jpg";
+					//f=1;
+				}
+				else{
+					oImg.src="image/南瓜灯off.jpg";
+					//f=0;
+				}
+			}
+		</script>
+		<div id="box">
+			<div id="color">
+				红色：<input type="text" class="col">
+				绿色：<input type="text" class="col">
+				蓝色：<input type="text" class="col">
+			</div>
+			<input type="button" value="背景颜色" onclick="bgcolor()">
+			<p id="para1">内蒙古农业大学是一所以农林为主，以草原畜牧业为特色，具有农、工、理、经、管、文、法、艺等8个学科门类的多科性大学，具备培养高职高专、学士、硕士及博士的完整高等教育体系。2001年成为国家西部大开发“一省一校”重点支持建设的大学，2012年成为国家林业局（现国家林业和草原局）和自治区人民政府“省部共建”高校，2013年进入国家“中西部高等教育振兴计划”支持院校行列。</p>
+			<p id="para2"onclick="change()">收缩</p>
+		</div>
+		<script>
+			function bgcolor(){
+				var obox=document.getElementById("box");
+				var oColorbox=document.getElementById("color");
+				var oInput=oColorbox.getElementsByClassName("col");
+				var r=oInput[0].value;
+				var g=oInput[1].value;
+				var b=oInput[2].value;
+// 				var r=parseInt(Math.random()*256);
+// 				var g=parseInt(Math.random()*256);
+// 				var b=parseInt(Math.random()*256);
+				obox.style.backgroundColor="rgb("+r+","+g+","+b+")";
+			}
+			function change(){
+				var oP1=document.getElementById("para1");
+				var oP2=document.getElementById("para2");
+				if(oP2.innerHTML=="收缩"){
+					oP1.innerHTML="内蒙古农业大学是一所以农林为主....";
+					oP2.innerHTML="展开";
+				}
+				else{
+					oP1.innerHTML="内蒙古农业大学是一所以农林为主，以草原畜牧业为特色，具有农、工、理、经、管、文、法、艺等8个学科门类的多科性大学，具备培养高职高专、学士、硕士及博士的完整高等教育体系。2001年成为国家西部大开发“一省一校”重点支持建设的大学，2012年成为国家林业局（现国家林业和草原局）和自治区人民政府“省部共建”高校，2013年进入国家“中西部高等教育振兴计划”支持院校行列。";
+					oP2.innerHTML="收缩";
+				}
+			}
+		</script>
+	</body>
+</html>

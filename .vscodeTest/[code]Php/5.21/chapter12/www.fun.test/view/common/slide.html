@@ -1,0 +1,25 @@
+<div class="wp-r js-slide">
+  <div class="wp-r-post">
+    <div class="wp-r-post-w">
+      <div class="wp-r-post-btn">发布</div>
+      <div class="wp-r-post-b">
+        <a class="wp-r-post-bl" href="post.php?type=pic">趣图</a>
+        <a class="wp-r-post-bn" href="post.php?type=text">趣文</a>
+        <a class="wp-r-post-br" href="post.php?type=video">视频</a>
+      </div>
+    </div>
+  </div>
+  <div class="wp-r-cate">
+    <div class="wp-r-cate-top">栏目推荐<?php if(IS_ADMIN): ?><a class="wp-r-cate-adm" href="category.php">[编辑]</a><?php endif; ?></div>
+    <div class="wp-r-cate-img">
+      <?php foreach ($category as $k => $v): if ($v['cover']): ?>
+        <a href="./?cid=<?=$v['id']?>" title="<?=$v['name']?>"><img src="./uploads/category/<?=$v['cover']?>"></a>
+      <?php endif; endforeach; ?>
+    </div>
+    <div class="wp-r-cate-lnk">
+      <?php foreach ($category as $k => $v): if (!$v['cover']): ?>
+        <a href="./?cid=<?=$v['id']?>"><?=$v['name']?></a>
+      <?php endif; endforeach; ?>
+    </div>
+  </div>
+</div>

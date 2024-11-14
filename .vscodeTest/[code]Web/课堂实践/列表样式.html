@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="awesome/css/font-awesome.css" rel="stylesheet">
+		<style>
+			#navlist li{
+				background-color: aliceblue;
+				list-style-position: inside;
+				/* list-style-image: url(img/03.jpg); */
+				list-style-type: none;
+			}
+			.fa-user-circle{
+				color: red;
+			}
+			table,td{
+				border:1px solid red;
+				/* border-collapse: collapse; */
+				border-spacing:10px;
+			}
+			table{
+				width: 500px;
+				height: 200px;
+			}
+			tr:nth-child(odd){
+				background: yellow;
+			}
+			tr:nth-child(even){
+				background: green;
+			}
+			tr:nth-child(1){
+				background: red;
+			}
+			tr:first-child{
+				background: #00FFFF;
+			}
+			tr:last-child{
+				background:greenyellow
+			}
+			#navlist li:hover{
+				background:yellow;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="navlist">
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i>html</li>
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i></i>CSS</li>
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i>JavaScript</li>
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i>JQuery</li>
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i>Ajax</li>
+		<li><i class="fa fa-user-circle" aria-hidden="true"></i>移动端</li>
+		</ul>
+		<table>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr><tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr><tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </table>
+	</body>
+</html>

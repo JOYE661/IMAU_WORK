@@ -1,0 +1,349 @@
+tarena@ubuntu:~$ cd test1117
+tarena@ubuntu:~/test1117$ vim test1_1.c
+tarena@ubuntu:~/test1117$ vim test1_2.c
+tarena@ubuntu:~/test1117$ vim test1_2.c
+tarena@ubuntu:~/test1117$ gcc test1_2.c -o test1_2
+tarena@ubuntu:~/test1117$ ./test1_2
+12345tarena@ubuntu:~/test1117$ cat test1_2.c
+#include<stdio.h>
+int main(){
+    int *pt;
+    int arr[5]={1,2,3,4,5};
+    int i;
+    for(i=0;i<5;i++){
+        pt=arr+i;
+        printf("%d",*pt);
+    }
+    return 0;
+}
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ vim test1_3.c
+tarena@ubuntu:~/test1117$ gcc test1_3.c -o test1_3
+test1_3.c: 在函数‘main’中:
+test1_3.c:10:14: 错误： ‘s1’未声明(在此函数内第一次使用)
+test1_3.c:10:14: 附注： 每个未声明的标识符在其出现的函数内只报告一次
+test1_3.c:16:24: 错误： 在非结构或联合中请求成员‘p2’
+tarena@ubuntu:~/test1117$ vim test1_3.c
+tarena@ubuntu:~/test1117$ gcc test1_3.c -o test1_3
+tarena@ubuntu:~/test1117$ ./test1_3
+202101,jo1,60
+202102,jo2,70
+202103,jo3,80
+tarena@ubuntu:~/test1117$ cat test1_3.c
+#include<stdio.h>
+typedef struct{
+    int num;
+    char name[20];
+    int grade;
+}stu;
+int main(){
+    stu sl={202101,"jo1",60};
+    stu s[2]={{202102,"jo2",70},{202103,"jo3",80}};
+    stu *p1=&sl;
+    stu *p2;
+    printf("%d,%s,%d\n",p1->num,p1->name,p1->grade);
+    int i=0;
+    for(i=0;i<2;i++){
+    p2=s+i;
+    printf("%d,%s,%d\n",p2->num,p2->name,p2->grade);
+    }
+    return 0;
+}
+
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ vim test1_4.c
+tarena@ubuntu:~/test1117$ gcc test1_4.c -o test1_4
+/usr/lib/gcc/i686-linux-gnu/4.6/../../../i386-linux-gnu/crt1.o: In function `_start':
+(.text+0x18): undefined reference to `main'
+collect2: ld 返回 1
+tarena@ubuntu:~/test1117$ vim test1_4.c
+tarena@ubuntu:~/test1117$ gcc test1_4.c -o test1_4
+tarena@ubuntu:~/test1117$ ./test1_4
+world
+tarena@ubuntu:~/test1117$ cat test1_4
+ELF��4@4 	(44�4�  TT�T�������
+                                                                 ((�(���hh�h�DDP�td�����44Q�tdR�td����/lib/ld-linux.so.2GNUGNU;��L1��!]�z�^�d�Œ  �K��) B:��__gmon_start__libc.so.6_IO_stdin_us^�����k_failputchar__libc_start_mainGLIBC_2.0GLIBC_2.4ii
+            �S��[�����������t�9���?�[��5���%���%�h������%��������h������%
+  �h�����1�^�����PTRhP�h��QVh4���������������������U��S���=�u?��� ��������9�s�����������9�r�����[]Ít&��'U�����$���t���t	�$$����ÐU�������0e��D$,1��D$hell�D$o wo�D$ rld�D$$�D$(�D$�D$�D$�%�D$�T$ЉD$�D$����$������D$�|$
+~��$
+�������T$,e3t�n����Ð�����������UWVS�i��
+                                         ���l$0�� ���������� ���)�����t)1��������������Ë$Ð���������U��S�������t��f����Ћ���u���[]Ð�S��[��_����[�;0����L����p0��������������zR
+                                           � ,���F
+                                                      J
+                                                       tx?;*2$"@
+��                                                                �����B
+   8`����a�A
+               �A�A�N0JA�A
+                                 ��A�������������������
+�����o��,�́                                                  ��
+h
+ �� ؂Ђ���o�����o���o��(�F�V�f�v�GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3.symtab.strtab.shstrtab.interp.note.ABI-tag.note.gnu.build-id.gnu.hash.dynsym.dynstr.gnu.version.gnu.version_r.rel.dyn.rel.plt.init.text.fini.rodata.eh_frame_hdr.eh_frame.ctors.dtors.jcr.dynamic.got.got.plt.data.bss.commentT�T#h�h 1���$D���o��� N
+                                       ́�`V,�,h^���o���
+                                                                  k���o���0z	Ђ��	؂� 
+                    ����.�0�0P����
+                                              �����������4����������$�$�(�(�����������0*B�� -	T�h�����́,�����Ђ	
+��
+   0�
+����������$�(���������
+ ������4��Y �f�s ��������a�($�5��
+        crtstuff.c__CTOR_LIST____DTOR_LIST____JCR_LIST____do_global_dtors_auxcompleted.6159dtor_idx.6161frame_dummy__CTOR_END____FRAME_END____JCR_END____do_global_ctors_auxtest1_4.c__init_array_end_DYNAMIC__init_array_start_GLOBAL_OFFSET_TABLE___libc_csu_fini__i686.get_pc_thunk.bxdata_start_edata_fini__stack_chk_fail@@GLIBC_2.4__DTOR_END____data_start__gmon_start____dso_handle_IO_stdin_used__libc_start_main@@GLIBC_2.0__libc_csu_initputchar@@GLIBC_2.0_end_start_fp_hw__bss_startmain_Jv_RegisterClasses_inittarena@ubuntu:~/test1117$ 
+tarena@ubuntu:~/test1117$ cat test1_4.c
+#include<stdio.h>
+int main(){
+    char a[20]={"hello world"};
+    char *p;
+    p=a;
+    int i;
+    for(i=6;i<11;i++){
+        p=a+i;
+        printf("%c",*p);
+    }
+    printf("\n");
+    return 0;
+}
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ vim test3_1.c
+tarena@ubuntu:~/test1117$ vim test3_2.c
+tarena@ubuntu:~/test1117$ vim stu.h
+tarena@ubuntu:~/test1117$ vim test3_3.c
+tarena@ubuntu:~/test1117$ makefile
+makefile: command not found
+tarena@ubuntu:~/test1117$ vim makefile
+tarena@ubuntu:~/test1117$ vim test4.c
+tarena@ubuntu:~/test1117$ gcc test4.c -o test4
+tarena@ubuntu:~/test1117$ ./test4 5+8
+段错误 (核心已转储)
+tarena@ubuntu:~/test1117$ ./test4 5 + 8
+5+8=13.000000
+tarena@ubuntu:~/test1117$ ./test4 9 / 3
+9/3=3.000000
+tarena@ubuntu:~/test1117$ cat test4.c
+#include<stdio.h>
+int main(int argc,char *argv[]){
+    int i;
+    int a=atoi(argv[1]);
+    char c=argv[2][0];
+    int b=atoi(argv[3]);
+    double result;
+    switch(c){
+        case '+':
+            result=a+b;
+            printf("%d+%d=%lf\n",a,b,result);
+            break;
+        case '-':
+            result=a-b;
+            printf("%d-%d=%lf\n",a,b,result);
+            break;
+        case '*':
+            result=a/b;
+            printf("%d*%d=%lf\n",a,b,result);
+            break;
+        case '/':
+            result=a/b;
+            printf("%d/%d=%lf\n",a,b,result);
+            break;
+        default:
+            printf("error\n");
+            break;
+    }
+    return 0;
+}
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ vim makefile
+tarena@ubuntu:~/test1117$ makefile
+makefile: command not found
+tarena@ubuntu:~/test1117$ make
+make: *** 没有规则可以创建“test3_3.o”需要的目标“std.h”。 停止。
+tarena@ubuntu:~/test1117$ take
+No command 'take' found, did you mean:
+ Command 'tmake' from package 'tmake' (universe)
+ Command 'fake' from package 'fake' (universe)
+ Command 'rake' from package 'rake' (main)
+ Command 'toke' from package 'fcode-utils' (universe)
+ Command 'make' from package 'make' (main)
+ Command 'cake' from package 'cakephp-scripts' (universe)
+take: command not found
+tarena@ubuntu:~/test1117$ vim makefile
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_3.o test3_3.c
+In file included from test3_3.c:2:0:
+stu.h:8:17: 错误： 未知的类型名‘stu’
+stu.h:9:14: 错误： 未知的类型名‘stu’
+test3_3.c: 在函数‘main’中:
+test3_3.c:4:5: 错误： 未知的类型名‘stu’
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:5:5: 错误： expected ‘,’ or ‘;’ before ‘sort_grade’
+test3_3.c:8:36: 错误： 在非结构或联合中请求成员‘sno’
+test3_3.c:8:45: 错误： 在非结构或联合中请求成员‘name’
+test3_3.c:8:55: 错误： 在非结构或联合中请求成员‘grade’
+make: *** [test3_3.o] 错误 1
+tarena@ubuntu:~/test1117$ vim test3_1.c
+tarena@ubuntu:~/test1117$ vim test3_2.c
+tarena@ubuntu:~/test1117$ vim test3_3.c
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_3.o test3_3.c
+In file included from test3_3.c:2:0:
+stu.h:8:17: 错误： 未知的类型名‘stu’
+stu.h:9:14: 错误： 未知的类型名‘stu’
+test3_3.c: 在函数‘main’中:
+test3_3.c:4:5: 错误： 未知的类型名‘stu’
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[0]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[1]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[2]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[3]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始化带花括号 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:4:5: 警告： 标量初始值设定项中有多余元素 [默认启用]
+test3_3.c:4:5: 警告： (在‘s[4]’的初始化附近) [默认启用]
+test3_3.c:5:5: 错误： expected ‘,’ or ‘;’ before ‘sort_grade’
+test3_3.c:8:36: 错误： 在非结构或联合中请求成员‘sno’
+test3_3.c:8:45: 错误： 在非结构或联合中请求成员‘name’
+test3_3.c:8:55: 错误： 在非结构或联合中请求成员‘grade’
+make: *** [test3_3.o] 错误 1
+tarena@ubuntu:~/test1117$ vim stu.h
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_3.o test3_3.c
+test3_3.c: 在函数‘main’中:
+test3_3.c:5:5: 错误： expected ‘,’ or ‘;’ before ‘sort_grade’
+make: *** [test3_3.o] 错误 1
+tarena@ubuntu:~/test1117$ vim test3_3.c
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_3.o test3_3.c
+make: *** 没有规则可以创建“test3”需要的目标“stu.o”。 停止。
+tarena@ubuntu:~/test1117$ vim makefile
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_2.o test3_2.c
+cc    -c -o test3_1.o test3_1.c
+test3_1.c:3:17: 错误： 未知的类型名‘std’
+make: *** [test3_1.o] 错误 1
+tarena@ubuntu:~/test1117$ vim test3_1.c
+tarena@ubuntu:~/test1117$ make
+cc    -c -o test3_1.o test3_1.c
+make: *** 没有规则可以创建“test3”需要的目标“stu.o”。 停止。
+tarena@ubuntu:~/test1117$ vim makefile
+tarena@ubuntu:~/test1117$ make
+gcc  test3_3.o test3_2.o test3_1.o -o test3
+tarena@ubuntu:~/test1117$ ./test3
+1 ,jo1 ,30 
+5 ,jo5 ,59 
+3 ,jo3 ,66 
+4 ,jo4 ,87 
+2 ,jo2 ,100 
+show students who under 60
+1 ,jo1 ,30 
+5 ,jo5 ,59 
+tarena@ubuntu:~/test1117$ cat test3_1.c
+#include<stdio.h>
+#include"stu.h"
+void sort_grade(stu s[]){
+    int i,j;
+    stu temp;
+    for(i=0;i<4;i++){
+        for(j=0;j<4-i;j++){
+            if(s[j].grade>s[j+1].grade){
+                temp=s[j];
+                s[j]=s[j+1];
+                s[j+1]=temp;
+            }
+        }
+    }
+}
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ cat test3_2.c
+#include<stdio.h>
+#include"stu.h"
+void display(stu s[]){
+    int i;
+    for(i=0;i<5;i++){
+        if(s[i].grade<60){
+            printf("%d ,%s ,%d \n",s[i].sno,s[i].name,s[i].grade);
+        }
+    }
+}
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ cat stu.h
+#ifndef _STU_H_
+#define _STU_H_
+typedef struct{
+    int sno;
+    char name[50];
+    int grade;
+}stu;
+void sort_grade(stu s[]);
+void display(stu s[]);
+#endif
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ cat test3_3.c
+#include<stdio.h>
+#include"stu.h"
+int main(){
+    stu s[5]={{1,"jo1",30},{2,"jo2",100},{3,"jo3",66},{4,"jo4",87},{5,"jo5",59}};
+    sort_grade(s);
+    int i;
+    for(i=0;i<5;i++){
+        printf("%d ,%s ,%d \n",s[i].sno,s[i].name,s[i].grade);
+    }
+    printf("show students who under 60\n");
+    display(s);
+    return 0;
+}
+
+tarena@ubuntu:~/test1117$ ^C
+tarena@ubuntu:~/test1117$ 
+

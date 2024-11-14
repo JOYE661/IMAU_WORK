@@ -1,0 +1,4 @@
+hello:test1.o
+	gcc test1.o -o hello
+test1:
+	gcc -c test1.c -o test1.o

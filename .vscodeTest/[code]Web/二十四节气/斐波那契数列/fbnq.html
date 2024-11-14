@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>请输入一个年限</p>
+		<input type="text" id="number1">
+		<input type="button" value="计算羊增长数" id="ok" onclick="fun()">
+		<input type="text" id="number2">
+		<script>
+			function fun()
+			{
+				var a = 0, b = 0, c = 0, i,m=0;
+				var n=document.getElementById("number1").value;
+				a = b = 1;
+				for (i = 1; i <=(n-1)/0.5 ; i++){
+					c = a + b;
+					m=c;
+					a = b;
+					b = c;
+				}
+				c = a + b;
+				m=c;
+				document.getElementById("number2").value=m;
+			}
+			
+		</script>
+	</body>
+</html>

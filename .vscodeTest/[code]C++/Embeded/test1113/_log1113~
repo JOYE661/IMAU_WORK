@@ -1,0 +1,83 @@
+tarena@ubuntu:~$ cd test1113
+tarena@ubuntu:~/test1113$ vim p5.c
+tarena@ubuntu:~/test1113$ gcc p5.c -o p5
+tarena@ubuntu:~/test1113$ ./p5 IBM-PC COMPUTER
+3
+IBM-PC
+COMPUTER
+tarena@ubuntu:~/test1113$ cat p5.c
+#include<stdio.h>
+int main(int argc,char* argv[]){
+    int i;
+    printf("%d\n",argc);
+    for(i=1;i<argc;i++){
+        printf("%s\n",argv[i]);
+    }
+    return 0;
+}
+
+tarena@ubuntu:~/test1113$ vim p6.c
+tarena@ubuntu:~/test1113$ gcc p6.c -o p6
+p6.c: 在函数‘main’中:
+p6.c:9:5: 警告： 格式 ‘%n’ expects argument of type ‘int *’, but argument 2 has type ‘int’ [-Wformat]
+tarena@ubuntu:~/test1113$ vim p6.c
+tarena@ubuntu:~/test1113$ gcc p6.c -o p6
+tarena@ubuntu:~/test1113$ ./p6 10
+sum=55
+tarena@ubuntu:~/test1113$ cat p6.c
+#include<stdio.h>
+int main(int argc,char* argv[]){
+    int n,i,s=0;
+    n=atoi(argv[1]);
+    if(argc<2)
+        return 0;
+    for(i=0;i<=n;i++)
+        s+=i;
+    printf("sum=%d\n",s);
+    return 0;
+}
+
+tarena@ubuntu:~/test1113$ ls
+p5  p5.c  p6  p6.c
+tarena@ubuntu:~/test1113$ vim p1.c
+tarena@ubuntu:~/test1113$ gcc p1.c -o p1
+p1.c: 在函数‘main’中:
+p1.c:8:5: 警告： 格式 ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘long int *’ [-Wformat]
+p1.c:9:5: 警告： 格式 ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘long int *’ [-Wformat]
+tarena@ubuntu:~/test1113$ ./p1
+plz enter a num:
+56
+result1=-1076781848
+result2=-1076781848
+tarena@ubuntu:~/test1113$ ls
+p1  p1.c  p5  p5.c  p6  p6.c
+tarena@ubuntu:~/test1113$ cat p1.c
+#include<stdio.h>
+int main(){
+    long i;
+    long *p;
+    p=&i;
+    printf("plz enter a num:\n");
+    scanf("%ld",&i);
+    printf("result1=%ld\n",&*p);
+    printf("result2=%ld\n",&i);
+    return 0;
+}
+
+tarena@ubuntu:~/test1113$ vim p2.c
+tarena@ubuntu:~/test1113$ gcc p2.c -o p2
+p2.c: 在函数‘main’中:
+p2.c:9:11: 错误： ‘week’未声明(在此函数内第一次使用)
+p2.c:9:11: 附注： 每个未声明的标识符在其出现的函数内只报告一次
+tarena@ubuntu:~/test1113$ vim p2.c
+tarena@ubuntu:~/test1113$ gcc p2.c -o p2
+tarena@ubuntu:~/test1113$ ./p2
+Monday
+Tuseday
+Wensday
+Thursday
+Friday
+Saturday
+Sunday
+tarena@ubuntu:~/test1113$ 
+
