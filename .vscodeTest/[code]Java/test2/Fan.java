@@ -1,4 +1,4 @@
-package test2;
+//package test2;
 
 public class Fan{
 	final int SLOW=1;

@@ -11,3 +11,4 @@ a=float(list1[0])
 b=float(list1[-1])
 c=(a+b)/2
 print("max=",b,"min=",a,"avg=",c)
+

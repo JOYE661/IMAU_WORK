@@ -3,5 +3,34 @@
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "test1",
+            "request": "launch",
+            "mainClass": "test2.test1",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Class3_13HelloWorld",
+            "request": "launch",
+            "mainClass": "Class3_13HelloWorld",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": ""
+        }
+    ]
 }
