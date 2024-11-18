@@ -1,6 +1,6 @@
 //package test3;
 
-public class test {
+public class testJ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

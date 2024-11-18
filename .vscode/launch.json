@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "testJava",
+            "request": "launch",
+            "mainClass": "testJava",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "test1",
             "request": "launch",
             "mainClass": "test2.test1",
