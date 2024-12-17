@@ -14,7 +14,7 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
-            "compilerPath": "D:\\mingw64\\bin\\gcc.exe"
+            "compilerPath": "/Users/joye/Desktop/Document/mingw64/bin/gcc.exe"
         }
     ],
     "version": 4
