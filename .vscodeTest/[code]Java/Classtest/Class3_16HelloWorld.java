@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class Class3_16HelloWorld {
-
+// input 5 numbers and sort them then find the number wheir is in the array
 	public static void main(String[] args) 
 	{
 		Scanner input;
 		input=new Scanner(System.in);
-		// TODO Auto-generated method stub
+		
 		int[] arr;
 		arr=new int[5];
 		for(int i=0;i<arr.length;i++) {
@@ -21,7 +21,7 @@ public class Class3_16HelloWorld {
 		for(int x:arr) {
 			System.out.print(x+" ");
 		}
-		//开始查找
+		//start finding
 		System.out.println("Check:");
 		int check=input.nextInt();
 		int x=0;
@@ -35,7 +35,7 @@ public class Class3_16HelloWorld {
 				x=mid+1;
 			}
 			else {
-				System.out.println("下标为:"+mid);
+				System.out.println("Count:"+mid);
 				break;
 			}
 			

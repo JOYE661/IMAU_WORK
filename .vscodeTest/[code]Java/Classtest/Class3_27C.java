@@ -2,7 +2,7 @@ import java.util.*;
 public class Class3_27C {
 	
 	public static void main(String[] args) {
-	// 输入两个整数，显示他们的最大公约数
+	//input two integers and show their greatest common divisor
 	Scanner input=new Scanner(System.in);
 	int n,m;
 	n=input.nextInt();

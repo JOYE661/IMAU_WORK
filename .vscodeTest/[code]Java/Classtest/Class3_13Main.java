@@ -4,7 +4,7 @@ public class Class3_13Main {
 	public static void main(String[] args) {
 		Scanner input;
 		input=new Scanner(System.in);
-		// 输入一个三位数求每位数相加和
+		// input a number which is 3 digits then print the sum of each digit
 		while(input.hasNext()) {
 			int x=input.nextInt();
 			int a=x%10;

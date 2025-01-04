@@ -3,7 +3,7 @@ public class Class4_03Main4 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 三个数间找最大公约数
+		// three number find the max common divisor
 		int a=input.nextInt();
 		int b=input.nextInt();
 		int c=input.nextInt();

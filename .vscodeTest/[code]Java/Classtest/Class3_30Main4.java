@@ -3,7 +3,7 @@ public class Class3_30Main4 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输出(n,m)间的素数
+		//output the prime number between n and m
 		int m=input.nextInt();
 		int n=input.nextInt();
 		Prime(m,n);

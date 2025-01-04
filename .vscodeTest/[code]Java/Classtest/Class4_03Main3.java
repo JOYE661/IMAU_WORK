@@ -3,7 +3,7 @@ public class Class4_03Main3 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 求斐波那契数列数组法
+		// find fibonacci array
 		while(input.hasNext()) {
 			int n=input.nextInt();
 			long []arr;

@@ -1,10 +1,9 @@
 import java.util.Scanner;
 public class Class3_16Main2 {
-
+	//find the greatest common divisor from three numbers
 	public static void main(String[] args) {
 		Scanner input;
 		input=new Scanner(System.in);
-		// 找出三个数间的最大公约数
 		int a=input.nextInt();
 		int b=input.nextInt();
 		int c=input.nextInt();

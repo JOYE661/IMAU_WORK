@@ -3,7 +3,7 @@ public class Class3_30Main1 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输入N，输出N列金字塔
+		//input N then output N columns pyramid
 		int N=input.nextInt();
 		Print1(N);
 		

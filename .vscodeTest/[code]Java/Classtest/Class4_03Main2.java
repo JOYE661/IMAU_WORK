@@ -3,7 +3,7 @@ public class Class4_03Main2 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输出n内奇数和
+		// output odd number sum in n
 		int n=input.nextInt();
 		int sum=0;
 		for(int i=0;i<=n;i++) {

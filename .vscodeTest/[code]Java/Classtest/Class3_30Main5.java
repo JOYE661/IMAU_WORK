@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Class3_30Main5 {
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输入n个数，统计n个数间1-9出现的次数
+		// count the times of 1-9
 		int N=input.nextInt();
 		int[] arr;
 		int[] b;

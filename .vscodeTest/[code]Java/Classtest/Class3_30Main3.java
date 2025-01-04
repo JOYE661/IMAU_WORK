@@ -3,7 +3,7 @@ public class Class3_30Main3 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输入奇数，输出金字塔组合，最长行为N个*
+		//input a number of odd number then output pyramid which longest row is N
 		int N=input.nextInt();
 		Print1(N);
 		

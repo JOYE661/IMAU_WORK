@@ -2,7 +2,7 @@ import java.util.*;
 public class Class3_27B {
 
 	public static void main(String[] args) {
-		//输出2000到2020之间每年的天数，每五年换一行
+		//output the days of every year between 2000 and 2020 then change line every five years
 		int count=0;
 		Scanner input=new Scanner(System.in);
 		for(int i=2000;i<=2020;i++) {

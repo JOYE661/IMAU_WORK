@@ -1,9 +1,10 @@
 import java.util.Scanner;
+//input N then output N columns temp pyramid 
 public class Class3_30Main2 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 输入N，输出N列倒金字塔
+	
 		int N=input.nextInt();
 		Print1(N);
 		

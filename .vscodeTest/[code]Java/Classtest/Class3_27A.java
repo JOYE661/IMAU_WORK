@@ -2,19 +2,19 @@
 public class Class3_27A {
 
 	public static int add(int x,int y) {
-		//函数找错
+		//function find error
 		int s;
 		s=x+y;
 		return s;
 	}
 	public static int max(int x,int y) {
-		//函数找错
+		//function find error
 		int m=x;
 		if(m<y)m=y;
 		return m;
 	}
 	public static boolean isPrime(int x) {
-		//判断x是否为素数
+		//judge x is prime
 		int i;
 		for(i=2;i<x;i++) {
 			if(x%i==0)break;
@@ -25,7 +25,7 @@ public class Class3_27A {
 		return f;
 	}
 	public static int isYear(int year) {
-		//判断是否为闰年并输出天数
+		//judge is Runyear and output days
 		int day=0;
 		if(year%400==0||year%4==0&&year%100!=0) {
 			day=366;
@@ -36,7 +36,7 @@ public class Class3_27A {
 		return day;
 	}
 	public static int fun(int x,int y) {
-		//两个数找最大公约数
+		//find max common divisor
 		int n=0;
 		int min=x;
 		if(x>y)min=y;

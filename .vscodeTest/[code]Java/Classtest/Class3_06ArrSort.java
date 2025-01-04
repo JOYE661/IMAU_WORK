@@ -3,9 +3,10 @@ public class Class3_06ArrSort{
 
 	public static void main(String[] args) 
 	{
+		// input 5 number from keyboard and sort then print change count
 		Scanner input;
 		input=new Scanner(System.in);
-		// Ñ¡ÔñÅÅĞò5¸öÊı
+		
 		int[] arr;
 		arr=new int[5];
 		for(int i=0;i<arr.length;i++) {

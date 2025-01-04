@@ -1,10 +1,9 @@
 import java.util.Scanner;
 public class Class3_20Main3 {
-
+	//output the prime number between n and m
 	public static void main(String[] args) {
 		Scanner input;
 		input=new Scanner(System.in);
-		// 输出n到m之间所有的素数
 		int N;
 		int m;
 		int n;

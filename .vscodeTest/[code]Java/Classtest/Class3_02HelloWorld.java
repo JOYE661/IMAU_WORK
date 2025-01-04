@@ -1,8 +1,7 @@
 import java.util.Scanner;
 public class Class3_02HelloWorld {
-//≤›∏Â÷Ω
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// scanner number from keyboard
 		Scanner input;
 		input=new Scanner(System.in);
 		int a=input.nextInt();

@@ -1,10 +1,9 @@
 import java.util.Scanner;
 public class Class3_16Main3 {
-
+	// input 10 numbers and sort them from small to big
 	public static void main(String[] args) {
 		Scanner input;
 		input=new Scanner(System.in);
-		//  冒泡排序十个数并输出
 		int[] arr;
 		arr=new int[10];
 		for(int i=0;i<arr.length;i++) {

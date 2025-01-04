@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class Class3_13HelloWorld {
 
 	public static void main(String[] args) {
+		// input 5 numbers from keyboard and sort them	
 		Scanner input;
 		input=new Scanner(System.in);
-		// TODO Auto-generated method stub
 		int[] arr;
 		arr=new int[5];
 		for(int i=0;i<arr.length;i++) {

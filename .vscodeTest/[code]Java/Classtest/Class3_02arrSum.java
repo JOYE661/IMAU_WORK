@@ -2,9 +2,10 @@ import java.util.Scanner;
 public class Class3_02arrSum {
 
 	public static void main(String[] args) {
+		//sum 5 numbers
 		Scanner input;
 		input=new Scanner(System.in);
-		//从键盘输入5个整数 求和
+		
 		int[] arr;
 		arr=new int[5];
 		int sum=0;

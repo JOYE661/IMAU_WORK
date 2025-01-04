@@ -3,7 +3,7 @@ public class Class4_03Main1 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		// 方法实现1!+2!+...+n!
+		// function to calculate 1!+2!+...+n!
 		int n=input.nextInt();
 		int sum=0;
 		int s;
