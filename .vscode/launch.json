@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "demo.Main",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.demo.crm.Main",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.demo.crm.Main",
+            "projectName": "org.example-crm"
+        },
+        {
+            "type": "java",
             "name": "testJava",
             "request": "launch",
             "mainClass": "testJava",
