@@ -6,6 +6,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fan",
+            "request": "launch",
+            "mainClass": "Fan"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "demo.Main",
