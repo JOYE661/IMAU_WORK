@@ -127,22 +127,26 @@ def run_1688(type_name,type_categories,start, count, interval=10000, headless=Fa
             #page.route("**/*.{png,jpg,jpeg}", lambda route: route.abort())
             page.goto('https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8', wait_until="load")
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(2000)
+            page.wait_for_timeout(1000)
 
-            yield page                                                   #———————— yield 暂停一级页面等待回调  //将当前页面对象返回给调用者，并暂停函数执行，保持状态以便后续继续执行。
-
+            yield page                                                  #———————— yield 暂停一级页面等待回调  //将当前页面对象返回给调用者，并暂停函数执行，保持状态以便后续继续执行。
+            ###########################################
             page.goto(
                 'https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8',
                 wait_until="load")
+    
+            page.get_by_text(type_name).click() 
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(1000)
             page.get_by_text(type_name).click()                         #————————点击type_name:马来西亚
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(1000)
             ###########################################修改于2025.2.11//增加点击分类
+            #page.get_by_text("更多类目").first.click()
+            #page.wait_for_timeout(3000)
             page.get_by_text(type_categories).click()                   #————————点击tge_categories:童装
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(1000)
 
 
 
@@ -437,9 +441,18 @@ def run_1688(type_name,type_categories,start, count, interval=10000, headless=Fa
     yield result_data
 
 if __name__ == "__main__":
-    run_exec = run_1688(type_name="马来西亚" ,type_categories="童装", start=0, count=30, interval=10*1000, headless=False)
-    page = next(run_exec)
-    page.wait_for_timeout(2*1000)
-    ret_data = next(run_exec)
-    run_exec = None
-    log.info(f"爬虫结果为： {json.dumps(ret_data, ensure_ascii=False) }")
+    name=["日本","韩国","马来西亚"]
+    for type_name in name:
+        run_exec = run_1688(type_name=type_name, type_categories="童装",start=0, count=10, interval=10*1000, headless=False)
+        page = next(run_exec)
+        page.wait_for_timeout(2*1000)
+        ret_data = next(run_exec)
+        run_exec = None
+        log.info(f"爬虫结果为： {json.dumps(ret_data, ensure_ascii=False) }")
+
+    #run_exec = run_1688(type_name="马来西亚" ,type_categories="童装", start=0, count=30, interval=10*1000, headless=False)
+    #page = next(run_exec)
+    #page.wait_for_timeout(2*1000)
+    #ret_data = next(run_exec)
+    #run_exec = None
+    #log.info(f"爬虫结果为： {json.dumps(ret_data, ensure_ascii=False) }")
