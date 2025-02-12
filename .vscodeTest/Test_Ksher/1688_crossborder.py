@@ -118,32 +118,32 @@ def run_1688(type_name, start, count, interval=10000, headless=False):
     result_data = []
     all_fail_urls = []
     custom_user_agent = random.choice(user_agents)
-    log.info(f"当前UA：{custom_user_agent}")
-    with sync_playwright() as p:
-            browser_type = p.chromium
-            browser = browser_type.launch(headless=headless)
-            context = browser.new_context(user_agent=custom_user_agent)
-            page = context.new_page()
+    log.info(f"当前UA：{custom_user_agent}")                         
+    with sync_playwright() as p:                                        #———————— 启动Playwright，赋值为p  //该对象会在进入 with 代码块时启动 Playwright，并在退出 with 代码块时自动关闭 Playwright。
+            browser_type = p.chromium                                   #———————— 启动浏览器
+            browser = browser_type.launch(headless=headless)        
+            context = browser.new_context(user_agent=custom_user_agent) #———————— 模拟真实用户创建浏览器上下文
+            page = context.new_page()                                   #———————— 创建浏览器页面
             #page.route("**/*.{png,jpg,jpeg}", lambda route: route.abort())
             page.goto('https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8', wait_until="load")
             page.wait_for_load_state('domcontentloaded')
             page.wait_for_timeout(2000)
 
-            yield page
+            yield page                                                   #———————— yield 暂停一级页面等待回调  //将当前页面对象返回给调用者，并暂停函数执行，保持状态以便后续继续执行。
 
             page.goto(
                 'https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8',
                 wait_until="load")
             page.wait_for_load_state('domcontentloaded')
             page.wait_for_timeout(3000)
-            page.get_by_text(type_name).click()
+            page.get_by_text(type_name).click()                         #————————点击type_name:马来西亚?
             page.wait_for_load_state('domcontentloaded')
             page.wait_for_timeout(3000)
             listitem = page.get_by_role("listitem").filter(has_text="商品详情").all()
-            last_count = start + count
-            current_count = len(listitem)
-            log.info(current_count)
-            has_end= 0
+            last_count = start + count                                  #————————page.get_by_role("listitem")//使用 Playwright 的 get_by_role 方法查找页面中所有具有 listitem 角色（role）的元素
+            current_count = len(listitem)                               #————————.filter(has_text="商品详情") //过滤出所有包含 "商品详情" 文本的元素
+            log.info(current_count)                                     #————————last_count 计算出的结束索引位置，即从 start 开始往后数 count 个商品项后的索引位置。
+            has_end= 0                                                  #————————current_count 计算出的当前索引位置，即当前已遍历的元素数量。
 
 
             def new_page_listener(detail_page):
