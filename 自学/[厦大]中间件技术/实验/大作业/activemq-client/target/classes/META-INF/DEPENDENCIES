@@ -1,0 +1,36 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+ActiveMQ :: Client
+
+
+From: 'Eclipse Foundation' (https://www.eclipse.org)
+
+  - Jakarta Messaging API (https://projects.eclipse.org/projects/ee4j.jms) jakarta.jms:jakarta.jms-api:jar:3.1.0
+    License: Eclipse Public License 2.0  (https://projects.eclipse.org/license/epl-2.0)
+    License: GNU General Public License, version 2 with the GNU Classpath Exception  (https://projects.eclipse.org/license/secondary-gpl-2.0-cp)
+
+
+From: 'FuseSource, Corp.' (http://fusesource.com/)
+
+  - hawtbuf (http://hawtbuf.fusesource.org/hawtbuf) org.fusesource.hawtbuf:hawtbuf:bundle:1.11
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'JmDNS' (http://jmdns.org/)
+
+  - JmDNS (http://jmdns.org) org.jmdns:jmdns:jar:3.5.9
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'QOS.ch' (http://www.qos.ch)
+
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:2.0.12
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+
+
+
+
