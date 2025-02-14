@@ -443,7 +443,7 @@ def run_1688(type_name,type_categories,start, count, interval=10000, headless=Fa
 if __name__ == "__main__":
     name=["日本","韩国","马来西亚"]
     for type_name in name:
-        run_exec = run_1688(type_name=type_name, type_categories="童装",start=0, count=10, interval=10*1000, headless=False)
+        run_exec = run_1688(type_name=type_name, type_categories="童装",start=0, count=1, interval=10*1000, headless=False)
         page = next(run_exec)
         page.wait_for_timeout(2*1000)
         ret_data = next(run_exec)

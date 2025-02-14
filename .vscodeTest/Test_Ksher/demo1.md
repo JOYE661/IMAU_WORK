@@ -6,6 +6,8 @@
 
 `python3 -m playwright codegen --target python -o 'autoTest.py' -b chromium https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8`
 
+`playwright codegen`
+
 #### with…as…语句
 
 Python 的 with…as… 语句，就像一个贴心的管家，负责照顾你的资源，让你不再担心忘记关闭文件、[网络连接](https://so.csdn.net/so/search?q=%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5&spm=1001.2101.3001.7020)或数据库事务等。这个管家在你进入“房间”时自动打开门，离开时帮你把门关上，真的是非常贴心！
