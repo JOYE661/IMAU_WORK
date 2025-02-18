@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #加入关联数据库一行
+    'common.apps.CommonConfig'
+    #'common.apps.CommonConfig' 告诉 Django ， CommonConfig 是 common/apps.py 文件中定义的一个应用配置的类。
+
 ]
 
 MIDDLEWARE = [
