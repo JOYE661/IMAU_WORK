@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.crm.biz.mapper.CompanyMapper">
-    <select id="findByUsername" resultType="Company">
+    <select id="findByname" resultType="Company">
         select *
         from company
         where name = #{name}
@@ -14,7 +14,7 @@
         from company limit #{first},#{pageSize}
     </select>
 
-    <update id="updateUser">
+    <update id="updateCompany">
         update company
         set password = #{password}
         where id = #{id}
