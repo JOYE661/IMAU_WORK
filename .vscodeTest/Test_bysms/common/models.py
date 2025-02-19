@@ -8,3 +8,6 @@ class Custom(models.Model):
     #联系电话
     address=models.CharField(max_length=200)
     #地址
+
+from django.contrib import admin
+admin.site.register(Custom)

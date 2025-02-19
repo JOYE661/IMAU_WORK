@@ -51,6 +51,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # admin界面语言本地化
+    #'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = "Test_bysms.urls"

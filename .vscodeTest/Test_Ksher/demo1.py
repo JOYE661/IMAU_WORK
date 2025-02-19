@@ -139,7 +139,7 @@ def run_1688(type1_class,type_name,type_categories,start, count, interval=10000,
             #page.locator('.type_class:has_text(type_name)').click() 
             page.locator(type1_class,has_text=type_name).click()
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(1000)
+            page.wait_for_timeout(3000)
             #page.locator('.type_class').get_by_text(type_name).click() 
             #page.locator('.type_class',name=type_name).click() 
             #page.get_by_text(type_name).click()                         #————————点击type_name:马来西亚
@@ -153,7 +153,7 @@ def run_1688(type1_class,type_name,type_categories,start, count, interval=10000,
             page.get_by_text(type_categories).click()                   #————————点击tge_categories:童装
             #page.locator(type2_role,has_text=type_categories).click()
             page.wait_for_load_state('domcontentloaded')
-            page.wait_for_timeout(1000)
+            page.wait_for_timeout(3000)
 
 
 

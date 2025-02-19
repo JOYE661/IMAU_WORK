@@ -8,13 +8,11 @@ python manage.py startapp sales
 
 所以，所谓 `路由` 就是指 ： 根据 HTTP请求的url路径， 设置 由哪个 函数来处理这个请求。
 
-
 首先我们需要创建数据库，执行如下命令
 
 ```
 python manage.py migrate
 ```
-
 
 现在Django知道了我们的 common 应用， 我们可以在项目根目录下执行命令
 
@@ -50,3 +48,23 @@ Running migrations:
 都需要再次运行 **python manage.py makemigrations common** 和 **python manage.py migrate** 命令，
 
 使数据库同步该修改结果
+
+
+Django提供了一个管理员操作界面可以方便的 添加、修改、删除你定义的 model 表数据。
+
+首先，我们需要创建 一个超级管理员账号。
+
+进入到项目的根目录，执行如下命令，依次输入你要创建的管理员的 登录名、email、密码。
+
+***python manage.py createsuperuser***
+
+```
+d:\projects\bysms>python manage.py createsuperuser
+Username (leave blank to use 'byhy'): byhy
+Email address: byhy@163.com
+Password:
+Password (again):
+Superuser created successfully.
+```
+
+注意密码至少8个字符。 这里，我们设置密码为 `88888888`
