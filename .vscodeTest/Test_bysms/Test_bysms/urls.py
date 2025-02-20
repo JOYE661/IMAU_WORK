@@ -20,9 +20,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 from sales.views import listorders,listorders1,listorders2
+# 静态文件服务
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    path('sales/',include('sales.urls')),   
-]
+    path('sales/',include('sales.urls')),  
+
+    path('api/mgr',include('mgr.urls')),  
+
+    
+]+  static("/", document_root="./z_dist")

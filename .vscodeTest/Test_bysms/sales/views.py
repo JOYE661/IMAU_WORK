@@ -11,14 +11,14 @@ def listorders2(request):
     return HttpResponse("下面是系统中所有的订单信息。。。我修院")
 
 
-from common.models import Custom
+from common.models import Customer
 
 def customDate(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
     # 每条表记录都是是一个dict对象，
     # key 是字段名，value 是 字段值
     # 返回一个 QuerySet 对象 ，包含所有的表记录
-    qs = Custom.objects.values()
+    qs = Customer.objects.values()
 
     # 检查url中是否有参数phonenumber
     ph =  request.GET.get('phonenumber',None)
@@ -71,7 +71,7 @@ th, td {
 '''
 def customList(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
-    qs = Custom.objects.values()
+    qs = Customer.objects.values()
 
     # 检查url中是否有参数phonenumber
     ph =  request.GET.get('phonenumber',None)
@@ -138,7 +138,7 @@ template = django_engine.from_string(html_template)
 
 def custom_List(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
-    qs = Custom.objects.values()
+    qs = Customer.objects.values()
 
     # 检查url中是否有参数phonenumber
     ph =  request.GET.get('phonenumber',None)

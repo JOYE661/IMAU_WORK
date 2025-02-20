@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Custom(models.Model):
+class Customer(models.Model):
     name=models.CharField(max_length=200)  #CharField:varchar
     #客户名称
     phonenumber=models.CharField(max_length=200)
@@ -10,4 +10,4 @@ class Custom(models.Model):
     #地址
 
 from django.contrib import admin
-admin.site.register(Custom)
+admin.site.register(Customer)
