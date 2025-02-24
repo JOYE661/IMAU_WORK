@@ -7,6 +7,6 @@ urlpatterns= [
     path('orders2/',views.listorders2),
 
     path('customDate/',views.customDate),
+    #path('customList/',views.customList),
     path('customList/',views.customList),
-    path('custom_List/',views.custom_List),
 ]

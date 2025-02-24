@@ -1,4 +1,6 @@
 ```
+django-admin startproject bysms
+
 python manage.py runserver 0.0.0.0:80
 ```
 
@@ -48,7 +50,6 @@ Running migrations:
 都需要再次运行 **python manage.py makemigrations common** 和 **python manage.py migrate** 命令，
 
 使数据库同步该修改结果
-
 
 Django提供了一个管理员操作界面可以方便的 添加、修改、删除你定义的 model 表数据。
 
