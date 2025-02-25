@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% block title %}
+    个人中心
+{% endblock %}
+
+{% block css %}
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title" style="width: 200px;margin: 10px auto">
+            <li class="layui-this">我的信息</li>
+            <li>修改信息</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show" style="width: 400px;margin: 0 auto">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                    </colgroup>
+
+                    <tbody>
+                    <tr>
+                        <td>id</td>
+                        <td>{{ my_info.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>昵称</td>
+                        <td>{{ my_info.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>手机号码</td>
+                        <td>{{ my_info.tel }}</td>
+                    </tr>
+                    <tr>
+                        <td>密码</td>
+                        <td>{{ my_info.password }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="layui-tab-item" style="width: 400px;margin: 0 auto">
+                <form class="layui-form" action="/my/" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">昵称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required lay-verify="required" placeholder="请输入昵称"
+                                   autocomplete="off" class="layui-input" value="{{ my_info.name }}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="tel" required lay-verify="required" placeholder="请输入手机号"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-inline">
+                            <input name="password1" style="margin-left: 30px" type="password" name="password" required
+                                   lay-verify="required" placeholder="请输入密码"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">重复密码</label>
+                        <div class="layui-input-inline">
+                            <input name="password2" style="margin-left: 30px" type="password" name="password" required
+                                   lay-verify="required" placeholder="请重复输入密码"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+
+            //…
+        });
+    </script>
+    <script>
+        //Demo
+        layui.use('form', function () {
+            var form = layui.form;
+
+            //监听提交
+            form.on('submit(formDemo)', function (data) {
+                {#layer.msg(JSON.stringify(data.field));#}
+
+                if ($('input[name="password1"]').val() != $('input[name="password2"]').val()){
+                    alert('两次密码不一致')
+                    return false;
+                }
+
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block title %}  {% endblock %}
+
+{% block css %}
+    <style>
+        body {
+            background-color: #E8E8E8;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;color: red;margin-top: 10px">以下为您推荐：</h1>
+    <div class="layui-fluid container" style="margin-top: 20px">
+        <div class="layui-row layui-col-space15">
+            {% for data in data_list %}
+                <div class="layui-col-sm6 layui-col-md4">
+                    <div class="layui-card">
+                        <div class="layui-card-header">收藏<span
+                                class="layui-badge layui-bg-cyan layuiadmin-badge">{{ data.star }}/月</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            浏览<span class="layui-badge layui-bg-cyan layuiadmin-badge">{{ data.see }}/月</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {% ifnotequal data.score 0 %}
+                                推荐指数<span class="layui-badge layui-bg-cyan layuiadmin-badge">{{ data.score }}/月</span>
+                            {% endifnotequal %}
+                        </div>
+                        <div class="layui-card-body  ">
+                            <p class="layuiadmin-big-font" style="color:#FF5722 ">{{ data.code }}</p>
+                            <p>
+                                <a hid="{{ data.id }}" target="_blank" href="{{ data.url }}" class="see layui-btn layui-btn-normal layui-btn-sm">{{ data.name }}</a>
+                                <span class="layuiadmin-span-color" style="color: #1E9FFF">
+                                        <i hid="{{ data.id }}" style="color: {% ifequal data.is_star 1 %} red {% else %} black{% endifequal %} ;margin-left: 10px"
+                                           class="star layui-inline layui-icon layui-icon-rate-solid"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $('.star').click(function () {
+            var hid = $(this).attr('hid')
+            $.ajax({
+                url: '{% url "star" %}',
+                dataType: 'json',
+                method: 'post',
+                //JSON.stringify(data.field)
+                //data: new FormData(  document.getElementById('submitNote') ),
+                data: {
+                    'hid': hid
+                },
+                success: function (data) {
+                    {#$('.star').css('color', data.color)#}
+                    alert(data.msg)
+                    location.reload()
+                }
+            });
+        })
+
+        $('.see').click(function () {
+            var hid = $(this).attr('hid')
+            $.ajax({
+                url: '{% url "see" %}',
+                dataType: 'json',
+                method: 'post',
+                //JSON.stringify(data.field)
+                //data: new FormData(  document.getElementById('submitNote') ),
+                data: {
+                    'hid': hid
+                },
+
+            });
+        })
+    </script>
+{% endblock %}

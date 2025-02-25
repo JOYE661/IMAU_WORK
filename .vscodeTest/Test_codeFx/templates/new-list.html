@@ -1,0 +1,16 @@
+<div class="newlist" style="background-color:white;width: 1200px;margin: 10px auto">
+        {% for foo in newlist %}
+            <div class="haha" style="height: 100px;width: 900px;vertical-align:middle;
+            border: 1px solid black;border-radius: 10px;margin-bottom: 10px;margin: 10px auto">
+                <div class="info"
+                     style="width: 640px;height: 100px;display: inline-block;vertical-align:middle;position: relative">
+
+                    <p style="margin:10px 20px;height: 20px;line-height: 20px">{{ foo.title }}</p>
+                    <div style="position: absolute;top: 40px">
+                        <span style="margin-left: 25px;color: #e84118">发布时间：{{ foo.date }}</span>
+                        <span style="margin-left: 25px;color: #e84118">来源：{{ foo.src }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>

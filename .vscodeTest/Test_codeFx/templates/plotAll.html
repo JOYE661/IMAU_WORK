@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+{% block title %}  {% endblock %}
+
+{% block css %}
+    <style>
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="layui-fluid" style="width: 90%;margin: 10px auto">
+
+{#        <div class="layui-row layui-col-space15">#}
+{#            <div class="layui-col-xs12">#}
+{#                <div class="layui-card">#}
+{#                    <div class="layui-card-header"> 每日股票个数</div>#}
+{#                    <div class="layui-card-body">#}
+{#                        <div id="container1" style="height: 400px"></div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs12">
+                <div class="layui-card">
+                    <div class="layui-card-header">每日股票最高/低收盘价</div>
+                    <div class="layui-card-body">
+                        <div id="container2" style="height: 400px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        //Demo
+        layui.use('form', function () {
+            var form = layui.form;
+            //监听提交
+            form.on('submit(formDemo)', function (data) {
+                {#layer.msg(JSON.stringify(data.field));#}
+                return true;
+            });
+        });
+    </script>
+    <script src="/static/js/echarts.min.js"></script>
+
+    <!-- 1 股票走势图--->
+    <script type="text/javascript">
+        var dom = document.getElementById("container1");
+        var myChart = echarts.init(dom);
+        var app = {};
+        var option;
+        option = {
+            dataZoom: { // 放大和缩放
+                type: 'inside'
+            },
+            xAxis: {
+                type: 'category',
+                data: {{ main1_x |safe }}
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: {{ main1_y |safe }},
+                type: 'line',
+                smooth: true
+            }]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+    </script>
+
+    <!-- 2 股票 4个指数图折线图--->
+    <script type="text/javascript">
+        var dom = document.getElementById("container2");
+        var myChart = echarts.init(dom);
+        var app = {};
+        var option;
+        option = {
+            dataZoom: { // 放大和缩放
+                type: 'inside'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:  {{ main2_legend |safe }}/*['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']*/
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: {{ main2_x |safe }}
+                /*['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']*/
+            },
+            yAxis: {
+                scale: true,
+                type: 'value'
+            },
+            series: {{ main2_y |safe }} /*[{
+                name: 'Email',
+                type: 'line',
+                stack: 'Total',
+                data: [120, 132, 101, 134, 90, 230, 210]
+            }, {
+                name: 'Union Ads',
+                type: 'line',
+                stack: 'Total',
+                data: [220, 182, 191, 234, 290, 330, 310]
+            }, {
+                name: 'Video Ads',
+                type: 'line',
+                stack: 'Total',
+                data: [150, 232, 201, 154, 190, 330, 410]
+            }, {
+                name: 'Direct',
+                type: 'line',
+                stack: 'Total',
+                data: [320, 332, 301, 334, 390, 330, 320]
+            }, {
+                name: 'Search Engine',
+                type: 'line',
+                stack: 'Total',
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }]*/
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+    </script>
+
+{% endblock %}

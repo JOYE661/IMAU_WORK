@@ -1,0 +1,84 @@
+body {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  background-color: #eee;
+  background-image: url("../images/1.png");
+  background-size: cover;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.myrow {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.info {
+  background-color: white;
+  border: 1px solid #cccccc;
+  padding:  10px;
+  border-radius: 5px;
+}
+.tsinfo {
+  color: red;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+.myicon {
+  color: #0099ff;
+}
+.myhospital{
+  color: #CC0000;
+}
+
+.row {
+  margin: 5px 0 5px 0;
+}
+
+.mybutton{
+  text-align: right;
+  margin-top: 10px;
+}
+
+
+.col-md-6,.col-sm-12 {
+  margin-bottom: 3px;
+}
+
+.myh4 {
+  color: #333399;
+}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block title %}
+    股票数据分析可视化系统
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <style>
+        a:hover {
+            color: red;
+        !important;
+        }
+        .haha:hover{
+            background-color: lightskyblue;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!--
+    <div class="cation-content">
+        <div style="height:50px"></div>
+        <div class="cation-middle">
+            <dl class="cation-list">
+                <dt>区域</dt>
+                <dd>
+                    {% for foo in all_type %}
+                        {% ifequal foo  type_ %}
+                            <a href="/?type={{ foo }}" rel="{{ foo }}" name="type" class="on">{{ foo }}</a>
+                            {% else %}
+                            <a href="/?type={{ foo }}" rel="{{ foo }}" name="type" class="default">{{ foo }}</a>
+                        {% endifequal %}
+                    {% endfor %}
+                </dd>
+            </dl>
+        </div>
+    </div>
+    -->
+
+
+{% include 'new-list.html' %}
+{% endblock %}
+
+{% block js %}
+{#    <script src="/static/js/current.js"></script>#}
+    <script src="/static/layui/lay/modules/layer.js"></script>
+    <script>
+    /*
+        $(function () {
+            new SelectTag({
+                child: ".default", //所有默认
+                over: 'on', //当前选中
+                all: ".all" // 默认全部
+            });
+        })*/
+        $('.shoucang').click(function () {
+            var id = $(this).attr('id_')
+            var ths = $(this)
+            $.ajax({
+                url: '/star_ajax/',
+                dataType: 'json',
+                method: 'post',
+                data: {
+                    'id': id
+                },
+                success: function (data) {
+                    if (data.color == 'red') {
+                        $(ths).css('color', data.color)
+                        layer.msg('收藏成功', {icon: 8, time: 2000});
+                    } else {
+                        $(ths).css('color', data.color)
+                        layer.msg('取消收藏', {icon: 5, time: 2000});
+                    }
+
+                }
+            });
+        })
+
+    </script>
+
+{% endblock %}
