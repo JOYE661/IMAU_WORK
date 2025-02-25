@@ -29,7 +29,7 @@ urlpatterns = [
 
     path('sales/',include('sales.urls')),  
 
-    path('api/mgr',include('mgr.urls')),  
+    path('api/mgr/',include('mgr.urls')),  
 
     
 ]+  static("/", document_root="./z_dist")

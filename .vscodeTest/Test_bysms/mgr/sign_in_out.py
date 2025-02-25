@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 
 # 登录处理
-def signin( request):
+def signin(request):
     # 从 HTTP POST 请求中获取用户名、密码参数
     userName = request.POST.get('username')
     passWord = request.POST.get('password')
@@ -31,7 +31,7 @@ def signin( request):
 
 
 # 登出处理
-def signout( request):
+def signout(request):
     # 使用登出方法
     logout(request)
     return JsonResponse({'ret': 0})
