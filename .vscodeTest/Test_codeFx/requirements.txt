@@ -1,0 +1,6 @@
+Django==2.2.13
+PyMySQL==1.0.2
+tqdm==4.52.0
+pandas==1.1.4
+tushare==1.2.85
+django-simpleui==2.1

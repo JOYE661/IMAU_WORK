@@ -1,0 +1,26 @@
+项目运行
+1、pycharm打开整个项目文件夹
+2、配置本地Python环境 （选择自己的python编译器，建议创建一个虚拟环境）
+3、安装依赖库，在终端窗口（Teminal）输入命令：
+pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
+4、启动项目，在终端窗口输入命令：
+python manage.py runserver
+5、浏览器打开网站：
+http://127.0.0.1:8000/
+
+账号admins   密码admins
+
+
+
+
+|-- 项目
+    |-- db.sqlite3    数据库相关   重要   想看数据，可以用navicat打开
+    |-- requirements.txt  项目依赖库，可以理解为部分技术栈之类的
+    |-- app   主要代码文件夹      
+    |   |-- models.py   django的model   不懂百度一下即可   这个有点重要
+    |   |-- views.py   后端主要代码          重点 重点  重点 重点  重点 重点
+    |-- meteorological
+    |   |-- settings.py  配置文件 
+    |   |-- urls.py     路由 这个有点重要
+    |-- static       静态文件夹 js  css  img这些文件
+    |-- templates   模板   你也可以理解为网页，但是他是django处理好数据后和他结合，就形成了最终的网页
