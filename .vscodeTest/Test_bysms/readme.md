@@ -69,3 +69,6 @@ Superuser created successfully.
 ```
 
 注意密码至少8个字符。 这里，我们设置密码为 `88888888`
+
+
+现在尝试接入deepseek接口：sk-c23c7cdf318c413392e48371e0efa667

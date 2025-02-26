@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from tests.deepseek import deepseek
 def listorders(request):
-    return HttpResponse("下面是系统中所有的订单信息。。。野兽仙贝")
+    ret=deepseek("评价一下你自己")
+    str = f"{ret}"
+    return HttpResponse(str)
 
 def listorders1(request):
     return HttpResponse("下面是系统中所有的订单信息。。。淳平")

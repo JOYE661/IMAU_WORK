@@ -20,3 +20,6 @@ paydate = {
 response = requests.post('http://localhost/api/mgr/signin',data=paydate)
 
 pprint.pprint(response.json())
+
+
+
