@@ -1,14 +1,23 @@
 <template>
+  
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
         <a
-          href="https://vuejs.org"
+          href="#/test1"
           target="_blank"
         >
-          Core Docs
+          test1
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.imau.edu.cn/"
+          target="_blank"
+        >
+          imau
         </a>
       </li>
       <li>
@@ -80,6 +89,7 @@
         </a>
       </li>
     </ul>
+    
   </div>
 </template>
 
@@ -88,7 +98,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js app'
     }
   }
 }
