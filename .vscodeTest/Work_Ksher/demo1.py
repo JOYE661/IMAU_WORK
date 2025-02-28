@@ -130,7 +130,9 @@ def run_1688(type1_class,type_name,type_categories,start, count, interval=10000,
             page.wait_for_timeout(1000)
 
             yield page                                                  #———————— yield 暂停一级页面等待回调  //将当前页面对象返回给调用者，并暂停函数执行，保持状态以便后续继续执行。
-            ###########################################
+###################################################################################
+#点击一级表
+
             page.goto(
                 'https://air.1688.com/app/1688-global/main-site-channel/inner-rank.html?spm=a260k.home2024.leftmenu_EXPEND.dzhanneishangji0of0kuajing.663335e4jLVMS8',
                 wait_until="load")
@@ -147,16 +149,38 @@ def run_1688(type1_class,type_name,type_categories,start, count, interval=10000,
             #page.locator('.type_class:has_text('type_name')').click()  
             #page.wait_for_load_state('domcontentloaded')
             #page.wait_for_timeout(1000)
-            ###########################################修改于2025.2.11//增加点击分类
+#########################################################################修改于2025.2.11//增加点击分类
+#点击二级表
+
             #page.get_by_text("更多类目").first.click()
             #page.wait_for_timeout(3000)
-            page.get_by_text(type_categories).click()                   #————————点击tge_categories:童装
+            #page.get_by_text(type_categories).click()                   #————————点击tge_categories:童装
             #page.locator(type2_role,has_text=type_categories).click()
+            #page.wait_for_load_state('domcontentloaded')
+            #page.wait_for_timeout(3000)
+#######################################################################################
+#牢学长修改的点击二级表  
+
+            def get_class_info_map(elements_selector):
+                # 获取一、二级分类映射关系字典
+                class_info_map = {}
+                elements = elements_selector.all()
+                for element in elements:
+                    class_name = element.text_content()
+                    class_info_map[class_name] = elements.index(element)
+                return class_info_map
+
+            elements_selector = page.locator(".list-item")
+            second_class_info_map = get_class_info_map(elements_selector=elements_selector)
+            second_class_names = list(second_class_info_map.keys())
+            print(second_class_info_map)
+            print()
+            print(second_class_names)
+            elements_selector.nth(second_class_info_map[second_class_names[1]]).click()
             page.wait_for_load_state('domcontentloaded')
             page.wait_for_timeout(3000)
 
-
-
+ ####################################################################################
             listitem = page.get_by_role("listitem").filter(has_text="商品详情").all()
             last_count = start + count                                  #————————page.get_by_role("listitem")//使用 Playwright 的 get_by_role 方法查找页面中所有具有 listitem 角色（role）的元素
             current_count = len(listitem)                               #————————.filter(has_text="商品详情") //过滤出所有包含 "商品详情" 文本的元素
@@ -446,6 +470,10 @@ def run_1688(type1_class,type_name,type_categories,start, count, interval=10000,
                         #raise e
 
     yield result_data
+
+
+
+
 
 if __name__ == "__main__":
     # name=["日本","韩国","马来西亚"]
