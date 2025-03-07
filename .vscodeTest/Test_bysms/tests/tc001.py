@@ -1,25 +1,28 @@
-#测试代码
 import  requests,pprint
-import time
+
+# 先登陆,获取sessionid
 payload = {
-    'username': 'byhy',
-    'password': '88888888'
+        'username': 'byhy',
+        'password': '88888888'
+    }
+
+response = requests.post("http://localhost/api/mgr/signin",
+                             data=payload)
+
+retDict = response.json()
+
+sessionid = response.cookies['sessionid']
+
+# 再发送列出请求，注意多了 keywords
+payload = {
+    'action': 'list_medicine',
+    'pagenum': 1,
+    'pagesize' : 3,
+    'keywords' : '乳酸 注射液'
 }
 
-response = requests.post('http://localhost/api/mgr/signin',data=payload)
+response = requests.get('http://localhost/api/mgr/medicines',
+              params=payload,
+              cookies={'sessionid': sessionid})
 
 pprint.pprint(response.json())
-
-time.sleep(1)
-
-paydate = {
-    'username': 'joye',
-    'password': '64646464'
-}
-
-response = requests.post('http://localhost/api/mgr/signin',data=paydate)
-
-pprint.pprint(response.json())
-
-
-

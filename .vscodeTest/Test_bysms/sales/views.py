@@ -1,49 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from tests.deepseek import deepseek
+# 导入 Customer 对象定义
+from  common.models import  Customer
+
 def listorders(request):
-    ret=deepseek("评价一下你自己")
-    str = f"{ret}"
-    return HttpResponse(str)
+    return HttpResponse("下面是系统中所有的订单信息。。。")
 
-def listorders1(request):
-    return HttpResponse("下面是系统中所有的订单信息。。。淳平")
-
-def listorders2(request):
-    return HttpResponse("下面是系统中所有的订单信息。。。我修院")
-def listorders3(request):
-    return HttpResponse("下面是系统中所有的订单信息。。。王道征途")
-
-
-from common.models import Customer
-
-def customDate(request):
-    # 返回一个 QuerySet 对象 ，包含所有的表记录
-    # 每条表记录都是是一个dict对象，
-    # key 是字段名，value 是 字段值
-    # 返回一个 QuerySet 对象 ，包含所有的表记录
-    qs = Customer.objects.values()
-
-    # 检查url中是否有参数phonenumber
-    ph =  request.GET.get('phonenumber',None)
-    #ad =  request.GET.get('address',None)
-    if ph:
-        qs = qs.filter(phonenumber=ph)
-    # 定义返回字符串
-    retStr = ''
-    for customer in  qs:
-        for name,value in customer.items():
-            retStr += f'{name} : {value} | '
-
-        # <br> 表示换行
-        retStr += '<br>'
-
-    return HttpResponse(retStr)
-
-from django.template import engines
 
 # 先定义好HTML模板
-html_template ='''
+html_template = '''
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,33 +24,37 @@ th, td {
 }
 </style>
 </head>
-    <body>
-        <table>
-        <tr>
-        <th>id</th>
-        <th>姓名</th>
-        <th>电话号码</th>
-        <th>地址</th>
-        </tr>
+<body>
+    <table>
+    <tr>
+    <th>id</th>
+    <th>姓名</th>
+    <th>电话号码</th>
+    <th>地址</th>
+    </tr>
 
-        {% for customer in customers %}
-            <tr>
+    
+    {% for customer in customers %}
+      <tr>
+      {% for name, value in customer.items %}
+      
+      <td>{{ value }}</td>
+      
+      {% endfor %}
+      </tr>
+    {% endfor %}
 
-            {% for name, value in customer.items %}            
-                <td>{{ value }}</td>            
-            {% endfor %}
-
-            </tr>
-        {% endfor %}
-
-        </table>
-    </body>
+    </table>
+</body>
 </html>
 '''
+
+
+from django.template import engines
 django_engine = engines['django']
 template = django_engine.from_string(html_template)
 
-def customList(request):
+def listcustomers(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
     qs = Customer.objects.values()
 
@@ -100,3 +69,10 @@ def customList(request):
     rendered = template.render({'customers':qs})
 
     return HttpResponse(rendered)
+
+
+
+
+
+
+
