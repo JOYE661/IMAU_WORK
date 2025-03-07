@@ -1,0 +1,65 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+require('../../../../hooks/index.js');
+require('../../../../utils/index.js');
+require('./index.js');
+var shared = require('@vue/shared');
+var index = require('../../../../hooks/use-form-item/index.js');
+var useCheckboxModel = require('./use-checkbox-model.js');
+var useCheckboxStatus = require('./use-checkbox-status.js');
+var useCheckboxDisabled = require('./use-checkbox-disabled.js');
+var useCheckboxEvent = require('./use-checkbox-event.js');
+
+const setStoreValue = (props, { model }) => {
+  function addToStore() {
+    if (shared.isArray(model.value) && !model.value.includes(props.label)) {
+      model.value.push(props.label);
+    } else {
+      model.value = props.trueLabel || true;
+    }
+  }
+  props.checked && addToStore();
+};
+const useCheckbox = (props, slots) => {
+  const { formItem: elFormItem } = index.useFormItem();
+  const { model, isGroup, isLimitExceeded } = useCheckboxModel.useCheckboxModel(props);
+  const {
+    isFocused,
+    isChecked,
+    checkboxButtonSize,
+    checkboxSize,
+    hasOwnLabel
+  } = useCheckboxStatus.useCheckboxStatus(props, slots, { model });
+  const { isDisabled } = useCheckboxDisabled.useCheckboxDisabled({ model, isChecked });
+  const { inputId, isLabeledByFormItem } = index.useFormItemInputId(props, {
+    formItemContext: elFormItem,
+    disableIdGeneration: hasOwnLabel,
+    disableIdManagement: isGroup
+  });
+  const { handleChange, onClickRoot } = useCheckboxEvent.useCheckboxEvent(props, {
+    model,
+    isLimitExceeded,
+    hasOwnLabel,
+    isDisabled,
+    isLabeledByFormItem
+  });
+  setStoreValue(props, { model });
+  return {
+    inputId,
+    isLabeledByFormItem,
+    isChecked,
+    isDisabled,
+    isFocused,
+    checkboxButtonSize,
+    checkboxSize,
+    hasOwnLabel,
+    model,
+    handleChange,
+    onClickRoot
+  };
+};
+
+exports.useCheckbox = useCheckbox;
+//# sourceMappingURL=use-checkbox.js.map
