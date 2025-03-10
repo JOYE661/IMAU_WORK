@@ -104,7 +104,7 @@ router.post('/batchDelete', async (req, res) => {
 
 //管理员查询接口search
 router.get('/search',async (req,res)=>{
-    let sql = 'select * from tm_goods where goods_name is ? '
+    let sql = 'select * from tm_goods where goods_name is ?'
     let result = await MysqlUtil.query(sql,[req.query.search]);
     if(result.length == 0){
         res.send({
