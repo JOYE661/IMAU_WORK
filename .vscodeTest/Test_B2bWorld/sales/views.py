@@ -1,10 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from tests.deepseek import deepseek
-def listorders(request):
-    ret=deepseek("评价一下你自己")
-    str = f"{ret}"
-    return HttpResponse(str)
 
 def listorders1(request):
     return HttpResponse("下面是系统中所有的订单信息。。。淳平")
@@ -16,7 +11,6 @@ def listorders3(request):
 
 
 from common.models import Customer
-
 def customDate(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
     # 每条表记录都是是一个dict对象，

@@ -15,11 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
 from django.contrib import admin
 from django.urls import path, include
-
-from sales.views import listorders,listorders1,listorders2
+from sales.views import listorders1,listorders1,listorders2
+from Test_vue.views import *
 # 静态文件服务
 from django.conf.urls.static import static
 
@@ -29,7 +28,9 @@ urlpatterns = [
 
     path('sales/',include('sales.urls')),  
 
-    path('api/mgr/',include('mgr.urls')),  
+    path('api/mgr/',include('mgr.urls')), 
+
+    path('Test_vue/',include('Test_vue.urls')),
 
     
 ]+  static("/", document_root="./z_dist")

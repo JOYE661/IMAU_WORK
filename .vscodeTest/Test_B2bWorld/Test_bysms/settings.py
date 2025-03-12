@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 #import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     #加入关联数据库一行
     'common.apps.CommonConfig'
     #'common.apps.CommonConfig' 告诉 Django ， CommonConfig 是 common/apps.py 文件中定义的一个应用配置的类。
+    #'sales.apps.SalesConfig',
+    #'Test_vue.apps.TestVueConfig'    
 
 ]
 
@@ -60,8 +63,9 @@ ROOT_URLCONF = "Test_bysms.urls"
 
 TEMPLATES = [
     {
+        
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
