@@ -18,7 +18,7 @@
 
 export default {
   name: 'App',
-  data(){
+    data(){
     return{
       value1:'abc',
       value2:'def',
