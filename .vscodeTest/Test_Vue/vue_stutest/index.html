@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+</body>
+</html>
+<script>
+    // const app = new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: 'Hello Vue!',
+    //     }
+    // })
+    const { createApp, ref } = Vue
+
+        createApp({
+        setup() {
+            const message = ref('Hello vue!')
+            return {
+            message
+            }
+        }
+        }).mount('#app')
+</script>
