@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CIMP | 登录</title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+  <link rel="stylesheet" href="/cdnjs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="/cdnjs/admin-lte/3.0.0/css/adminlte.min.css">
+    
+
+  <script src="/cdnjs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/cdnjs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="/cdnjs/admin-lte/3.0.0/js/adminlte.min.js"></script>
+    
+</head>
+
+
+<body class="login-page" style="min-height:512.391px">
+<div class="login-box" style="margin-top:-16rem">
+  <div class="login-logo">
+    <a href="#" style="color:#237530"><b>CIMP</b>登录</a>
+  </div>
+  
+  
+  <div class="card">
+  
+  <div class="card-body login-card-body">
+    <p class="login-box-msg">输入用户名、密码登录</p>
+
+    <div>
+      <div class="input-group mb-3">
+        <input type="username" class="form-control" id="username" placeholder="用户名" onkeydown="on_return()">
+        <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fa fa-user"></span>
+            </div>
+        </div>
+          
+          
+        
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" placeholder="密码" id="password" onkeydown="on_return()">
+        <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fa fa-lock"></span>
+            </div>
+        </div>
+        
+      </div>
+      
+      <div class="row">
+        
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-info btn-block btn-flat" style="background:#2a7e8b;color:#f8f9fa;font-weight:bolder" onclick="postLoginRequest()">登录</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="social-auth-links text-center">
+      
+    </div>
+    
+
+
+  </div>
+  
+  </div>
+  
+</div>
+
+
+
+
+<script>function postLoginRequest(){console.log("login");var e=$("#username").val(),n=$("#password").val();0!==e.length?0!==n.length?$.ajax({url:"/api/sign",type:"POST",data:JSON.stringify({action:"signin",username:e,password:n}),contentType:"application/json",success:function(e,n,t){0===e.ret?(sessionStorage.setItem("usertype",e.usertype),sessionStorage.setItem("userid",e.userid),sessionStorage.setItem("realname",e.realname),2e3<=e.usertype?window.location.href="/index.html":window.location.href="/admin.html"):(alert("登录失败 : "+e.msg),$("#password").val(""))},error:function(e,n,t){alert("错误: "+e.status+t)}}):alert("请输入密码"):alert("请输入用户名")}function curTimestamp(){var e=(new Date).getTime();return Math.floor(e/1e3)}var lastSendReqTime=0;function on_return(e){if(13==e){var n=curTimestamp();if(n-window.lastSendReqTime<5)return;window.lastSendReqTime=n,postLoginRequest()}}document.onkeydown=function(e){on_return(window.event?window.event.keyCode:e.which)}</script>
+</body>
+
+
+
+</html>

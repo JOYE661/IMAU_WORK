@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CIMP</title>
+    
+
+    <link rel="stylesheet" href="/cdnjs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/cdnjs/admin-lte/3.0.0/css/adminlte.min.css">
+   
+    <!-- <script src="/cdnjs/babel-polyfill/6.9.1/polyfill.min.js"></script> -->
+
+    <script src="/cdnjs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/cdnjs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/cdnjs/admin-lte/3.0.0/js/adminlte.min.js"></script>
+
+    <!-- 下面是异步加载的js 和 css -->
+    <script defer src="/cdnjs/tui-editor/1.4.10/tui-editor-Editor-full.min.js"></script>    
+    <script defer src="/cdnjs/highlight.js/9.18.1/highlight.min.js"></script>    
+    <link rel="stylesheet" href="/cdnjs/highlight.js/9.18.1/styles/vs.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/cdnjs/tui-editor/1.4.10/tui-editor.min.css" media="print" onload="this.media='all'"></link>
+    <link rel="stylesheet" href="/cdnjs/tui-editor/1.4.10/tui-editor-contents.min.css" media="print" onload="this.media='all'"></link>
+    
+
+<style>
+    
+    body{
+        font-family: Microsoft Yahei,Helvetica,Arial,sans-serif,"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family:  Microsoft Yahei,'Source Sans Pro',sans-serif !important;
+    }
+
+    .main-header{
+        font-size: 1.05rem;
+    }
+
+    .navbar {
+        padding: .2rem .5rem;
+    }
+
+    .box-header{
+        text-align: center;
+    }
+
+    .content , .navbar>.container{    
+        width: 90%;
+        max-width: 1000px;
+    }
+
+    .content-wrapper {
+        background-color: #fefefe;
+    }
+
+    .search-result-item{
+        position: relative; /*这个属性很重要*/
+        outline: #f7eded solid 1px;
+        margin-bottom: 3em;
+        padding: .01em .02em;
+    }
+
+    
+
+    /* 被自己撤回 */
+        
+    .search-result-item.hold::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f023";
+      position: absolute;
+      top: 3px;
+      right: 5px;
+      font-size: 1.6em;
+      color: #17a2b8;
+    }
+
+    /* 被管理员封禁 */
+      
+    .search-result-item.banned::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f05e";
+      position: absolute;
+      top: 3px;
+      right: 5px;
+      font-size: 1.6em;
+      color: #d81b60;
+    }
+
+    .search-result-item a{
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .search-result-item-field{
+        padding: .5em;
+    }
+
+    .search-result-item-actionbar{
+        background-color: #f9f9f9;
+        display: flex;
+    }
+
+    .search-result-item-actionbar .btn-group {
+        margin-left: auto;
+    }
+
+    .search-result-item-actionbar .btn {
+        color:#686f68;
+        font-size: .85rem;
+    }
+
+    .search-result-item-field-name{
+        color:darkgreen;
+        font-weight: bold;
+    }
+    
+    .btn-group > .btn-xs {
+        margin: .2em .5em;
+    }
+
+    /* .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+        z-index: 0;
+    } */
+
+    .btn-outlined.btn-green {
+        background: none;
+        border: 1px solid #488c6c;
+        color: #488c6c;
+    }
+
+    .btn-green:hover, .btn-green:focus, .btn-green:active, .btn-green.active, .open .dropdown-toggle.btn-green {
+        color: #ffffff;
+        background-color: #3a7157 !important;
+        border-color: #305d48;
+    }
+
+    .form-control:focus {
+        border-color: #3c8dbc;
+        box-shadow: none;
+    }
+
+
+    .tui-editor-contents {        
+        font-size: 1.1em;   
+        font-family: Microsoft Yahei,Helvetica,Arial,sans-serif,"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    }
+
+    .tui-editor-contents code{        
+        font-size: 1em;   
+        font-family: consolas;
+    }
+    
+    .tui-editor-contents pre{        
+        font-size: 0.9em;   
+        font-family: consolas;
+    }
+    
+    .tui-editor-defaultUI {        
+        font-family: Microsoft Yahei,Helvetica,Arial,sans-serif,"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    }
+
+    /* timeline */
+    .timeline::before {
+        border-radius: .25rem;
+        background: #3d9970;       
+        left: 33px;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        width: 1px;
+    }
+
+    .timeline>div>.timeline-item>.timeline-header {
+        cursor: pointer;
+    }
+
+    .timeline>.time-label>span {
+        font-weight: normal;
+    }
+
+    /* 否则顶部导航条下面有条白线 */
+    .main-header {
+        border-bottom: 0px solid #dee2e6;
+    }   
+
+    .card-header {
+        padding: .45rem 1.25rem;
+    }
+    
+    .content-wrapper>.content {
+        padding: 0 .5rem .5rem .5rem;
+    }
+    
+
+</style>
+</head>
+
+<body class="layout-top-nav">
+    <div class="wrapper" id="root"></div>
+<script type="text/javascript" src="index.js?e05f23fc3e206eb9a513"></script></body>
+
+
+
+</html>
