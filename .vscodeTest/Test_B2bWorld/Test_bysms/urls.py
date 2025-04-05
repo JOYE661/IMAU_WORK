@@ -22,7 +22,6 @@ from Test_vue.views import *
 # 静态文件服务
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
 
@@ -31,6 +30,5 @@ urlpatterns = [
     path('api/mgr/',include('mgr.urls')), 
 
     path('Test_vue/',include('Test_vue.urls')),
-
-    
+   
 ]+  static("/", document_root="./z_dist")
