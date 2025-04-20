@@ -1,9 +1,0 @@
-.idea
-.vscode
-.DS_Store
-venv
-__pycache__
-env.py
-env.slave.py
-env.docker.py
-docker-compose.yml

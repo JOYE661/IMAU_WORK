@@ -1,3 +1,0 @@
-<?php
-// 输出语句缺少分号
-echo 'test'			// 错误信息：Parse error: syntax error, unexpected end...
